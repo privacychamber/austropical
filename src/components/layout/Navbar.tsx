@@ -46,11 +46,11 @@ export default function Navbar() {
   }, [pathname]);
 
   const navLinks = [
-    { name: "Shop", href: "/shop", hasDropdown: true },
-    { name: "Recipes", href: "/recipes" },
-    { name: "Sustainability", href: "/sustainability" },
-    { name: "About Us", href: "/about" },
-    { name: "Contact", href: "/contact" },
+    { name: "SHOP", href: "/shop", hasDropdown: true },
+    { name: "OUR GOODNESS", href: "/shop" },
+    { name: "RECIPES", href: "/recipes" },
+    { name: "SUSTAINABILITY", href: "/sustainability" },
+    { name: "ABOUT US", href: "/about" },
   ];
 
   return (
