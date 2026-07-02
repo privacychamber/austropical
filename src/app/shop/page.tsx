@@ -88,7 +88,7 @@ function ShopContent() {
   };
 
   return (
-    <div className="bg-[#FFF9F2] text-[#1A1A1A] min-h-screen relative overflow-x-hidden font-sans">
+    <div className="bg-[var(--background)] text-[var(--foreground)] min-h-screen relative overflow-x-hidden font-sans transition-colors duration-500">
       <Navbar />
 
       {/* Hero Header with blue/purple leafy background and sticker header */}
@@ -139,8 +139,8 @@ function ShopContent() {
       <section className="py-12 max-w-container mx-auto px-6 md:px-12 space-y-10">
         
         {/* Horizontal Category Filters Bar */}
-        <div className="flex flex-col md:flex-row items-start md:items-center gap-4 py-4 border-b border-[#2A1147]/10">
-          <span className="text-xs font-black uppercase tracking-widest text-[#1A1A1A]/60 flex-shrink-0">
+        <div className="flex flex-col md:flex-row items-start md:items-center gap-4 py-4 border-b border-[var(--border-color)]">
+          <span className="text-xs font-black uppercase tracking-widest text-[var(--foreground)]/60 flex-shrink-0">
             Filter by:
           </span>
           <div className="flex flex-wrap items-center gap-2">
@@ -152,8 +152,8 @@ function ShopContent() {
                 onClick={() => setSelectedCategory(cat)}
                 className={`text-[10px] md:text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-full border transition-all duration-300 ${
                   selectedCategory === cat
-                    ? "bg-[#2A1147] border-[#2A1147] text-white shadow-md"
-                    : "bg-white border-[#2A1147]/20 text-[#2A1147] hover:border-[#2A1147] hover:bg-[#2A1147]/5"
+                    ? "bg-brand-purple border-brand-purple text-white shadow-md"
+                    : "bg-[var(--card-bg)] border-[var(--border-color)] text-[var(--foreground)] hover:border-[var(--foreground)] hover:bg-[var(--foreground)]/5"
                 }`}
               >
                 {cat === "All" ? "ALL PRODUCTS" : cat}
@@ -173,19 +173,19 @@ function ShopContent() {
                 placeholder="Search products..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-9 pr-4 py-2.5 bg-white border border-[#2A1147]/10 rounded-input text-xs font-semibold focus:border-[#2A1147] outline-none"
+                className="w-full pl-9 pr-4 py-2.5 bg-[var(--card-bg)] border border-[var(--border-color)] text-[var(--foreground)] rounded-input text-xs font-semibold focus:border-[var(--foreground)] outline-none"
               />
-              <Search className="absolute left-3 top-3 w-4 h-4 text-[#2A1147]/40" />
+              <Search className="absolute left-3 top-3 w-4 h-4 text-[var(--foreground)]/40" />
             </div>
 
             <div className="flex items-center gap-3 w-full sm:w-auto justify-end">
-              <span className="text-xs font-black text-[#1A1A1A]/50 uppercase tracking-widest">
+              <span className="text-xs font-black text-[var(--foreground)]/50 uppercase tracking-widest">
                 Sort By
               </span>
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
-                className="bg-white border border-[#2A1147]/10 px-3 py-2 rounded-lg text-xs font-bold text-[#2A1147] focus:border-[#2A1147] outline-none cursor-pointer"
+                className="bg-[var(--card-bg)] border border-[var(--border-color)] px-3 py-2 rounded-lg text-xs font-bold text-[var(--foreground)] focus:border-[var(--foreground)] outline-none cursor-pointer"
               >
                 <option value="featured">Featured Product</option>
                 <option value="price-low">Price: Low to High</option>
