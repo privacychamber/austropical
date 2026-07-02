@@ -270,47 +270,25 @@ export default function Homepage() {
         <div className="absolute top-10 right-10 w-[450px] h-[450px] bg-brand-yellow/15 rounded-full blur-[130px] pointer-events-none" />
         <div className="absolute bottom-10 left-10 w-[300px] h-[300px] bg-white/10 rounded-full blur-[90px] pointer-events-none" />
 
-        {/* Floating Fruit SVGs */}
+        {/* Floating Fruit Photographic PNGs */}
         <div className="absolute left-[8%] top-[25%] pointer-events-none z-10 animate-float-slow hidden md:block">
-          <svg width="60" height="60" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" className="drop-shadow-lg opacity-85">
-            <circle cx="32" cy="34" r="22" fill="#4D2677"/>
-            <circle cx="32" cy="34" r="20" fill="#3B1C5C"/>
-            <path d="M32 12C28 16 36 16 32 20C28 16 36 16 32 12Z" fill="#2A1147"/>
-            <path d="M46 16C42 12 38 20 40 24" stroke="#4F8F46" strokeWidth="3" strokeLinecap="round"/>
-          </svg>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="https://pngimg.com/uploads/blueberries/blueberries_PNG11.png" alt="blueberry" className="w-14 h-14 object-contain drop-shadow-2xl opacity-90" />
         </div>
 
         <div className="absolute right-[10%] top-[20%] pointer-events-none z-10 animate-float-fast hidden md:block">
-          <svg width="65" height="65" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" className="drop-shadow-lg opacity-90">
-            <path d="M32 60C45 42 54 30 52 18C50 6 38 6 32 10C26 6 14 6 12 18C10 30 19 42 32 60Z" fill="#E9418A"/>
-            <path d="M32 6C34 12 40 10 44 8C38 12 36 18 32 14C28 18 26 12 20 8C24 10 30 12 32 6Z" fill="#4F8F46"/>
-            <circle cx="24" cy="22" r="1.5" fill="#FFC531"/>
-            <circle cx="40" cy="22" r="1.5" fill="#FFC531"/>
-            <circle cx="32" cy="32" r="1.5" fill="#FFC531"/>
-            <circle cx="24" cy="40" r="1.5" fill="#FFC531"/>
-            <circle cx="40" cy="40" r="1.5" fill="#FFC531"/>
-          </svg>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="https://pngimg.com/uploads/strawberry/strawberry_PNG40.png" alt="strawberry" className="w-16 h-16 object-contain drop-shadow-2xl opacity-90" />
         </div>
 
         <div className="absolute left-[5%] bottom-[20%] pointer-events-none z-10 animate-float-reverse hidden md:block">
-          <svg width="55" height="55" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" className="drop-shadow-lg opacity-85">
-            <circle cx="32" cy="32" r="22" fill="#FFE599" stroke="#FFC531" strokeWidth="4"/>
-            <circle cx="32" cy="32" r="16" fill="#FFF2CC"/>
-            <circle cx="32" cy="32" r="1" fill="#7F6000"/>
-            <circle cx="28" cy="28" r="1" fill="#7F6000"/>
-            <circle cx="36" cy="28" r="1" fill="#7F6000"/>
-            <circle cx="28" cy="36" r="1" fill="#7F6000"/>
-            <circle cx="36" cy="36" r="1" fill="#7F6000"/>
-          </svg>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="https://pngimg.com/uploads/banana/banana_PNG841.png" alt="banana" className="w-14 h-14 object-contain drop-shadow-2xl opacity-90" />
         </div>
 
         <div className="absolute right-[6%] bottom-[25%] pointer-events-none z-10 animate-float-slow hidden md:block">
-          <svg width="45" height="45" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" className="drop-shadow-lg opacity-80">
-            <path d="M12 52C28 52 48 40 52 12C24 16 12 36 12 52Z" fill="#4F8F46"/>
-            <path d="M12 52Q32 32 52 12" stroke="#3A6B32" strokeWidth="2"/>
-            <path d="M26 38Q34 38 38 42" stroke="#3A6B32" strokeWidth="1.5"/>
-            <path d="M38 26Q42 22 46 22" stroke="#3A6B32" strokeWidth="1.5"/>
-          </svg>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="https://pngimg.com/uploads/mint/mint_PNG9.png" alt="mint leaf" className="w-12 h-12 object-contain drop-shadow-2xl opacity-90" />
         </div>
 
         <div className="max-w-container mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
@@ -481,21 +459,12 @@ export default function Homepage() {
 
         {/* Floating Fruit Decoration left/right */}
         <div className="absolute top-24 left-6 pointer-events-none opacity-85 hidden md:block animate-float-slow">
-          <svg width="60" height="60" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" className="drop-shadow-lg">
-            <path d="M32 60C45 42 54 30 52 18C50 6 38 6 32 10C26 6 14 6 12 18C10 30 19 42 32 60Z" fill="#E9418A"/>
-            <path d="M32 6C34 12 40 10 44 8C38 12 36 18 32 14C28 18 26 12 20 8C24 10 30 12 32 6Z" fill="#4F8F46"/>
-            <circle cx="24" cy="22" r="1.5" fill="#FFC531"/>
-            <circle cx="40" cy="22" r="1.5" fill="#FFC531"/>
-            <circle cx="32" cy="32" r="1.5" fill="#FFC531"/>
-          </svg>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="https://pngimg.com/uploads/strawberry/strawberry_PNG40.png" alt="strawberry" className="w-14 h-14 object-contain drop-shadow-2xl opacity-90" />
         </div>
         <div className="absolute bottom-24 right-6 pointer-events-none opacity-85 hidden md:block animate-float-reverse">
-          <svg width="55" height="55" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" className="drop-shadow-lg">
-            <circle cx="32" cy="34" r="22" fill="#4D2677"/>
-            <circle cx="32" cy="34" r="20" fill="#3B1C5C"/>
-            <path d="M32 12C28 16 36 16 32 20C28 16 36 16 32 12Z" fill="#2A1147"/>
-            <path d="M46 16C42 12 38 20 40 24" stroke="#4F8F46" strokeWidth="3" strokeLinecap="round"/>
-          </svg>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="https://pngimg.com/uploads/blueberries/blueberries_PNG11.png" alt="blueberry" className="w-14 h-14 object-contain drop-shadow-2xl opacity-90" />
         </div>
 
         <div className="space-y-4 max-w-2xl mx-auto">
@@ -705,18 +674,14 @@ export default function Homepage() {
       {/* SECTION 7 — Find Your Routine & Built Around Real Fruit */}
       <section className="py-24 max-w-container mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start bg-[var(--card-bg)] border border-[var(--border-color)] rounded-[32px] p-8 md:p-12 transition-colors duration-500 routine-trigger relative overflow-hidden">
         
-        {/* Floating Fruit SVGs */}
+        {/* Floating Fruit PNGs */}
         <div className="absolute top-8 left-4 pointer-events-none opacity-80 hidden md:block animate-float-reverse">
-          <svg width="45" height="45" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" className="drop-shadow-md">
-            <circle cx="32" cy="32" r="22" fill="#FFE599" stroke="#FFC531" strokeWidth="4"/>
-            <circle cx="32" cy="32" r="16" fill="#FFF2CC"/>
-          </svg>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="https://pngimg.com/uploads/banana/banana_PNG841.png" alt="banana" className="w-12 h-12 object-contain drop-shadow-md opacity-90" />
         </div>
         <div className="absolute bottom-8 right-4 pointer-events-none opacity-80 hidden md:block animate-float-slow">
-          <svg width="40" height="40" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" className="drop-shadow-md">
-            <path d="M12 52C28 52 48 40 52 12C24 16 12 36 12 52Z" fill="#4F8F46"/>
-            <path d="M12 52Q32 32 52 12" stroke="#3A6B32" strokeWidth="2"/>
-          </svg>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="https://pngimg.com/uploads/mint/mint_PNG9.png" alt="mint leaf" className="w-10 h-10 object-contain drop-shadow-md opacity-90" />
         </div>
         
         {/* Left Column: Routine category selector list */}
@@ -820,18 +785,14 @@ export default function Homepage() {
       {/* SECTION 8 — Recipes + Testimonials */}
       <section className="py-24 max-w-container mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-10 gap-12 items-start recipes-trigger relative overflow-hidden">
         
-        {/* Floating Fruit SVGs */}
+        {/* Floating Fruit PNGs */}
         <div className="absolute top-4 left-2 pointer-events-none opacity-80 hidden md:block animate-float-slow">
-          <svg width="45" height="45" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" className="drop-shadow-md">
-            <path d="M32 60C45 42 54 30 52 18C50 6 38 6 32 10C26 6 14 6 12 18C10 30 19 42 32 60Z" fill="#E9418A"/>
-            <path d="M32 6C34 12 40 10 44 8C38 12 36 18 32 14C28 18 26 12 20 8C24 10 30 12 32 6Z" fill="#4F8F46"/>
-          </svg>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="https://pngimg.com/uploads/strawberry/strawberry_PNG40.png" alt="strawberry" className="w-12 h-12 object-contain drop-shadow-md opacity-90" />
         </div>
         <div className="absolute bottom-8 right-2 pointer-events-none opacity-80 hidden md:block animate-float-fast">
-          <svg width="40" height="40" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" className="drop-shadow-md">
-            <circle cx="32" cy="34" r="22" fill="#4D2677"/>
-            <circle cx="32" cy="34" r="20" fill="#3B1C5C"/>
-          </svg>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="https://pngimg.com/uploads/blueberries/blueberries_PNG11.png" alt="blueberry" className="w-12 h-12 object-contain drop-shadow-md opacity-90" />
         </div>
 
         {/* Left Side: Recipes Slider (70%) */}
@@ -910,18 +871,14 @@ export default function Homepage() {
       {/* SECTION 9 — Three Columns Promotion */}
       <section className="py-24 max-w-container mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-3 gap-8 promo-trigger relative overflow-hidden">
         
-        {/* Floating Fruit SVGs */}
+        {/* Floating Fruit PNGs */}
         <div className="absolute top-6 left-2 pointer-events-none opacity-80 hidden md:block animate-float-reverse">
-          <svg width="45" height="45" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" className="drop-shadow-md">
-            <circle cx="32" cy="32" r="22" fill="#FFE599" stroke="#FFC531" strokeWidth="4"/>
-            <circle cx="32" cy="32" r="16" fill="#FFF2CC"/>
-          </svg>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="https://pngimg.com/uploads/banana/banana_PNG841.png" alt="banana" className="w-12 h-12 object-contain drop-shadow-md opacity-90" />
         </div>
         <div className="absolute bottom-12 right-2 pointer-events-none opacity-80 hidden md:block animate-float-slow">
-          <svg width="40" height="40" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" className="drop-shadow-md">
-            <path d="M12 52C28 52 48 40 52 12C24 16 12 36 12 52Z" fill="#4F8F46"/>
-            <path d="M12 52Q32 32 52 12" stroke="#3A6B32" strokeWidth="2"/>
-          </svg>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="https://pngimg.com/uploads/mint/mint_PNG9.png" alt="mint leaf" className="w-10 h-10 object-contain drop-shadow-md opacity-90" />
         </div>
 
         {/* Card 1: School Days */}
