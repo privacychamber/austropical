@@ -294,75 +294,76 @@ export default function Homepage() {
       </section>
 
       {/* Routine Routine Selector / Routines highlights */}
-      <section className="py-24 max-w-container mx-auto px-6 md:px-12 space-y-16">
-        <div className="text-center space-y-4">
-          <h2 className="text-xs font-black text-brand-orange uppercase tracking-widest">Find Your Routine</h2>
-          <p className="text-4xl md:text-5xl font-black font-display text-brand-purple tracking-tight">
-            Built Around Real Fruit.
-          </p>
-        </div>
+      <section className="py-24 bg-[#FF9F1C] text-white relative">
+        {/* Soft top-bottom curved border masks */}
+        <div className="absolute inset-x-0 top-0 h-8 bg-brand-cream rounded-b-3xl pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 h-8 bg-brand-cream rounded-t-3xl pointer-events-none" />
+        
+        <div className="max-w-container mx-auto px-6 md:px-12 space-y-12 text-center relative z-10">
+          <h2 className="text-4xl md:text-5xl font-black font-display text-white uppercase tracking-tight">
+            FIND YOUR ROUTINE
+          </h2>
 
-        {/* Tab Buttons */}
-        <div className="flex flex-wrap items-center justify-center gap-3">
-          {routines.map((routine) => (
-            <button
-              key={routine.name}
-              onClick={() => setActiveRoutine(routine.name)}
-              className={`px-6 py-3 rounded-btn font-bold text-sm transition-all duration-300 ${
-                activeRoutine === routine.name
-                  ? "bg-brand-purple text-white shadow-lg"
-                  : "bg-white border border-brand-purple/10 text-brand-purple hover:bg-brand-purple/5"
-              }`}
-            >
-              {routine.name}
-            </button>
-          ))}
-        </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 justify-items-center pt-6">
+            {[
+              {
+                name: "ALL PRODUCTS",
+                image: "https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=400&q=80",
+                link: "/shop"
+              },
+              {
+                name: "AÇAÍ RANGE",
+                image: "https://images.unsplash.com/photo-1553530666-ba11a7da3888?auto=format&fit=crop&w=400&q=80",
+                link: "/shop?category=SUPER+FRUITS+SORBET"
+              },
+              {
+                name: "SMOOTHIE CUBES",
+                image: "https://images.unsplash.com/photo-1628557044797-f21a177c37ec?auto=format&fit=crop&w=400&q=80",
+                link: "/shop?category=OTHER+FRUITS+SMOOTHIE+CUBES"
+              },
+              {
+                name: "ICE POPS",
+                image: "https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&fit=crop&w=400&q=80",
+                link: "/shop?category=SUPERFRUITS+ICE+POP+LINE"
+              },
+              {
+                name: "SUPERFRUIT SORBETS",
+                image: "https://images.unsplash.com/photo-1527324688151-0e627063f2b1?auto=format&fit=crop&w=400&q=80",
+                link: "/shop?category=SUPER+FRUITS+SORBET"
+              },
+              {
+                name: "BULK TUBS",
+                image: "https://images.unsplash.com/photo-1610970881699-44a5587caa9a?auto=format&fit=crop&w=400&q=80",
+                link: "/shop?category=ACAÍ+BUCKET"
+              }
+            ].map((cat, idx) => (
+              <Link 
+                key={idx} 
+                href={cat.link}
+                className="group flex flex-col items-center gap-4 cursor-pointer text-center"
+              >
+                {/* Outer Circular frame with hover dynamic scale and rotation */}
+                <div className="w-36 h-36 md:w-40 md:h-40 rounded-full bg-white relative overflow-hidden flex items-end justify-center shadow-lg border-4 border-white/20 transition-all duration-500 group-hover:scale-108 group-hover:shadow-2xl">
+                  
+                  {/* Styled liquid wave/organic shape in circle bottom */}
+                  <div className="absolute inset-x-0 bottom-0 h-1/3 bg-[#FFC531]/40 rounded-b-full transition-all duration-500 group-hover:h-1/2 group-hover:rotate-12" />
+                  
+                  {/* Sourced Product Image overlay peaking out */}
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img 
+                    src={cat.image} 
+                    alt={cat.name} 
+                    className="w-24 h-24 md:w-28 md:h-28 object-contain z-10 transition-all duration-500 transform translate-y-1 group-hover:-translate-y-3 group-hover:scale-110 group-hover:rotate-2"
+                  />
+                </div>
 
-        {/* Routine content / products display */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {selectedRoutineProducts.map((product) => (
-            <div
-              key={product.id}
-              className="bg-white rounded-card border border-brand-purple/5 p-6 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col md:flex-row gap-6 group"
-            >
-              <div className="w-full md:w-44 h-44 bg-brand-cream rounded-img overflow-hidden border border-brand-purple/5 relative flex-shrink-0">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <div className="flex-1 flex flex-col justify-between text-left space-y-4">
-                <div className="space-y-2">
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs font-bold text-brand-orange bg-brand-orange/15 px-2.5 py-1 rounded-btn uppercase">
-                      {product.category}
-                    </span>
-                    <div className="flex items-center gap-1">
-                      <Star className="w-3.5 h-3.5 fill-brand-yellow text-brand-yellow" />
-                      <span className="text-xs font-bold text-brand-purple">{product.rating}</span>
-                    </div>
-                  </div>
-                  <h4 className="text-xl font-bold font-display text-brand-purple">{product.name}</h4>
-                  <p className="text-brand-purple/75 text-sm font-medium line-clamp-2 leading-relaxed">
-                    {product.description}
-                  </p>
-                </div>
-                <div className="flex items-center justify-between pt-2">
-                  <span className="text-xl font-extrabold text-brand-purple">${product.price.toFixed(2)}</span>
-                  <button
-                    onClick={() => addToCart(product, 1)}
-                    className="px-4 py-2 bg-brand-purple hover:bg-brand-purple-light text-white text-xs font-bold rounded-btn transition-colors flex items-center gap-1.5"
-                  >
-                    <span>Quick Add</span>
-                    <ShoppingBag className="w-3.5 h-3.5" />
-                  </button>
-                </div>
-              </div>
-            </div>
-          ))}
+                {/* Subtitle Label */}
+                <span className="text-white text-xs font-black tracking-widest uppercase transition-colors group-hover:text-brand-yellow">
+                  {cat.name}
+                </span>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
