@@ -14,7 +14,9 @@ import {
   X,
   ChevronDown,
   Globe,
-  DollarSign
+  DollarSign,
+  Sun,
+  Moon
 } from "lucide-react";
 
 export default function Navbar() {
@@ -27,6 +29,28 @@ export default function Navbar() {
   const [searchQuery, setSearchQuery] = useState("");
   const [currency, setCurrency] = useState("AUD");
   const [language, setLanguage] = useState("EN");
+  const [theme, setTheme] = useState("light");
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("austropical_theme") || "light";
+    setTheme(savedTheme);
+    if (savedTheme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    const nextTheme = theme === "light" ? "dark" : "light";
+    setTheme(nextTheme);
+    localStorage.setItem("austropical_theme", nextTheme);
+    if (nextTheme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  };
 
   const totalCartItems = cart.reduce((sum, item) => sum + item.quantity, 0);
   const totalWishlistItems = wishlist.length;
@@ -214,6 +238,15 @@ export default function Navbar() {
               <User className="w-5 h-5" />
             </Link>
 
+            {/* Theme Toggle Button */}
+            <button
+              onClick={toggleTheme}
+              className="text-white/85 hover:text-brand-orange hover:scale-110 transition-all flex items-center justify-center mr-1"
+              aria-label="Toggle theme"
+            >
+              {theme === "dark" ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+            </button>
+
             <button
               onClick={() => setCartOpen(true)}
               className="bg-brand-orange hover:bg-brand-yellow hover:scale-105 transition-all text-brand-purple p-2.5 rounded-full flex items-center justify-center relative shadow-md"
@@ -236,6 +269,15 @@ export default function Navbar() {
 
           {/* Mobile Navigation controls */}
           <div className="flex lg:hidden items-center gap-4">
+            {/* Theme Toggle for Mobile */}
+            <button
+              onClick={toggleTheme}
+              className="text-white/95 p-1 flex items-center justify-center mr-1"
+              aria-label="Toggle theme"
+            >
+              {theme === "dark" ? <Sun className="w-5.5 h-5.5" /> : <Moon className="w-5.5 h-5.5" />}
+            </button>
+
             {/* Cart Icon for Mobile */}
             <button
               onClick={() => setCartOpen(true)}

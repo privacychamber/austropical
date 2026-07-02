@@ -261,14 +261,14 @@ export default function Homepage() {
   });
 
   return (
-    <div ref={mainRef} className="bg-[#FFF9F2] text-[#1A1A1A] min-h-screen relative overflow-x-hidden font-sans">
+    <div ref={mainRef} className="bg-[var(--background)] text-[var(--foreground)] min-h-screen relative overflow-x-hidden font-sans transition-colors duration-500">
       <Navbar />
 
       {/* SECTION 2 — Hero Banner */}
       <section className="relative min-h-screen pt-40 pb-28 bg-gradient-to-br from-[#7B2CBF] via-[#E9418A] to-[#FF7A00] text-white flex items-center overflow-hidden bg-leaf-pattern">
         {/* Soft background lighting element */}
         <div className="absolute top-10 right-10 w-[450px] h-[450px] bg-brand-yellow/15 rounded-full blur-[130px] pointer-events-none" />
-        <div className="absolute bottom-10 left-10 w-[300px] h-[300px] bg-[#FFF9F2]/10 rounded-full blur-[90px] pointer-events-none" />
+        <div className="absolute bottom-10 left-10 w-[300px] h-[300px] bg-white/10 rounded-full blur-[90px] pointer-events-none" />
 
         <div className="max-w-container mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
           
@@ -341,20 +341,20 @@ export default function Homepage() {
 
         {/* Wavy bottom divider transition */}
         <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none z-20">
-          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[60px] text-[#FFF9F2] fill-[#FFF9F2]">
+          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[60px] text-[var(--background)] fill-[var(--background)] transition-colors duration-500">
             <path d="M0,32L120,42.7C240,53,480,75,720,74.7C960,75,1200,53,1320,42.7L1440,32L1440,120L1320,120C1200,120,960,120,720,120C480,120,240,120,120,120L0,120Z"></path>
           </svg>
         </div>
       </section>
 
       {/* SECTION 3 — Trust Bar */}
-      <section className="h-[90px] bg-white border-b border-[#2A1147]/5 flex items-center justify-center">
+      <section className="h-[90px] bg-[var(--card-bg)] border-b border-[var(--border-color)] flex items-center justify-center transition-colors duration-500">
         <div className="max-w-container mx-auto px-6 md:px-12 w-full flex items-center justify-center gap-12 md:gap-20 whitespace-nowrap overflow-x-auto no-scrollbar">
           {[
             {
               name: "100% Real Fruit",
               icon: (
-                <svg className="w-5 h-5 text-brand-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                <svg className="w-5 h-5 text-[var(--foreground)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
                 </svg>
               )
@@ -362,7 +362,7 @@ export default function Homepage() {
             {
               name: "No Added Sugar",
               icon: (
-                <svg className="w-5 h-5 text-brand-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                <svg className="w-5 h-5 text-[var(--foreground)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
                 </svg>
               )
@@ -370,7 +370,7 @@ export default function Homepage() {
             {
               name: "Plant Based",
               icon: (
-                <svg className="w-5 h-5 text-brand-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                <svg className="w-5 h-5 text-[var(--foreground)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
                 </svg>
               )
@@ -378,7 +378,7 @@ export default function Homepage() {
             {
               name: "Gluten Free",
               icon: (
-                <svg className="w-5 h-5 text-brand-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                <svg className="w-5 h-5 text-[var(--foreground)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               )
@@ -386,7 +386,7 @@ export default function Homepage() {
             {
               name: "Australian Made",
               icon: (
-                <svg className="w-5 h-5 text-brand-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                <svg className="w-5 h-5 text-[var(--foreground)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 002 2h2m4-3.5a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               )
@@ -394,7 +394,7 @@ export default function Homepage() {
           ].map((item, idx) => (
             <div key={item.name} className="flex items-center gap-2.5">
               <div className="flex-shrink-0">{item.icon}</div>
-              <span className="text-sm font-black text-brand-purple uppercase tracking-widest">{item.name}</span>
+              <span className="text-sm font-black text-[var(--foreground)] uppercase tracking-widest">{item.name}</span>
             </div>
           ))}
         </div>
@@ -445,14 +445,14 @@ export default function Homepage() {
           ].map((item, idx) => (
             <div
               key={item.title}
-              className="w-full max-w-[300px] h-[320px] bg-white border p-8 rounded-[28px] text-center flex flex-col justify-between group shadow-sm hover:shadow-md transition-all duration-300 border-brand-purple/5 goodness-card-anim hover:-translate-y-2 cursor-pointer"
+              className="w-full max-w-[300px] h-[320px] bg-[var(--card-bg)] border border-[var(--border-color)] p-8 rounded-[28px] text-center flex flex-col justify-between group shadow-sm hover:shadow-md transition-all duration-300 goodness-card-anim hover:-translate-y-2 cursor-pointer"
             >
               <div className="space-y-4 flex flex-col items-center">
                 <div className={`w-14 h-14 rounded-full flex items-center justify-center ${item.color.split(" ")[1]}`}>
                   <Leaf className={`w-7 h-7 ${item.color.split(" ")[0]}`} />
                 </div>
                 <h3 className={`text-lg font-black tracking-wide uppercase ${item.color.split(" ")[0]}`}>{item.title}</h3>
-                <p className="text-brand-purple/75 text-xs font-semibold leading-relaxed line-clamp-3">{item.desc}</p>
+                <p className="text-[var(--foreground)]/75 text-xs font-semibold leading-relaxed line-clamp-3">{item.desc}</p>
               </div>
               <div className="pt-2">
                 <span className="text-[10px] font-black text-brand-orange uppercase tracking-wider cursor-pointer group-hover:underline flex items-center justify-center gap-1">
@@ -465,10 +465,10 @@ export default function Homepage() {
 
         {/* 4 dots row indicator */}
         <div className="flex items-center justify-center gap-2.5 pt-4">
-          <span className="w-2.5 h-2.5 rounded-full bg-brand-purple" />
-          <span className="w-2.5 h-2.5 rounded-full border border-brand-purple" />
-          <span className="w-2.5 h-2.5 rounded-full border border-brand-purple" />
-          <span className="w-2.5 h-2.5 rounded-full border border-brand-purple" />
+          <span className="w-2.5 h-2.5 rounded-full bg-[var(--foreground)]" />
+          <span className="w-2.5 h-2.5 rounded-full border border-[var(--foreground)]" />
+          <span className="w-2.5 h-2.5 rounded-full border border-[var(--foreground)]" />
+          <span className="w-2.5 h-2.5 rounded-full border border-[var(--foreground)]" />
         </div>
       </section>
 
@@ -476,7 +476,7 @@ export default function Homepage() {
       <section className="py-28 bg-gradient-to-br from-[#FF9F1C] to-[#FFC531] text-white relative overflow-hidden cubes-trigger">
         {/* Soft wave top divider */}
         <div className="absolute top-0 left-0 right-0 w-full overflow-hidden leading-none z-20">
-          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[30px] text-[#FFF9F2] fill-[#FFF9F2]">
+          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[30px] text-[var(--background)] fill-[var(--background)] transition-colors duration-500">
             <path d="M0,32L120,42.7C240,53,480,75,720,74.7C960,75,1200,53,1320,42.7L1440,32L1440,120L1320,120C1200,120,960,120,720,120C480,120,240,120,120,120L0,120Z"></path>
           </svg>
         </div>
@@ -565,7 +565,7 @@ export default function Homepage() {
       <section className="py-28 bg-[#2A1147] bg-leaf-pattern text-white relative overflow-hidden timeline-trigger">
         {/* Soft wave top divider */}
         <div className="absolute top-0 left-0 right-0 w-full overflow-hidden leading-none z-20">
-          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[30px] text-[#FFF9F2] fill-[#FFF9F2]">
+          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[30px] text-[var(--background)] fill-[var(--background)] transition-colors duration-500">
             <path d="M0,32L120,42.7C240,53,480,75,720,74.7C960,75,1200,53,1320,42.7L1440,32L1440,120L1320,120C1200,120,960,120,720,120C480,120,240,120,120,120L0,120Z"></path>
           </svg>
         </div>
@@ -611,12 +611,12 @@ export default function Homepage() {
       </section>
 
       {/* SECTION 7 — Find Your Routine & Built Around Real Fruit */}
-      <section className="py-24 max-w-container mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start bg-white routine-trigger">
+      <section className="py-24 max-w-container mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start bg-[var(--card-bg)] border border-[var(--border-color)] rounded-[32px] p-8 md:p-12 transition-colors duration-500 routine-trigger">
         
         {/* Left Column: Routine category selector list */}
         <div className="lg:col-span-5 space-y-8 text-left">
           <div className="space-y-2">
-            <h2 className="text-4xl font-black uppercase text-brand-purple">
+            <h2 className="text-4xl font-black uppercase text-[var(--foreground)]">
               FIND YOUR ROUTINE
             </h2>
           </div>
@@ -631,7 +631,7 @@ export default function Homepage() {
                   className={`flex items-center gap-4 px-5 py-3 rounded-full border transition-all text-left routine-tab-anim ${
                     selectedRoutine === tab.id
                       ? "bg-brand-purple text-white border-brand-purple scale-102"
-                      : "bg-[#FFF9F2] text-brand-purple hover:bg-brand-cream border-brand-purple/10"
+                      : "bg-[var(--background)] text-[var(--foreground)] hover:opacity-90 border-[var(--border-color)]"
                   }`}
                 >
                   <div className={`w-8 h-8 rounded-full flex items-center justify-center ${
@@ -648,7 +648,7 @@ export default function Homepage() {
 
         {/* Right Column: Slide cards */}
         <div className="lg:col-span-7 space-y-6 text-left">
-          <h2 className="text-2xl font-black text-brand-purple uppercase tracking-tight">
+          <h2 className="text-2xl font-black text-[var(--foreground)] uppercase tracking-tight">
             BUILT AROUND REAL FRUIT
           </h2>
 
@@ -656,7 +656,7 @@ export default function Homepage() {
             {filteredProducts.slice(0, 3).map((prod) => (
               <div
                 key={prod.id}
-                className="bg-[#FFF9F2] text-brand-purple rounded-[28px] p-5 border border-brand-purple/5 shadow-sm flex flex-col justify-between text-center aspect-[3/4.2] group cursor-pointer routine-card-anim"
+                className="bg-[var(--background)] text-[var(--foreground)] rounded-[28px] p-5 border border-[var(--border-color)] shadow-sm flex flex-col justify-between text-center aspect-[3/4.2] group cursor-pointer routine-card-anim transition-all duration-500"
               >
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
@@ -687,9 +687,9 @@ export default function Homepage() {
                 <div className="space-y-3 mt-4">
                   <div className="space-y-1">
                     <h4 className="text-sm font-black tracking-wide uppercase leading-none truncate">{prod.name}</h4>
-                    <p className="text-[10px] font-bold text-brand-purple/65">{prod.category}</p>
+                    <p className="text-[10px] font-bold text-[var(--foreground)]/65">{prod.category}</p>
                   </div>
-                  <div className="flex items-center justify-between pt-2 border-t border-brand-purple/5">
+                  <div className="flex items-center justify-between pt-2 border-t border-[var(--border-color)]">
                     <span className="text-sm font-black text-brand-orange">${prod.price}</span>
                     <button 
                       onClick={() => addToCart(prod, 1)}
@@ -703,7 +703,7 @@ export default function Homepage() {
             ))}
             
             {filteredProducts.length === 0 && (
-              <div className="col-span-full py-16 text-center text-brand-purple/50 font-bold">
+              <div className="col-span-full py-16 text-center text-[var(--foreground)]/50 font-bold">
                 No products found matching this routine filter.
               </div>
             )}
@@ -716,8 +716,8 @@ export default function Homepage() {
         
         {/* Left Side: Recipes Slider (70%) */}
         <div className="lg:col-span-7 space-y-6 text-left">
-          <div className="flex items-center justify-between border-b border-brand-purple/5 pb-4">
-            <h2 className="text-3xl font-black uppercase text-brand-purple">
+          <div className="flex items-center justify-between border-b border-[var(--border-color)] pb-4">
+            <h2 className="text-3xl font-black uppercase text-[var(--foreground)]">
               RECIPES & INSPIRATION
             </h2>
             <Link href="/recipes" className="text-xs font-black text-brand-orange uppercase hover:underline">
@@ -730,7 +730,7 @@ export default function Homepage() {
               <div
                 key={recipe.id}
                 onClick={() => setActiveRecipe(recipe)}
-                className="bg-white rounded-card overflow-hidden border border-brand-purple/5 shadow-sm transition-all duration-300 cursor-pointer group recipe-card-anim"
+                className="bg-[var(--card-bg)] text-[var(--foreground)] rounded-card overflow-hidden border border-[var(--border-color)] shadow-sm transition-all duration-300 cursor-pointer group recipe-card-anim"
               >
                 <div className="aspect-square w-full overflow-hidden relative">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -746,7 +746,7 @@ export default function Homepage() {
                   </div>
                 </div>
                 <div className="p-3 text-left space-y-1">
-                  <h4 className="text-xs font-black text-brand-purple group-hover:text-brand-orange transition-colors line-clamp-2">
+                  <h4 className="text-xs font-black text-[var(--foreground)] group-hover:text-brand-orange transition-colors line-clamp-2">
                     {recipe.title}
                   </h4>
                 </div>
@@ -757,26 +757,26 @@ export default function Homepage() {
 
         {/* Right Side: Testimonial Card (30%) */}
         <div className="lg:col-span-3 space-y-6 text-left testimonial-card">
-          <div className="border-b border-brand-purple/5 pb-4">
-            <h2 className="text-3xl font-black uppercase text-brand-purple">
+          <div className="border-b border-[var(--border-color)] pb-4">
+            <h2 className="text-3xl font-black uppercase text-[var(--foreground)]">
               LOVED BY THOUSANDS
             </h2>
           </div>
 
-          <div className="bg-white border border-brand-purple/5 p-6 rounded-[28px] shadow-sm space-y-4">
+          <div className="bg-[var(--card-bg)] text-[var(--foreground)] border border-[var(--border-color)] p-6 rounded-[28px] shadow-sm space-y-4 transition-all duration-500">
             <div className="flex gap-1 text-[#FFC531]">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="w-4 h-4 fill-current" />
               ))}
             </div>
             
-            <p className="text-brand-purple text-xs font-semibold leading-relaxed italic">
+            <p className="text-[var(--foreground)]/80 text-xs font-semibold leading-relaxed italic">
               &ldquo;Austropical has completely changed my mornings. Fresh, convenient and absolutely delicious!&rdquo;
             </p>
 
-            <div className="flex items-center justify-between gap-3 pt-3 border-t border-brand-purple/5">
+            <div className="flex items-center justify-between gap-3 pt-3 border-t border-[var(--border-color)]">
               <div>
-                <h4 className="text-xs font-black text-brand-purple uppercase">— Jessica M.</h4>
+                <h4 className="text-xs font-black text-[var(--foreground)] uppercase">— Jessica M.</h4>
               </div>
               <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -791,18 +791,18 @@ export default function Homepage() {
       <section className="py-24 max-w-container mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-3 gap-8 promo-trigger">
         
         {/* Card 1: School Days */}
-        <div className="bg-[#4D2677]/10 rounded-[28px] border border-brand-purple/10 flex flex-col justify-between shadow-sm transition-all text-left p-8 promo-card-anim">
+        <div className="bg-[#4D2677]/20 rounded-[28px] border border-[var(--border-color)] flex flex-col justify-between shadow-sm transition-all text-left p-8 promo-card-anim">
           <div className="space-y-4">
-            <h3 className="text-2xl font-black text-brand-purple uppercase">MADE FOR SCHOOL DAYS</h3>
-            <p className="text-brand-purple/80 text-xs font-medium leading-relaxed">
+            <h3 className="text-2xl font-black text-[var(--foreground)] uppercase">MADE FOR SCHOOL DAYS</h3>
+            <p className="text-[var(--foreground)]/80 text-xs font-medium leading-relaxed">
               Nutritious, tasty and made for growing minds and busy days.
             </p>
-            <div className="w-full aspect-[4/3] rounded-[24px] overflow-hidden border border-brand-purple/10 bg-white p-2">
+            <div className="w-full aspect-[4/3] rounded-[24px] overflow-hidden border border-[var(--border-color)] bg-white p-2">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/acai-passionfruit-legs.png" alt="school days kids tubs" className="w-full h-full object-contain" />
             </div>
           </div>
-          <div className="pt-4 border-t border-brand-purple/10 mt-4">
+          <div className="pt-4 border-t border-[var(--border-color)] mt-4">
             <Link href="/shop" className="text-xs font-black text-brand-orange uppercase hover:underline flex items-center gap-1">
               SHOP NOW →
             </Link>
@@ -810,18 +810,18 @@ export default function Homepage() {
         </div>
 
         {/* Card 2: Partnerships */}
-        <div className="bg-[#4D2677]/10 rounded-[28px] border border-brand-purple/10 flex flex-col justify-between shadow-sm transition-all text-left p-8 promo-card-anim">
+        <div className="bg-[#4D2677]/20 rounded-[28px] border border-[var(--border-color)] flex flex-col justify-between shadow-sm transition-all text-left p-8 promo-card-anim">
           <div className="space-y-4">
-            <h3 className="text-2xl font-black text-brand-purple uppercase">PARTNERSHIPS FOR A BETTER PLANET</h3>
-            <p className="text-brand-purple/80 text-xs font-medium leading-relaxed">
+            <h3 className="text-2xl font-black text-[var(--foreground)] uppercase">PARTNERSHIPS FOR A BETTER PLANET</h3>
+            <p className="text-[var(--foreground)]/80 text-xs font-medium leading-relaxed">
               Working with local farmers and communities to protect the Amazon.
             </p>
-            <div className="w-full aspect-[4/3] rounded-[24px] overflow-hidden border border-brand-purple/10 relative">
+            <div className="w-full aspect-[4/3] rounded-[24px] overflow-hidden border border-[var(--border-color)] relative">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="https://images.unsplash.com/photo-1602491453977-1b3991288411?auto=format&fit=crop&w=400&q=80" alt="jaguar" className="w-full h-full object-cover" />
             </div>
           </div>
-          <div className="pt-4 border-t border-brand-purple/10 mt-4">
+          <div className="pt-4 border-t border-[var(--border-color)] mt-4">
             <Link href="/sustainability" className="text-xs font-black text-brand-orange uppercase hover:underline flex items-center gap-1">
               LEARN MORE →
             </Link>
@@ -829,10 +829,10 @@ export default function Homepage() {
         </div>
 
         {/* Card 3: Join community rotated photos */}
-        <div className="bg-[#4D2677]/10 rounded-[28px] border border-brand-purple/10 flex flex-col justify-between shadow-sm text-left p-8 promo-card-anim">
+        <div className="bg-[#4D2677]/20 rounded-[28px] border border-[var(--border-color)] flex flex-col justify-between shadow-sm text-left p-8 promo-card-anim">
           <div className="space-y-4">
-            <h3 className="text-2xl font-black text-brand-purple uppercase">JOIN THE AUSTROPICAL COMMUNITY</h3>
-            <p className="text-brand-purple/80 text-xs font-medium leading-relaxed">
+            <h3 className="text-2xl font-black text-[var(--foreground)] uppercase">JOIN THE AUSTROPICAL COMMUNITY</h3>
+            <p className="text-[var(--foreground)]/80 text-xs font-medium leading-relaxed">
               Share, inspire, empower. Be part of a global community.
             </p>
             
@@ -858,7 +858,7 @@ export default function Homepage() {
             </div>
           </div>
           
-          <div className="pt-4 border-t border-brand-purple/10 mt-4 flex items-center justify-between text-[11px] font-bold text-brand-purple/70">
+          <div className="pt-4 border-t border-[var(--border-color)] mt-4 flex items-center justify-between text-[11px] font-bold text-[var(--foreground)]/70">
             <span>FOLLOW US →</span>
             <div className="flex gap-2">
               <span className="hover:text-brand-orange cursor-pointer">IG</span>
@@ -870,8 +870,8 @@ export default function Homepage() {
       </section>
 
       {/* SECTION 10 — Benefits Strip */}
-      <section className="py-6 bg-[#4D2677]/5 border-y border-brand-purple/10 overflow-x-auto no-scrollbar">
-        <div className="max-w-container mx-auto px-6 flex items-center justify-between gap-12 whitespace-nowrap text-brand-purple">
+      <section className="py-6 bg-[var(--card-bg)] border-y border-[var(--border-color)] overflow-x-auto no-scrollbar transition-colors duration-500">
+        <div className="max-w-container mx-auto px-6 flex items-center justify-between gap-12 whitespace-nowrap text-[var(--foreground)]">
           {[
             { icon: Truck, title: "FREE SHIPPING", detail: "On orders over $75" },
             { icon: ShieldCheck, title: "SECURE PAYMENTS", detail: "100% Safe & Encrypted" },
@@ -885,7 +885,7 @@ export default function Homepage() {
                 <IconComponent className="w-5 h-5 text-brand-orange flex-shrink-0" />
                 <div className="text-left">
                   <p className="text-[10px] font-black uppercase tracking-widest leading-none">{val.title}</p>
-                  <p className="text-[9px] font-bold text-brand-purple/60 leading-none mt-1">{val.detail}</p>
+                  <p className="text-[9px] font-bold text-[var(--foreground)]/60 leading-none mt-1">{val.detail}</p>
                 </div>
               </div>
             );
