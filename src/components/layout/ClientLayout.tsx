@@ -27,5 +27,14 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
     };
   }, []);
 
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("austropical_theme") || "light";
+    if (savedTheme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, []);
+
   return <StoreProvider>{children}</StoreProvider>;
 }

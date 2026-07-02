@@ -219,4 +219,63 @@ html.lenis, html.lenis body {
   z-index: 1;
 }
 
+/* Global Dark Mode Fallback and Overrides for Inner Pages */
+.dark .bg-brand-cream {
+  background-color: var(--background) !important;
+  color: var(--foreground);
+}
+
+.dark .text-brand-purple {
+  color: var(--foreground) !important;
+}
+
+.dark .bg-white {
+  background-color: var(--card-bg) !important;
+  color: var(--foreground);
+}
+
+.dark .border-brand-purple\/5,
+.dark .border-brand-purple\/10,
+.dark .border-brand-purple\/15,
+.dark .border-brand-purple\/20 {
+  border-color: var(--border-color) !important;
+}
+
+.dark .text-brand-purple\/80,
+.dark .text-brand-purple\/70,
+.dark .text-brand-purple\/60,
+.dark .text-brand-purple\/50 {
+  color: var(--text-muted) !important;
+}
+
+.dark input,
+.dark select,
+.dark textarea {
+  background-color: var(--card-bg) !important;
+  color: var(--foreground) !important;
+  border-color: var(--border-color) !important;
+}
+
+.dark .bg-brand-orange\/10 {
+  background-color: rgba(255, 159, 28, 0.15) !important;
+}
+
+.dark .border-brand-orange\/20 {
+  border-color: rgba(255, 159, 28, 0.3) !important;
+}
+
+.dark .bg-brand-green\/10 {
+  background-color: rgba(79, 143, 70, 0.15) !important;
+}
+
+.dark .border-brand-green\/15 {
+  border-color: rgba(79, 143, 70, 0.3) !important;
+}
+
+.dark .bg-\[\#e9f3eb\],
+.dark .bg-\[\#f0eaf5\] {
+  background-color: var(--card-bg) !important;
+}
+
+
 

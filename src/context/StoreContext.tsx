@@ -508,7 +508,18 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     if (savedCart) setCart(JSON.parse(savedCart));
     if (savedWishlist) setWishlist(JSON.parse(savedWishlist));
     if (savedCms) setCms(JSON.parse(savedCms));
-    if (savedProducts) setProducts(JSON.parse(savedProducts));
+    
+    if (savedProducts) {
+      const parsedProducts = JSON.parse(savedProducts);
+      if (parsedProducts.length !== DEFAULT_PRODUCTS.length) {
+        setProducts(DEFAULT_PRODUCTS);
+        localStorage.setItem("austropical_products", JSON.stringify(DEFAULT_PRODUCTS));
+      } else {
+        setProducts(parsedProducts);
+      }
+    } else {
+      setProducts(DEFAULT_PRODUCTS);
+    }
   }, []);
 
   // Save to localstorage
