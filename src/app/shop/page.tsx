@@ -91,8 +91,8 @@ function ShopContent() {
     <div className="bg-[#FFF9F2] text-[#1A1A1A] min-h-screen relative overflow-x-hidden font-sans">
       <Navbar />
 
-      {/* Hero Header with floating fruits */}
-      <section className="pt-40 pb-20 bg-[#2A1147] text-white text-center relative overflow-hidden">
+      {/* Hero Header with blue/purple leafy background and sticker header */}
+      <section className="pt-40 pb-20 bg-[#2A1147] bg-leaf-pattern text-white text-center relative overflow-hidden">
         {/* Ambient glow backgrounds */}
         <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-brand-pink/20 rounded-full blur-[100px] pointer-events-none" />
         
@@ -103,7 +103,7 @@ function ShopContent() {
           className="absolute top-10 left-10 w-16 h-16 pointer-events-none opacity-80 hidden md:block"
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=100&q=80" alt="acai" className="w-full h-full object-cover rounded-full" />
+          <img src="/acai-zero-sugar-original.png" alt="acai" className="w-full h-full object-contain rounded-full" />
         </motion.div>
         
         <motion.div 
@@ -112,7 +112,7 @@ function ShopContent() {
           className="absolute top-20 right-16 w-14 h-14 pointer-events-none opacity-80 hidden md:block"
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="https://images.unsplash.com/photo-1553530666-ba11a7da3888?auto=format&fit=crop&w=100&q=80" alt="strawberry" className="w-full h-full object-cover rounded-full" />
+          <img src="/range-ledge.png" alt="strawberry" className="w-full h-full object-contain rounded-full" />
         </motion.div>
         
         <div className="max-w-container mx-auto px-6 relative z-10 space-y-4">
@@ -120,7 +120,7 @@ function ShopContent() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="text-5xl md:text-7xl font-black font-display tracking-tight text-white leading-none"
+            className="text-5xl md:text-7xl font-black font-display tracking-tight text-white leading-none text-sticker"
           >
             PRODUCTS
           </motion.h1>

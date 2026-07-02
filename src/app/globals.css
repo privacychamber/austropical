@@ -163,3 +163,46 @@ html.lenis, html.lenis body {
   animation: float-reverse 5s ease-in-out infinite;
 }
 
+/* Comic Sticker Text stroke shadow */
+.text-sticker {
+  color: #ffffff;
+  text-shadow: 
+    -3px -3px 0 #2A1147,  
+     3px -3px 0 #2A1147,
+    -3px  3px 0 #2A1147,
+     3px  3px 0 #2A1147,
+    -4px  0px 0 #2A1147,
+     4px  0px 0 #2A1147,
+     0px -4px 0 #2A1147,
+     0px  4px 0 #2A1147,
+     6px  6px 0 rgba(42, 17, 71, 0.35);
+}
+
+.text-sticker-light {
+  color: #ffffff;
+  text-shadow: 
+    -2px -2px 0 #4D2677,  
+     2px -2px 0 #4D2677,
+    -2px  2px 0 #4D2677,
+     2px  2px 0 #4D2677,
+     0px -3px 0 #4D2677,
+     0px  3px 0 #4D2677,
+     4px  4px 0 rgba(77, 38, 119, 0.25);
+}
+
+/* Repeating Leaf Background overlay pattern */
+.bg-leaf-pattern {
+  position: relative;
+}
+.bg-leaf-pattern::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpath d='M30 0C38 12 42 18 52 24 42 27 34 24 30 48 26 24 18 27 8 24 18 18 22 12 30 0z' fill='%23ffffff'/%3E%3C/svg%3E");
+  background-size: 100px 100px;
+  z-index: 1;
+}
+
+

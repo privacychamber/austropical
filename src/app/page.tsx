@@ -77,25 +77,25 @@ export default function Homepage() {
     {
       name: "ACAI",
       sub: "Original Sensation",
-      image: "https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=400&q=80",
+      image: "/acai-zero-sugar-original.png",
       tag: "NEW",
     },
     {
       name: "DRAGON FRUIT",
       sub: "Superfood Blend",
-      image: "https://images.unsplash.com/photo-1527324688151-0e627063f2b1?auto=format&fit=crop&w=400&q=80",
+      image: "/mornings-made-smoothie.jpg",
       tag: "POPULAR",
     },
     {
       name: "MANGO",
       sub: "Tropical Delight",
-      image: "https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&fit=crop&w=400&q=80",
+      image: "/acai-passionfruit-legs.png",
       tag: "BEST SELLER",
     },
     {
       name: "PINEAPPLE",
       sub: "Island Crush",
-      image: "https://images.unsplash.com/photo-1553530666-ba11a7da3888?auto=format&fit=crop&w=400&q=80",
+      image: "/range-ledge.png",
       tag: "FRESH",
     }
   ];
@@ -104,10 +104,10 @@ export default function Homepage() {
     <div className="bg-[#FFF9F2] text-[#1A1A1A] min-h-screen relative overflow-x-hidden font-sans">
       <Navbar />
 
-      {/* Hero Section with Purple Wavy Gradient & Slow moving gradient animation */}
-      <section className="relative pt-36 pb-24 md:pt-48 md:pb-36 bg-gradient-to-br from-[#8A2BE2] via-[#4D2677] to-[#2A1147] text-white overflow-hidden">
+      {/* Hero Section with Blue Leafy Background and Sticker Headers */}
+      <section className="relative pt-36 pb-24 md:pt-48 md:pb-36 bg-[#0062C4] bg-leaf-pattern text-white overflow-hidden">
         {/* Soft floating background glow elements */}
-        <div className="absolute top-1/4 right-1/4 w-[350px] h-[350px] bg-brand-pink/20 rounded-full blur-[100px] pointer-events-none animate-float-slow" />
+        <div className="absolute top-1/4 right-1/4 w-[350px] h-[350px] bg-brand-yellow/15 rounded-full blur-[100px] pointer-events-none animate-float-slow" />
         <div className="absolute bottom-10 left-10 w-[280px] h-[280px] bg-brand-orange/15 rounded-full blur-[80px] pointer-events-none animate-float-reverse" />
         
         {/* Floating particles */}
@@ -119,7 +119,7 @@ export default function Homepage() {
           className="absolute top-24 left-10 w-20 h-20 pointer-events-none opacity-60 hidden md:block"
           style={{ x: mousePos.x * -0.6, y: mousePos.y * -0.6, rotate: 12 }}
         >
-          <Leaf className="w-full h-full text-brand-green fill-brand-green/20" />
+          <Leaf className="w-full h-full text-brand-yellow fill-brand-yellow/20" />
         </motion.div>
         
         <motion.div
@@ -138,12 +138,12 @@ export default function Homepage() {
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-6 space-y-6 text-left"
           >
-            <h1 className="text-5xl md:text-[80px] font-black tracking-tight leading-[0.95] text-white">
+            <h1 className="text-5xl md:text-[80px] font-black tracking-tight leading-[0.95] text-white text-sticker">
               HEALTH FOODS <br />
-              <span className="text-[#FFC531]">THAT MOVE</span> <br />
+              THAT MOVE <br />
               WITH YOU
             </h1>
-            <p className="text-white/90 text-base md:text-lg font-bold max-w-md leading-relaxed">
+            <p className="text-white/95 text-base md:text-lg font-bold max-w-md leading-relaxed">
               Wildly natural superfoods. Real nutrition. <br />
               Feel good, move more, live better.
             </p>
@@ -187,7 +187,7 @@ export default function Homepage() {
               {/* Rotating Vegan stamp badge */}
               <motion.div 
                 whileHover={{ scale: 1.1, rotate: 15 }}
-                className="absolute top-0 right-4 md:right-10 w-24 h-24 bg-[#FFC531] text-[#2A1147] rounded-full p-2 flex flex-col items-center justify-center font-black text-[9px] uppercase tracking-wider animate-spin-slow shadow-lg border-4 border-[#2A1147] z-20 cursor-pointer"
+                className="absolute -top-6 right-4 md:right-10 w-24 h-24 bg-[#FFC531] text-[#2A1147] rounded-full p-2 flex flex-col items-center justify-center font-black text-[9px] uppercase tracking-wider animate-spin-slow shadow-lg border-4 border-[#2A1147] z-20 cursor-pointer"
               >
                 <span>★ 100% VEGAN ★</span>
                 <span className="text-[7px]">Certified Organic</span>
@@ -196,7 +196,7 @@ export default function Homepage() {
               {/* Star-burst minerals badge */}
               <motion.div 
                 whileHover={{ scale: 1.1, y: -5 }}
-                className="absolute top-24 left-0 bg-[#FF9F1C] text-white px-3.5 py-1.5 rounded-full font-black text-[10px] uppercase tracking-widest shadow-md rotate-[-8deg] z-20 animate-bounce cursor-pointer"
+                className="absolute top-16 left-0 bg-[#FF9F1C] text-white px-3.5 py-1.5 rounded-full font-black text-[10px] uppercase tracking-widest shadow-md rotate-[-8deg] z-20 animate-bounce cursor-pointer"
               >
                 Essential Minerals
               </motion.div>
@@ -204,7 +204,7 @@ export default function Homepage() {
               {/* Lower Sugar bubble */}
               <motion.div 
                 whileHover={{ scale: 1.1, y: 5 }}
-                className="absolute bottom-12 left-10 bg-[#E9418A] text-white px-4 py-2 rounded-full font-black text-[10px] uppercase tracking-widest shadow-md rotate-[12deg] z-20 animate-pulse cursor-pointer"
+                className="absolute bottom-12 left-2 bg-[#E9418A] text-white px-4 py-2 rounded-full font-black text-[10px] uppercase tracking-widest shadow-md rotate-[12deg] z-20 animate-pulse cursor-pointer"
               >
                 Lower Sugar
               </motion.div>
@@ -216,31 +216,13 @@ export default function Homepage() {
 
               {/* Sourced Product Mockups overlapping with slight individual movement */}
               <div className="relative w-full h-full flex items-center justify-center">
-                {/* 1. Large Tub in Center */}
+                {/* Walking legs products image from Image 2 */}
                 <motion.img
                   animate={{ y: [0, -10, 0] }}
                   transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                  src="https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=400&q=80"
-                  alt="Açaí smoothie cubes tub"
-                  className="w-48 h-48 md:w-64 md:h-64 object-contain drop-shadow-2xl z-10 transform translate-x-[-20px] translate-y-[-10px]"
-                />
-                
-                {/* 2. Packs on right */}
-                <motion.img
-                  animate={{ y: [0, 8, 0], rotate: [12, 14, 12] }}
-                  transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 0.5 }}
-                  src="https://images.unsplash.com/photo-1628557044797-f21a177c37ec?auto=format&fit=crop&w=300&q=80"
-                  alt="Açaí pure packs"
-                  className="w-36 h-36 md:w-48 md:h-48 object-contain drop-shadow-2xl absolute right-0 bottom-4 z-10"
-                />
-
-                {/* 3. Smoothie Cup */}
-                <motion.img
-                  animate={{ y: [0, -6, 0], rotate: [-12, -10, -12] }}
-                  transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut", delay: 0.2 }}
-                  src="https://images.unsplash.com/photo-1553530666-ba11a7da3888?auto=format&fit=crop&w=300&q=80"
-                  alt="Smoothie Cup"
-                  className="w-32 h-32 md:w-40 md:h-40 object-contain drop-shadow-2xl absolute left-0 bottom-0 z-20"
+                  src="/acai-passionfruit-legs.png"
+                  alt="Açaí Zero Sugar and Passionfruit Sorbet walking tubs with legs"
+                  className="w-full h-full object-contain drop-shadow-2xl z-10"
                 />
               </div>
             </motion.div>
@@ -294,7 +276,7 @@ export default function Homepage() {
         </motion.div>
 
         <div className="space-y-4 max-w-2xl mx-auto">
-          <motion.h2 variants={itemVariants} className="text-4xl md:text-5xl font-black text-[#2A1147] uppercase tracking-tight">
+          <motion.h2 variants={itemVariants} className="text-4xl md:text-5xl font-black uppercase tracking-tight text-sticker">
             SQUEEZE IN SOME GOODNESS
           </motion.h2>
         </div>
@@ -350,13 +332,13 @@ export default function Homepage() {
         </div>
       </motion.section>
 
-      {/* Section: OUR FAVOURITES Slider (Golden Yellow / Orange background) */}
+      {/* Section: OUR FAVOURITES Slider (Orange leaf pattern background) */}
       <motion.section 
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={revealVariants}
-        className="py-24 bg-gradient-to-r from-[#FF9F1C] to-[#FFC531] text-white relative overflow-hidden"
+        className="py-24 bg-[#FF7A00] bg-leaf-pattern text-white relative overflow-hidden"
       >
         {/* Soft wavy border masks */}
         <div className="absolute inset-x-0 top-0 h-6 bg-[#FFF9F2] rounded-b-2xl pointer-events-none" />
@@ -367,7 +349,7 @@ export default function Homepage() {
           {/* Left Text */}
           <div className="lg:col-span-5 space-y-6">
             <span className="text-xs font-black uppercase tracking-widest text-[#2A1147]">OUR FAVOURITES</span>
-            <h2 className="text-4xl md:text-5xl font-black text-white leading-none">
+            <h2 className="text-4xl md:text-5xl font-black text-white leading-none text-sticker">
               POPS OF FLAVOUR. <br />
               BOOST OF GOODNESS.
             </h2>
@@ -461,7 +443,7 @@ export default function Homepage() {
       >
         {/* Left Copy */}
         <div className="lg:col-span-5 space-y-6">
-          <motion.h2 variants={itemVariants} className="text-4xl md:text-5xl font-black text-[#2A1147] leading-none uppercase">
+          <motion.h2 variants={itemVariants} className="text-4xl md:text-5xl font-black leading-none uppercase text-sticker">
             WILDLY FLAVOURFUL, <br />
             TOTALLY ADDICTIVE. <br />
             PACKED WITH TASTE
@@ -488,8 +470,8 @@ export default function Homepage() {
             <motion.img 
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.6 }}
-              src="https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=500&q=80" 
-              alt="Happy girl drinking acai smoothie" 
+              src="/range-ledge.png" 
+              alt="Austropical product range on ledge" 
               className="w-full h-full object-cover"
             />
           </motion.div>
@@ -529,13 +511,13 @@ export default function Homepage() {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={revealVariants}
-        className="py-24 bg-[#FF9F1C] text-white relative"
+        className="py-24 bg-[#FF9F1C] bg-leaf-pattern text-white relative"
       >
         <div className="absolute inset-x-0 top-0 h-6 bg-[#FFF9F2] rounded-b-2xl pointer-events-none" />
         <div className="absolute inset-x-0 bottom-0 h-6 bg-[#FFF9F2] rounded-t-2xl pointer-events-none" />
         
         <div className="max-w-container mx-auto px-6 md:px-12 space-y-12 text-center relative z-10">
-          <h2 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tight text-sticker">
             FIND YOUR ROUTINE
           </h2>
 
