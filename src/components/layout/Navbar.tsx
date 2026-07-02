@@ -214,7 +214,6 @@ export default function Navbar() {
               <User className="w-5 h-5" />
             </Link>
 
-            {/* Cart Trigger */}
             <button
               onClick={() => setCartOpen(true)}
               className="bg-brand-orange hover:bg-brand-yellow hover:scale-105 transition-all text-brand-purple p-2.5 rounded-full flex items-center justify-center relative shadow-md"
@@ -227,6 +226,12 @@ export default function Navbar() {
                 </span>
               )}
             </button>
+            <Link
+              href="/shop"
+              className="bg-[#FFC531] hover:bg-[#FF9F1C] text-[#2A1147] font-black text-xs uppercase tracking-widest px-5 py-2.5 rounded-full shadow-md transition-all hover:scale-105"
+            >
+              SHOP NOW
+            </Link>
           </div>
 
           {/* Mobile Navigation controls */}
