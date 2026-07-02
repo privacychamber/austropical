@@ -104,11 +104,11 @@ export default function Homepage() {
     <div className="bg-[#FFF9F2] text-[#1A1A1A] min-h-screen relative overflow-x-hidden font-sans">
       <Navbar />
 
-      {/* Hero Section with Blue Leafy Background and Sticker Headers */}
-      <section className="relative pt-36 pb-24 md:pt-48 md:pb-36 bg-[#0062C4] bg-leaf-pattern text-white overflow-hidden">
+      {/* Hero Section with Purple/Magenta/Blue Gradient, Watermark Leaves & Sticker Headers */}
+      <section className="relative pt-40 pb-36 bg-gradient-to-br from-[#0062C4] via-[#7B2CBF] to-[#2A1147] bg-leaf-pattern text-white overflow-hidden">
         {/* Soft floating background glow elements */}
-        <div className="absolute top-1/4 right-1/4 w-[350px] h-[350px] bg-brand-yellow/15 rounded-full blur-[100px] pointer-events-none animate-float-slow" />
-        <div className="absolute bottom-10 left-10 w-[280px] h-[280px] bg-brand-orange/15 rounded-full blur-[80px] pointer-events-none animate-float-reverse" />
+        <div className="absolute top-1/4 right-1/4 w-[350px] h-[350px] bg-brand-yellow/20 rounded-full blur-[120px] pointer-events-none animate-float-slow" />
+        <div className="absolute bottom-10 left-10 w-[280px] h-[280px] bg-brand-orange/20 rounded-full blur-[100px] pointer-events-none animate-float-reverse" />
         
         {/* Floating particles */}
         <div className="absolute top-24 left-1/4 w-3 h-3 bg-brand-yellow rounded-full animate-ping pointer-events-none" />
@@ -116,15 +116,15 @@ export default function Homepage() {
         
         {/* Parallax fruits & leaves */}
         <motion.div
-          className="absolute top-24 left-10 w-20 h-20 pointer-events-none opacity-60 hidden md:block"
-          style={{ x: mousePos.x * -0.6, y: mousePos.y * -0.6, rotate: 12 }}
+          className="absolute top-28 left-12 w-20 h-20 pointer-events-none opacity-40 hidden md:block"
+          style={{ x: mousePos.x * -0.5, y: mousePos.y * -0.5, rotate: 15 }}
         >
           <Leaf className="w-full h-full text-brand-yellow fill-brand-yellow/20" />
         </motion.div>
         
         <motion.div
-          className="absolute bottom-20 left-1/3 w-16 h-16 pointer-events-none opacity-40 hidden md:block"
-          style={{ x: mousePos.x * 0.9, y: mousePos.y * 0.9 }}
+          className="absolute bottom-24 left-1/3 w-16 h-16 pointer-events-none opacity-30 hidden md:block"
+          style={{ x: mousePos.x * 0.8, y: mousePos.y * 0.8 }}
         >
           <div className="w-6 h-6 rounded-full bg-brand-pink shadow-lg" />
         </motion.div>
@@ -140,13 +140,14 @@ export default function Homepage() {
           >
             <h1 className="text-5xl md:text-[80px] font-black tracking-tight leading-[0.95] text-white text-sticker">
               HEALTH FOODS <br />
-              THAT MOVE <br />
+              <span className="text-[#FFC531]">THAT MOVE</span> <br />
               WITH YOU
             </h1>
-            <p className="text-white/95 text-base md:text-lg font-bold max-w-md leading-relaxed">
+            <p className="text-white/95 text-sm md:text-base font-medium max-w-md leading-relaxed">
               Wildly natural superfoods. Real nutrition. <br />
               Feel good, move more, live better.
             </p>
+            
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <motion.div
                 style={{ x: ctaOffset.x, y: ctaOffset.y }}
@@ -166,7 +167,7 @@ export default function Homepage() {
               <motion.div whileHover={{ scale: 1.05 }}>
                 <Link
                   href="/about"
-                  className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-black text-sm uppercase tracking-widest rounded-full transition-all duration-300 border border-white/20 flex items-center gap-2"
+                  className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-black text-sm uppercase tracking-widest rounded-full transition-all duration-300 border border-white/20 flex items-center gap-2 backdrop-blur-sm"
                 >
                   <Play className="w-4 h-4 text-brand-yellow fill-brand-yellow" />
                   <span>Discover Our Story</span>
@@ -175,19 +176,19 @@ export default function Homepage() {
             </div>
           </motion.div>
 
-          {/* Right Product Composition with Interactive Parallax */}
+          {/* Right Product Composition with Parallax Ledge Collage */}
           <div className="lg:col-span-6 flex justify-center relative pt-10 lg:pt-0">
             <motion.div 
               initial={{ opacity: 0, scale: 0.9, filter: "blur(8px)" }}
               animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-              className="relative w-72 h-72 md:w-[480px] md:h-[400px] flex items-center justify-center"
-              style={{ x: mousePos.x * 0.5, y: mousePos.y * 0.5 }}
+              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
+              className="relative w-full max-w-[480px] aspect-[4/3] flex items-center justify-center"
+              style={{ x: mousePos.x * 0.4, y: mousePos.y * 0.4 }}
             >
               {/* Rotating Vegan stamp badge */}
               <motion.div 
                 whileHover={{ scale: 1.1, rotate: 15 }}
-                className="absolute -top-6 right-4 md:right-10 w-24 h-24 bg-[#FFC531] text-[#2A1147] rounded-full p-2 flex flex-col items-center justify-center font-black text-[9px] uppercase tracking-wider animate-spin-slow shadow-lg border-4 border-[#2A1147] z-20 cursor-pointer"
+                className="absolute top-0 right-0 md:right-4 w-20 h-20 md:w-24 md:h-24 bg-[#FFC531] text-[#2A1147] rounded-full p-2 flex flex-col items-center justify-center font-black text-[9px] uppercase tracking-wider animate-spin-slow shadow-lg border-4 border-[#2A1147] z-20 cursor-pointer"
               >
                 <span>★ 100% VEGAN ★</span>
                 <span className="text-[7px]">Certified Organic</span>
@@ -196,7 +197,7 @@ export default function Homepage() {
               {/* Star-burst minerals badge */}
               <motion.div 
                 whileHover={{ scale: 1.1, y: -5 }}
-                className="absolute top-16 left-0 bg-[#FF9F1C] text-white px-3.5 py-1.5 rounded-full font-black text-[10px] uppercase tracking-widest shadow-md rotate-[-8deg] z-20 animate-bounce cursor-pointer"
+                className="absolute top-16 left-0 bg-[#FF9F1C] text-white px-3.5 py-1.5 rounded-full font-black text-[9px] uppercase tracking-widest shadow-md rotate-[-8deg] z-20 animate-bounce cursor-pointer"
               >
                 Essential Minerals
               </motion.div>
@@ -204,38 +205,41 @@ export default function Homepage() {
               {/* Lower Sugar bubble */}
               <motion.div 
                 whileHover={{ scale: 1.1, y: 5 }}
-                className="absolute bottom-12 left-2 bg-[#E9418A] text-white px-4 py-2 rounded-full font-black text-[10px] uppercase tracking-widest shadow-md rotate-[12deg] z-20 animate-pulse cursor-pointer"
+                className="absolute bottom-20 left-4 bg-[#E9418A] text-white px-3.5 py-1.5 rounded-full font-black text-[9px] uppercase tracking-widest shadow-md rotate-[12deg] z-20 animate-pulse cursor-pointer"
               >
                 Lower Sugar
               </motion.div>
 
               {/* Gluten Free tag */}
-              <div className="absolute bottom-16 right-0 bg-[#4F8F46] text-white px-3.5 py-1.5 rounded-full font-black text-[10px] uppercase tracking-widest shadow-md rotate-[-6deg] z-20">
+              <div className="absolute bottom-16 right-0 bg-[#E9418A] text-white px-3.5 py-1.5 rounded-full font-black text-[9px] uppercase tracking-widest shadow-md rotate-[-6deg] z-20">
                 Gluten Free
               </div>
 
-              {/* Sourced Product Mockups overlapping with slight individual movement */}
+              {/* Mossy Ledge Collage visual - matches Image 1 and Hero mockup visual */}
               <div className="relative w-full h-full flex items-center justify-center">
-                {/* Walking legs products image from Image 2 */}
                 <motion.img
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                  src="/acai-passionfruit-legs.png"
-                  alt="Açaí Zero Sugar and Passionfruit Sorbet walking tubs with legs"
-                  className="w-full h-full object-contain drop-shadow-2xl z-10"
+                  animate={{ y: [0, -8, 0] }}
+                  transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+                  src="/range-ledge.png"
+                  alt="Austropical product range on ledge"
+                  className="w-full h-auto max-h-[420px] object-contain drop-shadow-2xl z-10"
                 />
               </div>
             </motion.div>
           </div>
         </div>
 
-        {/* Wavy bottom divider transition */}
-        <div className="absolute inset-x-0 bottom-0 h-16 bg-[#FFF9F2] rounded-t-3xl" style={{ borderTopRightRadius: '100% 40px', borderTopLeftRadius: '100% 40px' }} />
+        {/* Wavy bottom divider transition - matches mockup wave transition */}
+        <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none z-20">
+          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[60px] text-[#FFF9F2] fill-[#FFF9F2]">
+            <path d="M0,32L120,42.7C240,53,480,75,720,74.7C960,75,1200,53,1320,42.7L1440,32L1440,120L1320,120C1200,120,960,120,720,120C480,120,240,120,120,120L0,120Z"></path>
+          </svg>
+        </div>
       </section>
 
-      {/* Badges / Brand Values Row */}
-      <section className="py-6 bg-white border-b border-[#2A1147]/5 overflow-x-auto no-scrollbar">
-        <div className="max-w-container mx-auto px-6 flex items-center justify-between gap-12 whitespace-nowrap">
+      {/* Trust Badges Row */}
+      <section className="py-8 bg-[#FFF9F2] border-b border-[#2A1147]/5">
+        <div className="max-w-container mx-auto px-6 flex flex-wrap items-center justify-center md:justify-between gap-8 md:gap-4 whitespace-nowrap">
           {[
             "100% REAL FRUIT",
             "NO ADDED SUGAR",
@@ -244,14 +248,16 @@ export default function Homepage() {
             "AUSTRALIAN MADE"
           ].map((val, idx) => (
             <div key={val} className="flex items-center gap-2.5">
-              <CheckCircle2 className="w-5 h-5 text-brand-green flex-shrink-0" />
-              <span className="text-xs font-black text-brand-purple uppercase tracking-widest">{val}</span>
+              <div className="w-5 h-5 rounded-full border border-brand-purple flex items-center justify-center">
+                <span className="text-[9px] font-black text-brand-purple">✓</span>
+              </div>
+              <span className="text-[11px] font-black text-brand-purple uppercase tracking-widest">{val}</span>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Section: SQUEEZE IN SOME GOODNESS (Reveals smoothly while in view) */}
+      {/* Section: SQUEEZE IN SOME GOODNESS (Feature Grid with floating assets) */}
       <motion.section 
         initial="hidden"
         whileInView="visible"
@@ -259,13 +265,13 @@ export default function Homepage() {
         variants={revealVariants}
         className="py-24 max-w-container mx-auto px-6 md:px-12 text-center space-y-16 relative"
       >
-        {/* Floating Fruit Assets on sides */}
+        {/* Floating Fruit Assets on sides - matches mockup decoration */}
         <motion.div 
           style={{ y: mousePos.y * -0.4 }}
           className="absolute top-10 left-4 w-12 h-12 opacity-60 hidden md:block animate-float"
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="https://images.unsplash.com/photo-1551244072-5d12893278ab?auto=format&fit=crop&w=80&q=80" alt="berry" className="w-full h-full object-cover rounded-full" />
+          <img src="https://images.unsplash.com/photo-1551244072-5d12893278ab?auto=format&fit=crop&w=80&q=80" alt="strawberry" className="w-full h-full object-cover rounded-full" />
         </motion.div>
         <motion.div 
           style={{ y: mousePos.y * 0.4 }}
@@ -332,7 +338,7 @@ export default function Homepage() {
         </div>
       </motion.section>
 
-      {/* Section: OUR FAVOURITES Slider (Orange leaf pattern background) */}
+      {/* Section: OUR FAVOURITES Slider (Orange Section with wave bottom) */}
       <motion.section 
         initial="hidden"
         whileInView="visible"
@@ -342,7 +348,11 @@ export default function Homepage() {
       >
         {/* Soft wavy border masks */}
         <div className="absolute inset-x-0 top-0 h-6 bg-[#FFF9F2] rounded-b-2xl pointer-events-none" />
-        <div className="absolute inset-x-0 bottom-0 h-6 bg-[#FFF9F2] rounded-t-2xl pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none z-20">
+          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[60px] text-[#FFF9F2] fill-[#FFF9F2]">
+            <path d="M0,32L120,42.7C240,53,480,75,720,74.7C960,75,1200,53,1320,42.7L1440,32L1440,120L1320,120C1200,120,960,120,720,120C480,120,240,120,120,120L0,120Z"></path>
+          </svg>
+        </div>
 
         <div className="max-w-container mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10 text-left">
           
@@ -364,7 +374,7 @@ export default function Homepage() {
             </motion.div>
           </div>
 
-          {/* Right Carousel Slider with Framer Motion Slide transitions */}
+          {/* Right Carousel Slider */}
           <div className="lg:col-span-7 relative flex items-center gap-4">
             
             {/* Left arrow controls */}
@@ -400,14 +410,13 @@ export default function Homepage() {
                         </span>
                         <Heart className="w-4 h-4 text-brand-purple/20 hover:text-brand-pink transition-colors cursor-pointer" />
                       </div>
-
+                      
                       <div className="aspect-square w-full rounded-img bg-brand-cream overflow-hidden flex items-center justify-center p-2">
-                        <motion.img
-                          whileHover={{ scale: 1.1 }}
-                          transition={{ duration: 0.4 }}
-                          src={item.image}
-                          alt={item.name}
-                          className="w-full h-full object-contain rounded-img"
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img 
+                          src={item.image} 
+                          alt={item.name} 
+                          className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                         />
                       </div>
                     </div>
@@ -433,79 +442,87 @@ export default function Homepage() {
         </div>
       </motion.section>
 
-      {/* Section: WILDLY FLAVOURFUL, TOTALLY ADDICTIVE */}
+      {/* Section: WILDLY FLAVOURFUL (Teal split background with central pill image) */}
       <motion.section 
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={revealVariants}
-        className="py-24 max-w-container mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center text-left"
+        className="py-32 bg-gradient-to-r from-[#00b4d8] to-[#0077b6] bg-leaf-pattern text-white relative overflow-hidden"
       >
-        {/* Left Copy */}
-        <div className="lg:col-span-5 space-y-6">
-          <motion.h2 variants={itemVariants} className="text-4xl md:text-5xl font-black leading-none uppercase text-sticker">
-            WILDLY FLAVOURFUL, <br />
-            TOTALLY ADDICTIVE. <br />
-            PACKED WITH TASTE
-          </motion.h2>
-          <motion.div 
-            variants={itemVariants}
-            whileHover={{ scale: 1.05, rotate: -3 }}
-            className="inline-block bg-[#FFC531] text-[#2A1147] font-black text-xl px-4 py-2 rounded-btn shadow-sm rotate-[-2deg] cursor-pointer"
-          >
-            YOUR NEW FROZEN CRUSH
-          </motion.div>
-          <motion.p variants={itemVariants} className="text-brand-purple/90 text-sm md:text-base font-black uppercase tracking-wider">
-            SAVER IT, CRAVE IT, LOVE IT!
-          </motion.p>
+        {/* Soft wavy border dividers */}
+        <div className="absolute inset-x-0 top-0 h-6 bg-[#FFF9F2] rounded-b-2xl pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none z-20">
+          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[60px] text-[#FFF9F2] fill-[#FFF9F2]">
+            <path d="M0,32L120,42.7C240,53,480,75,720,74.7C960,75,1200,53,1320,42.7L1440,32L1440,120L1320,120C1200,120,960,120,720,120C480,120,240,120,120,120L0,120Z"></path>
+          </svg>
         </div>
 
-        {/* Middle Image happy smiling girl */}
-        <div className="lg:col-span-4 relative group">
-          <div className="absolute inset-0 bg-brand-pink/15 rounded-card blur-md scale-95 pointer-events-none" />
-          <motion.div 
-            whileHover={{ scale: 1.02 }}
-            className="rounded-card overflow-hidden border border-brand-purple/5 aspect-[3/4] shadow-lg relative cursor-pointer"
-          >
-            <motion.img 
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.6 }}
-              src="/range-ledge.png" 
-              alt="Austropical product range on ledge" 
-              className="w-full h-full object-cover"
-            />
-          </motion.div>
-        </div>
-
-        {/* Right side Pill badges */}
-        <div className="lg:col-span-3 space-y-4">
-          {[
-            {
-              title: "ZERO DAIRY",
-              color: "bg-[#E9418A]"
-            },
-            {
-              title: "ZERO SUGAR",
-              color: "bg-[#4F8F46]"
-            },
-            {
-              title: "LOW IN CALORIES",
-              color: "bg-[#FF9F1C]"
-            }
-          ].map((pill, idx) => (
+        <div className="max-w-container mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center text-left relative z-10">
+          {/* Left Column Text */}
+          <div className="lg:col-span-5 space-y-6">
+            <motion.h2 variants={itemVariants} className="text-4xl md:text-5xl font-black leading-none uppercase text-sticker">
+              WILDLY FLAVOURFUL, <br />
+              TOTALLY ADDICTIVE. <br />
+              PACKED WITH TASTE
+            </motion.h2>
             <motion.div 
               variants={itemVariants}
-              whileHover={{ scale: 1.05, y: -2 }}
-              key={idx}
-              className={`p-4 rounded-full flex items-center justify-center text-white text-sm font-black uppercase tracking-widest shadow-md cursor-pointer ${pill.color}`}
+              whileHover={{ scale: 1.05, rotate: -2 }}
+              className="inline-block bg-[#FFC531] text-[#2A1147] font-black text-xl px-4 py-2 rounded-btn shadow-md rotate-[-2deg] cursor-pointer"
             >
-              {pill.title}
+              YOUR NEW FROZEN CRUSH
             </motion.div>
-          ))}
+            <motion.p variants={itemVariants} className="text-white text-sm md:text-base font-black uppercase tracking-wider">
+              SAVER IT, CRAVE IT, LOVE IT!
+            </motion.p>
+          </div>
+
+          {/* Middle Pillar Image - Happy smiling girl */}
+          <div className="lg:col-span-4 flex justify-center">
+            <motion.div 
+              whileHover={{ scale: 1.03 }}
+              className="rounded-full overflow-hidden border-8 border-white/20 aspect-[2/3] w-64 md:w-72 shadow-2xl relative cursor-pointer"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img 
+                src="https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=600&q=80" 
+                alt="Happy girl drinking acai smoothie" 
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+          </div>
+
+          {/* Right Column Pill Badges */}
+          <div className="lg:col-span-3 space-y-4">
+            {[
+              {
+                title: "ZERO DAIRY",
+                color: "bg-[#7B2CBF]"
+              },
+              {
+                title: "ZERO SUGAR",
+                color: "bg-[#0096C7]"
+              },
+              {
+                title: "LOW IN CALORIES",
+                color: "bg-[#FF7A00]"
+              }
+            ].map((pill, idx) => (
+              <motion.div 
+                variants={itemVariants}
+                whileHover={{ scale: 1.05, y: -2 }}
+                key={idx}
+                className={`p-4 rounded-full flex items-center justify-center text-white text-sm font-black uppercase tracking-widest shadow-md cursor-pointer ${pill.color}`}
+              >
+                {pill.title}
+              </motion.div>
+            ))}
+          </div>
         </div>
       </motion.section>
 
-      {/* Find Your Routine (Horizontal category cutout section) */}
+      {/* Find Your Routine (Horizontal Category circle select list) */}
       <motion.section 
         initial="hidden"
         whileInView="visible"
@@ -525,32 +542,32 @@ export default function Homepage() {
             {[
               {
                 name: "ALL PRODUCTS",
-                image: "https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=400&q=80",
+                image: "/range-ledge.png",
                 link: "/shop"
               },
               {
                 name: "AÇAÍ RANGE",
-                image: "https://images.unsplash.com/photo-1553530666-ba11a7da3888?auto=format&fit=crop&w=400&q=80",
+                image: "/acai-zero-sugar-original.png",
                 link: "/shop?category=SUPER+FRUITS+SORBET"
               },
               {
                 name: "SMOOTHIE CUBES",
-                image: "https://images.unsplash.com/photo-1628557044797-f21a177c37ec?auto=format&fit=crop&w=400&q=80",
+                image: "/mornings-made-smoothie.jpg",
                 link: "/shop?category=OTHER+FRUITS+SMOOTHIE+CUBES"
               },
               {
                 name: "ICE POPS",
-                image: "https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&fit=crop&w=400&q=80",
+                image: "/acai-passionfruit-legs.png",
                 link: "/shop?category=SUPERFRUITS+ICE+POP+LINE"
               },
               {
                 name: "SUPERFRUIT SORBETS",
-                image: "https://images.unsplash.com/photo-1527324688151-0e627063f2b1?auto=format&fit=crop&w=400&q=80",
+                image: "/acai-zero-sugar-original.png",
                 link: "/shop?category=SUPER+FRUITS+SORBET"
               },
               {
                 name: "BULK TUBS",
-                image: "https://images.unsplash.com/photo-1610970881699-44a5587caa9a?auto=format&fit=crop&w=400&q=80",
+                image: "/unmatched-excellence-buckets.jpg",
                 link: "/shop?category=ACAÍ+BUCKET"
               }
             ].map((cat, idx) => (
@@ -580,172 +597,143 @@ export default function Homepage() {
         </div>
       </motion.section>
 
-      {/* Recipes Masonry Section */}
-      <motion.section 
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-        variants={revealVariants}
-        className="py-24 max-w-container mx-auto px-6 md:px-12 space-y-16"
-      >
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="space-y-4 text-left">
-            <h2 className="text-xs font-black text-brand-orange uppercase tracking-widest">Recipes &amp; Inspiration</h2>
-            <p className="text-4xl md:text-5xl font-black font-display text-[#2A1147] tracking-tight">
-              Elevate Your Daily Ritual.
-            </p>
-          </div>
-          <Link
-            href="/recipes"
-            className="text-xs font-black text-brand-orange uppercase tracking-widest hover:underline flex items-center gap-1"
-          >
-            View All Recipes →
-          </Link>
-        </div>
-
-        {/* Recipes Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-          {recipes.slice(0, 5).map((recipe, idx) => (
-            <motion.div
-              variants={itemVariants}
-              whileHover={{ y: -6, boxShadow: "0px 15px 30px rgba(42, 17, 71, 0.06)" }}
-              key={recipe.id}
-              onClick={() => setActiveRecipe(recipe)}
-              className="bg-white rounded-card overflow-hidden border border-[#2A1147]/5 shadow-sm transition-all duration-300 cursor-pointer group"
-            >
-              <div className="aspect-[3/4] w-full bg-brand-cream overflow-hidden relative">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={recipe.image}
-                  alt={recipe.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute top-3 left-3 flex flex-col gap-1.5">
-                  <span className="text-[9px] font-black bg-brand-purple/85 text-white px-2 py-0.5 rounded-btn flex items-center gap-1 backdrop-blur-sm">
-                    {recipe.time}
-                  </span>
-                  <span className="text-[9px] font-black bg-white/85 text-brand-purple px-2 py-0.5 rounded-btn flex items-center gap-1 backdrop-blur-sm border border-brand-purple/5">
-                    {recipe.calories} kcal
-                  </span>
+      {/* Polaroid & Trust Banner layout styled to match bottom mockup section */}
+      <section className="px-6 md:px-12 my-12">
+        <div className="max-w-container mx-auto py-6 bg-[#FFC531] text-[#2A1147] rounded-[28px] shadow-lg overflow-x-auto no-scrollbar">
+          <div className="px-8 flex items-center justify-between gap-12 whitespace-nowrap">
+            {[
+              "FREE SHIPPING On orders over $75",
+              "SECURE PAYMENTS 100% Safe & Encrypted",
+              "30 DAY RETURNS Hassle-free returns",
+              "LOYALTY REWARDS Earn points & save",
+              "SUSTAINABLE PACKAGING Good for you, good for Earth"
+            ].map((val, idx) => (
+              <div key={idx} className="flex items-center gap-2.5">
+                <div className="w-5 h-5 rounded-full border border-brand-purple flex items-center justify-center flex-shrink-0">
+                  <span className="text-[10px] font-bold text-brand-purple">✓</span>
                 </div>
+                <span className="text-xs font-black uppercase tracking-widest">{val}</span>
               </div>
-              <div className="p-4 text-left space-y-2">
-                <span className="text-[9px] font-black text-brand-orange uppercase tracking-wider">{recipe.difficulty}</span>
-                <h4 className="text-sm font-black text-brand-purple group-hover:text-brand-orange transition-colors line-clamp-2">
-                  {recipe.title}
-                </h4>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </motion.section>
-
-      {/* Sleek Yellow Trust Banner bar */}
-      <section className="py-6 bg-[#FFC531] border-y border-[#2A1147]/5 overflow-x-auto no-scrollbar">
-        <div className="max-w-container mx-auto px-6 flex items-center justify-between gap-12 whitespace-nowrap text-[#2A1147]">
-          {[
-            "FREE SHIPPING On orders over $75",
-            "SECURE PAYMENTS 100% Safe & Encrypted",
-            "30 DAY RETURNS Hassle-free returns",
-            "LOYALTY REWARDS Earn points & save",
-            "SUSTAINABLE PACKAGING Good for you, good for Earth"
-          ].map((val, idx) => (
-            <div key={idx} className="flex items-center gap-2.5">
-              <CheckCircle2 className="w-5 h-5 text-brand-purple flex-shrink-0" />
-              <span className="text-xs font-black uppercase tracking-widest">{val}</span>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Bottom Fun Campaign cards grid */}
+      {/* Bottom Fun Campaign cards grid - fully matches Image 5 and purple page footer bottom layout */}
       <motion.section 
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={revealVariants}
-        className="py-20 max-w-container mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-3 gap-8"
+        className="py-24 bg-[#2A1147] bg-leaf-pattern text-white overflow-hidden"
       >
-        {/* Card 1: School Days */}
-        <motion.div 
-          variants={itemVariants}
-          whileHover={{ y: -8, boxShadow: "0px 20px 40px rgba(0, 0, 0, 0.05)" }}
-          className="bg-[#e9f3eb] rounded-card border border-brand-green/10 overflow-hidden flex flex-col justify-between shadow-sm transition-all text-left"
-        >
-          <div className="p-8 space-y-6">
-            <h3 className="text-2xl font-black text-brand-purple uppercase">MADE FOR SCHOOL DAYS</h3>
-            <p className="text-brand-purple/80 text-xs font-semibold leading-relaxed">
-              Nutritious, tasty and made for growing minds and busy days. Packaged for kids lunch boxes.
-            </p>
-            <div className="w-full aspect-[4/3] rounded-card overflow-hidden">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80" alt="school days kids" className="w-full h-full object-cover" />
-            </div>
-          </div>
-          <div className="p-6 border-t border-brand-green/10">
-            <Link href="/shop" className="text-xs font-black text-brand-green uppercase tracking-wider hover:underline flex items-center gap-1">
-              Shop Now <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
-          </div>
-        </motion.div>
-
-        {/* Card 2: Partnerships */}
-        <motion.div 
-          variants={itemVariants}
-          whileHover={{ y: -8, boxShadow: "0px 20px 40px rgba(0, 0, 0, 0.05)" }}
-          className="bg-[#f0eaf5] rounded-card border border-brand-purple/10 overflow-hidden flex flex-col justify-between shadow-sm transition-all text-left"
-        >
-          <div className="p-8 space-y-6">
-            <h3 className="text-2xl font-black text-brand-purple uppercase">PARTNERSHIPS FOR A BETTER PLANET</h3>
-            <p className="text-brand-purple/80 text-xs font-semibold leading-relaxed">
-              Working with local farmers and communities to protect the Amazon and its people.
-            </p>
-            <div className="w-full aspect-[4/3] rounded-card overflow-hidden">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=400&q=80" alt="amazon rainforest partnerships" className="w-full h-full object-cover" />
-            </div>
-          </div>
-          <div className="p-6 border-t border-brand-purple/10">
-            <Link href="/sustainability" className="text-xs font-black text-brand-purple/60 uppercase tracking-wider hover:underline flex items-center gap-1">
-              Learn More <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
-          </div>
-        </motion.div>
-
-        {/* Card 3: Join Community */}
-        <motion.div 
-          variants={itemVariants}
-          whileHover={{ y: -8, boxShadow: "0px 20px 40px rgba(42, 17, 71, 0.15)" }}
-          className="bg-brand-purple text-white rounded-card overflow-hidden flex flex-col justify-between shadow-sm transition-all text-left"
-        >
-          <div className="p-8 space-y-6">
-            <h3 className="text-2xl font-black text-white uppercase">JOIN THE AUSTROPICAL COMMUNITY</h3>
-            <p className="text-white/80 text-xs font-semibold leading-relaxed">
-              Share, inspire, empower. Be part of a global community eating better, living better.
-            </p>
-            <div className="w-full aspect-[4/3] rounded-card overflow-hidden bg-white/5 flex flex-col justify-center p-6 space-y-4">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
-                  <Star className="w-5 h-5 text-brand-yellow" />
-                </div>
-                <p className="text-xs font-bold text-white/95">Unlock 10% off your next purchase!</p>
-              </div>
-              <div className="space-y-2">
-                <input 
-                  type="email" 
-                  placeholder="Enter your email" 
-                  className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-input text-xs outline-none focus:border-brand-orange text-white"
-                />
-                <button className="w-full py-2 bg-brand-orange hover:bg-brand-yellow text-brand-purple font-black text-xs uppercase tracking-widest rounded-btn transition-colors">
-                  Subscribe
-                </button>
+        <div className="max-w-container mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          {/* Card 1: School Days */}
+          <motion.div 
+            variants={itemVariants}
+            whileHover={{ y: -8, boxShadow: "0px 20px 40px rgba(0, 0, 0, 0.15)" }}
+            className="bg-[#4D2677] rounded-[28px] border border-white/10 overflow-hidden flex flex-col justify-between shadow-md transition-all text-left p-8"
+          >
+            <div className="space-y-6">
+              <h3 className="text-2xl font-black text-white uppercase tracking-wide">MADE FOR SCHOOL DAYS</h3>
+              <p className="text-white/80 text-xs font-medium leading-relaxed">
+                Nutritious, tasty and made for growing minds and busy days. Packaged for kids lunch boxes.
+              </p>
+              <div className="w-full aspect-[4/3] rounded-[24px] overflow-hidden border border-white/10">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/acai-passionfruit-legs.png" alt="school days kids tubs" className="w-full h-full object-contain p-2" />
               </div>
             </div>
-          </div>
-          <div className="p-6 border-t border-white/10 text-xs font-semibold text-white/50 text-center">
-            Tag @austropical_superfoods
-          </div>
-        </motion.div>
+            <div className="pt-6 mt-6 border-t border-white/10">
+              <Link href="/shop" className="text-xs font-black text-brand-yellow uppercase tracking-widest hover:underline flex items-center gap-1">
+                Shop Now <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
+          </motion.div>
+
+          {/* Card 2: Partnerships */}
+          <motion.div 
+            variants={itemVariants}
+            whileHover={{ y: -8, boxShadow: "0px 20px 40px rgba(0, 0, 0, 0.15)" }}
+            className="bg-[#4D2677] rounded-[28px] border border-white/10 overflow-hidden flex flex-col justify-between shadow-md transition-all text-left p-8"
+          >
+            <div className="space-y-6">
+              <h3 className="text-2xl font-black text-white uppercase tracking-wide">PARTNERSHIPS FOR A BETTER PLANET</h3>
+              <p className="text-white/80 text-xs font-medium leading-relaxed">
+                Working with local farmers and communities to protect the Amazon and its people.
+              </p>
+              <div className="w-full aspect-[4/3] rounded-[24px] overflow-hidden border border-white/10">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/unmatched-excellence-buckets.jpg" alt="amazon rainforest partnerships" className="w-full h-full object-cover" />
+              </div>
+            </div>
+            <div className="pt-6 mt-6 border-t border-white/10">
+              <Link href="/sustainability" className="text-xs font-black text-brand-yellow uppercase tracking-widest hover:underline flex items-center gap-1">
+                Learn More <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
+          </motion.div>
+
+          {/* Card 3: Polaroid Deck - Community Snapshots */}
+          <motion.div 
+            variants={itemVariants}
+            className="bg-[#4D2677] rounded-[28px] border border-white/10 overflow-hidden flex flex-col justify-between shadow-md text-left p-8 relative"
+          >
+            <div className="space-y-6">
+              <h3 className="text-2xl font-black text-white uppercase tracking-wide">JOIN THE AUSTROPICAL COMMUNITY</h3>
+              <p className="text-white/80 text-xs font-medium leading-relaxed">
+                Share, inspire, empower. Be part of a global community eating better, living better.
+              </p>
+              
+              {/* Polaroid Snapshot deck stack - rotated with animations */}
+              <div className="relative h-44 w-full flex items-center justify-center overflow-visible mt-2">
+                <motion.div 
+                  whileHover={{ scale: 1.08, zIndex: 10, rotate: -2 }}
+                  className="absolute left-4 w-28 bg-white p-2 pb-4 shadow-lg border border-black/5 rotate-[-8deg] rounded-sm"
+                >
+                  <div className="aspect-square bg-gray-100 overflow-hidden">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src="https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=150&q=80" alt="pic1" className="w-full h-full object-cover" />
+                  </div>
+                  <p className="text-[7px] text-gray-500 font-bold mt-2 text-center">#bowlgoals</p>
+                </motion.div>
+                
+                <motion.div 
+                  whileHover={{ scale: 1.08, zIndex: 10, rotate: 2 }}
+                  className="absolute right-4 w-28 bg-white p-2 pb-4 shadow-lg border border-black/5 rotate-[8deg] rounded-sm"
+                >
+                  <div className="aspect-square bg-gray-100 overflow-hidden">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src="https://images.unsplash.com/photo-1553530666-ba11a7da3888?auto=format&fit=crop&w=150&q=80" alt="pic2" className="w-full h-full object-cover" />
+                  </div>
+                  <p className="text-[7px] text-gray-500 font-bold mt-2 text-center">#smoothieglow</p>
+                </motion.div>
+                
+                <motion.div 
+                  whileHover={{ scale: 1.08, zIndex: 10, rotate: 0 }}
+                  className="absolute w-28 bg-white p-2 pb-4 shadow-xl border border-black/5 z-0 rounded-sm"
+                >
+                  <div className="aspect-square bg-gray-100 overflow-hidden">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src="/mornings-made-smoothie.jpg" alt="pic3" className="w-full h-full object-cover" />
+                  </div>
+                  <p className="text-[7px] text-gray-500 font-bold mt-2 text-center">#superfoodlife</p>
+                </motion.div>
+              </div>
+            </div>
+            
+            <div className="pt-6 mt-6 border-t border-white/10 flex items-center justify-between text-xs font-bold text-white/60">
+              <span>Tag @austropical_superfoods</span>
+              <div className="flex gap-2">
+                <span className="hover:text-brand-yellow cursor-pointer">IG</span>
+                <span className="hover:text-brand-yellow cursor-pointer">FB</span>
+                <span className="hover:text-brand-yellow cursor-pointer">YT</span>
+              </div>
+            </div>
+          </motion.div>
+
+        </div>
       </motion.section>
 
       {/* Recipe Modal Overlay */}
