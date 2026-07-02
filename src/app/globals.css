@@ -38,6 +38,34 @@
   }
 }
 
+/* Custom Floating Animations */
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-18px) rotate(5deg); }
+}
+
+@keyframes float-fast {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(-6deg); }
+}
+
+@keyframes float-reverse {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(15px) rotate(4deg); }
+}
+
+.animate-float-slow {
+  animation: float-slow 7s ease-in-out infinite;
+}
+
+.animate-float-fast {
+  animation: float-fast 4.5s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: float-reverse 6s ease-in-out infinite;
+}
+
 /* Glassmorphism Classes */
 .glass-nav {
   background: rgba(42, 17, 71, 0.7); /* Translucent Primary Purple */
