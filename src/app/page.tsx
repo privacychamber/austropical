@@ -317,11 +317,22 @@ export default function Homepage() {
           
           {/* Left Text Column (45%) */}
           <div className="lg:col-span-5 space-y-6 text-left">
-            <h1 className="text-6xl md:text-[88px] font-black tracking-tight leading-[0.95] text-white text-sticker hero-text-anim uppercase">
-              HEALTH FOODS <br />
-              <span className="text-[#FFC531]">THAT MOVE</span> <br />
-              WITH YOU
-            </h1>
+            <div className="relative inline-block">
+              {/* Doodle Arrows on the Left */}
+              <svg width="40" height="70" viewBox="0 0 40 70" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" className="absolute -left-14 top-2 opacity-80 hidden sm:block text-white/90">
+                <path d="M10,8 Q28,10 32,12" />
+                <path d="M6,32 Q25,35 28,38" />
+                <path d="M10,56 Q28,58 32,60" />
+                <path d="M22,5 L32,12 L22,18" />
+                <path d="M18,30 L28,38 L18,44" />
+                <path d="M22,53 L32,60 L22,66" />
+              </svg>
+              <h1 className="text-6xl md:text-[88px] font-black tracking-tight leading-[0.95] text-white text-sticker hero-text-anim uppercase">
+                HEALTH FOODS <br />
+                <span className="text-[#FFC531]">THAT MOVE</span> <br />
+                WITH YOU
+              </h1>
+            </div>
             
             <p className="text-white/95 text-base md:text-lg font-semibold max-w-md leading-relaxed hero-text-anim">
               Wildly natural superfoods. Real nutrition. <br />
@@ -339,12 +350,12 @@ export default function Homepage() {
               
               <Link
                 href="/about"
-                className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-black text-sm uppercase tracking-widest rounded-full transition-all duration-300 border border-white/20 flex items-center gap-2 backdrop-blur-sm hero-btn-anim hover:scale-105"
+                className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-black text-sm uppercase tracking-widest rounded-full transition-all duration-300 border border-white/20 flex items-center gap-4 backdrop-blur-sm hero-btn-anim hover:scale-105"
               >
-                <div className="w-6 h-6 rounded-full bg-white flex items-center justify-center">
-                  <Play className="w-3.5 h-3.5 text-[#E9418A] fill-[#E9418A] translate-x-[1px]" />
-                </div>
                 <span>DISCOVER OUR STORY</span>
+                <div className="w-7 h-7 rounded-full bg-white flex items-center justify-center flex-shrink-0">
+                  <Play className="w-3.5 h-3.5 text-[#E9418A] fill-[#E9418A] translate-x-[1.5px]" />
+                </div>
               </Link>
             </div>
           </div>
@@ -353,20 +364,35 @@ export default function Homepage() {
           <div className="lg:col-span-7 flex justify-center relative pt-10 lg:pt-0">
             <div className="relative w-full max-w-[650px] aspect-[4/3] flex items-center justify-center hero-collage-anim">
               
-              {/* Sticker 1: ESSENTIAL MINERALS */}
-              <div className="absolute top-[20%] left-[-4%] bg-[#FFC531] text-[#2A1147] px-4 py-2 rounded-full font-black text-[10px] uppercase tracking-widest shadow-md rotate-[-8deg] z-20 border-2 border-[#2A1147] hero-sticker-anim">
-                ESSENTIAL MINERALS
+              {/* Sticker 1: ESSENTIAL MINERALS spiky starburst SVG */}
+              <div className="absolute top-[28%] left-[-6%] md:left-[4%] z-20 rotate-[-8deg] hero-sticker-anim scale-95 md:scale-100">
+                <svg viewBox="0 0 100 100" width="115" height="115" className="drop-shadow-lg filter">
+                  <path d="M50 0 L58 10 L70 5 L73 17 L85 15 L83 27 L93 29 L87 40 L95 45 L87 54 L92 65 L82 70 L83 82 L71 83 L69 95 L58 92 L50 100 L42 92 L31 95 L29 83 L17 82 L18 70 L8 65 L13 54 L5 45 L13 40 L7 29 L17 27 L15 15 L27 17 L30 5 L42 10 Z" fill="#FFC531" stroke="#2A1147" strokeWidth="2.5" />
+                  <text x="50" y="47" textAnchor="middle" fill="#2A1147" fontSize="8" fontWeight="900" fontFamily="Fredoka, sans-serif">ESSENTIAL</text>
+                  <text x="50" y="58" textAnchor="middle" fill="#2A1147" fontSize="8" fontWeight="900" fontFamily="Fredoka, sans-serif">MINERALS</text>
+                </svg>
               </div>
 
-              {/* Sticker 2: 100% VEGAN stamp seal */}
-              <div className="absolute top-[-4%] right-[20%] w-24 h-24 bg-[#FFC531] text-[#2A1147] rounded-full p-2 flex flex-col items-center justify-center font-black text-[9px] uppercase tracking-wider animate-spin-slow shadow-lg border-4 border-[#2A1147] z-20 hero-sticker-anim">
-                <span>★ 100% VEGAN ★</span>
-                <span className="text-[7px]">Certified Organic</span>
+              {/* Sticker 2: 100% VEGAN circular stamp SVG with palm tree */}
+              <div className="absolute top-[-5%] right-[16%] md:right-[20%] z-20 hero-sticker-anim scale-95 md:scale-100">
+                <svg viewBox="0 0 100 100" width="105" height="105" className="animate-spin-slow drop-shadow-md">
+                  <circle cx="50" cy="50" r="45" fill="#FFC531" stroke="#2A1147" strokeWidth="3" />
+                  <circle cx="50" cy="50" r="38" fill="none" stroke="#2A1147" strokeWidth="1.5" strokeDasharray="3 2.5" />
+                  <path d="M50 72 L50 45 Q50 35 44 32 M50 50 Q50 35 56 32 M50 55 Q42 42 38 48 M50 55 Q58 42 62 48" stroke="#2A1147" strokeWidth="3.5" strokeLinecap="round" fill="none" />
+                  <path id="vegan-text-path-hero" d="M 50,50 m -29,0 a 29,29 0 1,1 58,0 a 29,29 0 1,1 -58,0" fill="none" />
+                  <text fill="#2A1147" fontSize="8" fontWeight="900" letterSpacing="1.8">
+                    <textPath href="#vegan-text-path-hero" startOffset="0%">★ 100% VEGAN ★ 100% VEGAN</textPath>
+                  </text>
+                </svg>
               </div>
 
-              {/* Sticker 3: GLUTEN FREE starburst */}
-              <div className="absolute bottom-[8%] right-[-2%] bg-[#E9418A] text-white px-5 py-2.5 rounded-full font-black text-[10px] uppercase tracking-widest shadow-md rotate-[12deg] z-20 border-2 border-[#2A1147] hero-sticker-anim">
-                GLUTEN FREE
+              {/* Sticker 3: GLUTEN FREE spiky starburst SVG */}
+              <div className="absolute bottom-[6%] right-[-5%] md:right-[2%] z-20 rotate-[12deg] hero-sticker-anim scale-95 md:scale-100">
+                <svg viewBox="0 0 100 100" width="115" height="115" className="drop-shadow-lg filter">
+                  <path d="M50 0 L58 10 L70 5 L73 17 L85 15 L83 27 L93 29 L87 40 L95 45 L87 54 L92 65 L82 70 L83 82 L71 83 L69 95 L58 92 L50 100 L42 92 L31 95 L29 83 L17 82 L18 70 L8 65 L13 54 L5 45 L13 40 L7 29 L17 27 L15 15 L27 17 L30 5 L42 10 Z" fill="#E9418A" stroke="#ffffff" strokeWidth="2.5" />
+                  <text x="50" y="47" textAnchor="middle" fill="#ffffff" fontSize="9" fontWeight="900" fontFamily="Fredoka, sans-serif">GLUTEN</text>
+                  <text x="50" y="58" textAnchor="middle" fill="#ffffff" fontSize="9" fontWeight="900" fontFamily="Fredoka, sans-serif">FREE</text>
+                </svg>
               </div>
 
               {/* Mossy Ledge Collage visual containing tub, cup, smoothie glass & fruits */}
@@ -385,7 +411,7 @@ export default function Homepage() {
         {/* Wavy bottom divider transition */}
         <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none z-20">
           <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[60px] text-[var(--background)] fill-[var(--background)] transition-colors duration-500">
-            <path d="M0,32L120,42.7C240,53,480,75,720,74.7C960,75,1200,53,1320,42.7L1440,32L1440,120L1320,120C1200,120,960,120,720,120C480,120,240,120,120,120L0,120Z"></path>
+            <path d="M0,60 C300,110 700,20 1200,80 L1200,120 L0,120 Z"></path>
           </svg>
         </div>
       </section>
