@@ -1,47 +1,36 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "@/components/layout/Navbar";
-import { Hero } from "@/components/hero/Hero";
-import { TrustBar } from "@/components/sections/TrustBar";
-import { GoodnessCards } from "@/components/sections/GoodnessCards";
-import { ProductHighlight } from "@/components/sections/ProductHighlight";
-import { Timeline } from "@/components/sections/Timeline";
-import { StoryShowcase } from "@/components/sections/StoryShowcase";
-import { RecipeSection } from "@/components/sections/RecipeSection";
-import { SchoolDaysSection } from "@/components/sections/SchoolDaysSection";
-import { EcosystemBanner } from "@/components/sections/EcosystemBanner";
-import { CertificationsGrid } from "@/components/sections/CertificationsGrid";
-import { CommunityGrid } from "@/components/sections/CommunityGrid";
-import { Benefits } from "@/components/sections/Benefits";
 import Footer from "@/components/layout/Footer";
 
+// Immersive Narrative Scenes
+import { Scene01_Rainforest } from "@/components/scenes/Scene01_Rainforest";
+import { Scene02_Harvest } from "@/components/scenes/Scene02_Harvest";
+import { Scene03_Science } from "@/components/scenes/Scene03_Science";
+import { Scene04_Journey } from "@/components/scenes/Scene04_Journey";
+import { Scene05_Kitchen } from "@/components/scenes/Scene05_Kitchen";
+import { Scene06_Planet } from "@/components/scenes/Scene06_Planet";
+
 export default function Homepage() {
+  
+  // Smooth scrolling is handled globally by Lenis in ClientLayout, which pairs perfectly with GSAP ScrollTrigger.
+  
   return (
-    <main className="relative bg-brand-cream text-brand-purple min-h-screen">
+    <main className="relative bg-brand-cream text-brand-forest-dark min-h-screen">
       <Navbar />
       
-      {/* 1. Cinematic Arrival */}
-      <Hero />
-      <TrustBar />
-
-      {/* 2. Amazon Origin & Authenticity */}
-      <StoryShowcase />
-      <Timeline />
-
-      {/* 3. The Ecosystems & Products (Peak Freshness) */}
-      <GoodnessCards />
-      <ProductHighlight />
-
-      {/* 4. Daily Usage & The Australian Breakfast */}
-      <RecipeSection />
-      <SchoolDaysSection />
-
-      {/* 5. Trust, Certifications & Community */}
-      <Benefits />
-      <EcosystemBanner />
-      <CertificationsGrid />
-      <CommunityGrid />
+      {/* 
+        The Austropical Brand World Experience 
+        A continuous, scroll-driven documentary flow.
+      */}
+      
+      <Scene01_Rainforest />
+      <Scene02_Harvest />
+      <Scene03_Science />
+      <Scene04_Journey />
+      <Scene05_Kitchen />
+      <Scene06_Planet />
       
       <Footer />
     </main>
