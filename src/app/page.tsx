@@ -1,14 +1,28 @@
 "use client";
 
-import React, { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import React, { useRef, useState, useEffect } from "react";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { Button } from "@/components/ui/Button";
 
+const BANNER_IMAGES = [
+  "/unmatched-excellence-buckets.jpg",
+  "/mornings-made-smoothie.jpg",
+  "/range-ledge.png"
+];
+
 export default function DreamlandHomepage() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [currentBanner, setCurrentBanner] = useState(0);
   
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentBanner((prev) => (prev + 1) % BANNER_IMAGES.length);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, []);
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"]
@@ -25,14 +39,8 @@ export default function DreamlandHomepage() {
   const world2Y = useTransform(scrollYProgress, [0.2, 0.6], ["100%", "0%"]);
   const world3Y = useTransform(scrollYProgress, [0.4, 0.8], ["100%", "0%"]);
 
-  // Zero-Gravity Harvest Transforms
-  const fruit1Y = useTransform(scrollYProgress, [0.7, 1], ["0%", "-200%"]);
-  const fruit2Y = useTransform(scrollYProgress, [0.7, 1], ["0%", "-100%"]);
-  const fruit3Y = useTransform(scrollYProgress, [0.7, 1], ["0%", "-150%"]);
-  const fruitRotate = useTransform(scrollYProgress, [0.7, 1], [0, 180]);
-
   return (
-    <main ref={containerRef} className="relative bg-[#1A0B2E] text-brand-ivory min-h-[400vh] font-sans overflow-clip selection:bg-brand-orange selection:text-white">
+    <main ref={containerRef} className="relative bg-[#1A0B2E] text-brand-ivory min-h-[350vh] font-sans overflow-clip selection:bg-brand-orange selection:text-white">
       <Navbar />
       
       {/* 
@@ -53,18 +61,24 @@ export default function DreamlandHomepage() {
 
       <motion.section style={{ y: heroY, opacity: heroOpacity }} className="relative h-screen w-full flex flex-col items-center justify-center z-10 pt-20">
         
-        {/* Floating Banner */}
+        {/* Floating Auto-Slider Banner */}
         <motion.div 
           animate={{ y: [0, -15, 0] }}
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-          className="relative z-20 w-full max-w-5xl mx-auto px-4 mt-12"
+          className="relative z-20 w-full max-w-5xl mx-auto px-4 mt-12 h-[300px] md:h-[500px]"
         >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img 
-            src="/unmatched-excellence-buckets.jpg" 
-            alt="Unmatched Excellence" 
-            className="w-full h-auto object-contain rounded-[40px] shadow-[0_0_80px_rgba(45,11,56,0.8)]"
-          />
+          <AnimatePresence mode="wait">
+            <motion.img 
+              key={currentBanner}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 1.05 }}
+              transition={{ duration: 0.8, ease: "easeInOut" }}
+              src={BANNER_IMAGES[currentBanner]} 
+              alt="Austropical Highlights" 
+              className="absolute inset-0 w-full h-full object-contain drop-shadow-[0_0_80px_rgba(45,11,56,0.8)]"
+            />
+          </AnimatePresence>
         </motion.div>
 
         {/* Parallax Foreground Leaves */}
@@ -87,7 +101,7 @@ export default function DreamlandHomepage() {
         SCENE 02: FLOATING WORLDS
         ========================================
       */}
-      <div className="relative z-20 w-full max-w-7xl mx-auto px-6 space-y-[30vh] pb-[30vh]">
+      <div className="relative z-20 w-full max-w-7xl mx-auto px-6 space-y-[30vh] pb-[20vh]">
         
         {/* World 1: Açaí */}
         <motion.div style={{ y: world1Y }} className="relative grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -159,27 +173,47 @@ export default function DreamlandHomepage() {
 
       {/* 
         ========================================
-        SCENE 03: ZERO-GRAVITY HARVEST
+        SCENE 03: STORYTELLING TIMELINE
         ========================================
       */}
-      <section className="relative h-[120vh] w-full flex items-center justify-center overflow-hidden bg-gradient-to-b from-transparent to-[#10041C]">
+      <section className="relative w-full z-20 bg-brand-charcoal py-32 rounded-t-[80px] overflow-hidden border-t border-white/5">
         
         {/* Background Australian Beach Lifestyle */}
-        <div className="absolute inset-0 bg-[url('/australian_morning_surf.png')] bg-cover bg-center opacity-20 mix-blend-luminosity" />
+        <div className="absolute inset-0 bg-[url('/australian_morning_surf.png')] bg-cover bg-center opacity-20 mix-blend-luminosity blur-[2px]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-brand-charcoal via-brand-charcoal/80 to-brand-charcoal/20" />
 
-        {/* Floating Fruits */}
-        <motion.div style={{ y: fruit1Y, rotate: fruitRotate }} className="absolute top-[20%] left-[10%] w-32 h-32 bg-[url('/recipe_bowl.png')] bg-contain bg-no-repeat drop-shadow-2xl opacity-80" />
-        <motion.div style={{ y: fruit2Y, rotate: fruitRotate }} className="absolute top-[40%] right-[15%] w-48 h-48 bg-[url('/mango_pack.png')] bg-contain bg-no-repeat drop-shadow-2xl opacity-90" />
-        <motion.div style={{ y: fruit3Y, rotate: fruitRotate }} className="absolute top-[60%] left-[20%] w-40 h-40 bg-[url('/recipe_smoothie.png')] bg-contain bg-no-repeat drop-shadow-2xl opacity-70" />
+        <div className="relative z-20 max-w-5xl mx-auto px-6 text-center space-y-16">
+          <div className="space-y-6">
+            <span className="text-brand-orange font-bold uppercase tracking-[0.3em] text-sm">The Journey</span>
+            <h2 className="font-display text-5xl md:text-7xl text-white drop-shadow-lg leading-tight">
+              From the Amazon Canopy <br/><span className="italic text-white/70 font-light">to the Australian Coast</span>
+            </h2>
+            <p className="font-sans text-lg text-white/80 font-light max-w-2xl mx-auto leading-relaxed">
+              We travel to the heart of the Amazon to sustainably wild-harvest the most nutrient-dense superfoods on earth, freezing them instantly to lock in their magic before they reach your breakfast table.
+            </p>
+          </div>
 
-        <div className="relative z-20 max-w-4xl mx-auto px-6 text-center">
-          <h2 className="font-display text-6xl md:text-[100px] text-white leading-none mb-8 drop-shadow-[0_0_30px_rgba(255,255,255,0.3)]">
-            Taste the Magic.
-          </h2>
-          <p className="font-sans text-xl text-white/70 font-light mb-12">
-            Experience the wildest, purest superfoods on earth.
-          </p>
-          <Button variant="primary" size="lg" className="shadow-[0_0_40px_rgba(247,147,30,0.4)]">Enter the Shop</Button>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-12">
+            <div className="bg-white/5 border border-white/10 backdrop-blur-md p-8 rounded-[40px] text-left hover:bg-white/10 transition-colors">
+              <span className="text-4xl mb-4 block">01</span>
+              <h3 className="text-2xl font-display font-bold text-white mb-3">Wild Harvest</h3>
+              <p className="text-sm text-white/70">Hand-picked by local families in the Amazon rainforest, ensuring sustainability and fair trade.</p>
+            </div>
+            <div className="bg-white/5 border border-white/10 backdrop-blur-md p-8 rounded-[40px] text-left hover:bg-white/10 transition-colors mt-0 md:mt-12">
+              <span className="text-4xl mb-4 block">02</span>
+              <h3 className="text-2xl font-display font-bold text-white mb-3">Flash Frozen</h3>
+              <p className="text-sm text-white/70">Instantly frozen at the source to preserve the vibrant nutrients, taste, and magical energy.</p>
+            </div>
+            <div className="bg-white/5 border border-white/10 backdrop-blur-md p-8 rounded-[40px] text-left hover:bg-white/10 transition-colors mt-0 md:mt-24">
+              <span className="text-4xl mb-4 block">03</span>
+              <h3 className="text-2xl font-display font-bold text-white mb-3">Pure Joy</h3>
+              <p className="text-sm text-white/70">Blended into perfect portions for your morning rituals, post-surf fuel, and family breakfasts.</p>
+            </div>
+          </div>
+          
+          <div className="pt-20">
+            <Button variant="primary" size="lg" className="shadow-[0_0_40px_rgba(247,147,30,0.4)]">Discover Our Goodness</Button>
+          </div>
         </div>
       </section>
 

@@ -87,10 +87,14 @@ export default function Navbar() {
         }`}
       >
         <div className="max-w-container mx-auto px-6 md:px-12 flex items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="flex items-center group">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo.png" alt="Austropical Logo" className="h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
+          {/* Typographic Logo */}
+          <Link href="/" className="flex flex-col group">
+            <span className={`text-2xl font-black font-display tracking-tight leading-none transition-colors ${scrolled ? 'text-brand-charcoal' : 'text-white'}`}>
+              austropical
+            </span>
+            <span className="text-[9px] font-bold text-brand-orange uppercase tracking-widest leading-none mt-0.5 group-hover:text-brand-green transition-colors">
+              Superfoods
+            </span>
           </Link>
 
           {/* Desktop Navigation Links */}
@@ -362,9 +366,13 @@ export default function Navbar() {
         <div className="fixed inset-0 z-50 bg-brand-charcoal flex flex-col font-sans">
           {/* Header */}
           <div className="flex items-center justify-between px-6 py-6 border-b border-white/10">
-            <Link href="/" className="flex items-center" onClick={() => setMobileMenuOpen(false)}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/logo.png" alt="Austropical Logo" className="h-10 w-auto object-contain" />
+            <Link href="/" className="flex flex-col" onClick={() => setMobileMenuOpen(false)}>
+              <span className="text-xl font-black font-display tracking-tight text-white leading-none">
+                austropical
+              </span>
+              <span className="text-[8px] font-bold text-brand-orange uppercase tracking-widest leading-none mt-0.5">
+                Superfoods
+              </span>
             </Link>
             <button
               onClick={() => setMobileMenuOpen(false)}
