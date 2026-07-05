@@ -92,46 +92,50 @@ function ShopContent() {
     <div className="bg-[var(--background)] text-[var(--foreground)] min-h-screen relative overflow-x-hidden font-sans transition-colors duration-500">
       <Navbar />
 
-      {/* Hero Header with blue/purple leafy background and sticker header */}
-      <section className="pt-40 pb-20 bg-[#2A1147] bg-leaf-pattern text-white text-center relative overflow-hidden">
+      {/* Hero Header with Cinematic Dreamland styling */}
+      <section className="pt-40 pb-20 relative overflow-hidden flex items-center justify-center min-h-[40vh]">
+        {/* Background Imagery */}
+        <div className="absolute inset-0 bg-[url('/crushed_ice_macro.png')] bg-cover bg-center opacity-40 mix-blend-luminosity" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1A0B2E]/90 via-transparent to-[#1A0B2E]" />
+        
         {/* Ambient glow backgrounds */}
-        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-brand-orange/20 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-brand-blue/30 rounded-full blur-[100px] pointer-events-none" />
         
         {/* Floating Fruit Elements matching the mockup */}
         <motion.div 
-          animate={{ y: [0, -10, 0] }}
+          animate={{ y: [0, -10, 0], rotate: [0, 5, 0] }}
           transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-          className="absolute top-10 left-10 w-16 h-16 pointer-events-none opacity-80 hidden md:block"
+          className="absolute top-10 left-[10%] w-24 h-24 pointer-events-none opacity-80 hidden md:block drop-shadow-[0_20px_40px_rgba(0,0,0,0.8)]"
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/acai-zero-sugar-original.png" alt="acai" className="w-full h-full object-contain rounded-full" />
         </motion.div>
         
         <motion.div 
-          animate={{ y: [0, 8, 0] }}
-          transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut", delay: 0.3 }}
-          className="absolute top-20 right-16 w-14 h-14 pointer-events-none opacity-80 hidden md:block"
+          animate={{ y: [0, 15, 0], rotate: [0, -10, 0] }}
+          transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 0.5 }}
+          className="absolute bottom-10 right-[15%] w-32 h-32 pointer-events-none opacity-90 hidden md:block drop-shadow-[0_20px_40px_rgba(0,0,0,0.8)]"
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/range-ledge.png" alt="strawberry" className="w-full h-full object-contain rounded-full" />
+          <img src="/dragonfruit_pack.png" alt="dragonfruit" className="w-full h-full object-contain rounded-full" />
         </motion.div>
         
-        <div className="max-w-container mx-auto px-6 relative z-10 space-y-4">
+        <div className="max-w-container mx-auto px-6 relative z-10 space-y-6 text-center">
           <motion.h1 
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="text-5xl md:text-7xl font-black font-display tracking-tight text-white leading-none text-sticker"
+            className="text-5xl md:text-7xl font-black font-display tracking-tight text-white leading-none drop-shadow-[0_0_30px_rgba(255,255,255,0.2)]"
           >
-            PRODUCTS
+            The Collection.
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.8 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-white/80 text-sm md:text-base font-semibold max-w-lg mx-auto leading-relaxed"
+            className="text-white/80 text-lg font-light max-w-xl mx-auto leading-relaxed"
           >
-            Smooth, fruity, and naturally fresh, bringing you pure flavor satisfaction with every single bite.
+            Experience the purest tropical flavors on earth, wild-harvested and flash-frozen for unparalleled freshness.
           </motion.p>
         </div>
       </section>
@@ -233,9 +237,7 @@ function ShopContent() {
                       rotate: idx % 2 === 0 ? 1 : -1,
                       boxShadow: "0px 20px 40px rgba(42, 17, 71, 0.25)" 
                     }}
-                    transition={{ type: "spring", stiffness: 350, damping: 20 }}
-                    key={product.id}
-                    className="bg-[#4D2677] text-white p-6 rounded-card shadow-lg flex flex-col justify-between group relative overflow-hidden"
+                    className="bg-[var(--card-bg)] backdrop-blur-md border border-[var(--border-color)] text-[var(--foreground)] p-6 rounded-card shadow-lg flex flex-col justify-between group relative overflow-hidden"
                   >
                     {/* Top Header of Card */}
                     <div className="space-y-4 text-center">
@@ -244,25 +246,25 @@ function ShopContent() {
                       </h3>
 
                       {/* Image Area with container */}
-                      <div className="relative aspect-square w-full rounded-img bg-[#FFF9F2] overflow-hidden border-4 border-[#2A1147]/20 p-4 flex items-center justify-center">
+                      <div className="relative aspect-square w-full rounded-img bg-white/5 overflow-hidden border-4 border-white/5 p-4 flex items-center justify-center">
                         <motion.img
                           whileHover={{ scale: 1.06 }}
                           transition={{ duration: 0.4 }}
                           src={product.image}
                           alt={product.name}
-                          className="w-full h-full object-contain rounded-img"
+                          className="w-full h-full object-contain rounded-img drop-shadow-xl"
                         />
                         
                         {/* Quick Add Overlay on hover */}
-                        <div className="absolute inset-0 bg-[#2A1147]/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-6 gap-3 z-10">
+                        <div className="absolute inset-0 bg-[#1A0B2E]/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-6 gap-3 z-10 backdrop-blur-sm">
                           <p className="text-xs font-bold text-white/95 text-center leading-relaxed">
                             {product.description}
                           </p>
-                          <span className="text-lg font-black text-brand-yellow">${product.price}</span>
+                          <span className="text-lg font-black text-brand-orange">${product.price}</span>
                           <div className="flex items-center gap-2">
                             <button
                               onClick={() => addToCart(product, 1)}
-                              className="px-4 py-2 bg-brand-orange hover:bg-brand-yellow text-[#2A1147] text-xs font-black rounded-btn transition-colors flex items-center gap-1.5"
+                              className="px-4 py-2 bg-brand-orange hover:bg-brand-yellow text-white text-xs font-black rounded-btn transition-colors flex items-center gap-1.5"
                             >
                               <ShoppingBag className="w-3.5 h-3.5" />
                               Add to Cart
@@ -292,10 +294,10 @@ function ShopContent() {
                     </div>
 
                     {/* Rating / Meta display at bottom */}
-                    <div className="flex items-center justify-between mt-4 text-[10px] text-white/70 font-semibold px-1">
-                      <span className="uppercase tracking-widest">{product.category}</span>
+                    <div className="flex items-center justify-between mt-4 text-[10px] text-[var(--text-muted)] font-semibold px-1">
+                      <span className="uppercase tracking-widest text-[var(--foreground)]">{product.category}</span>
                       <div className="flex items-center gap-1">
-                        <Star className="w-3 h-3 fill-brand-yellow text-brand-yellow" />
+                        <Star className="w-3 h-3 fill-brand-orange text-brand-orange" />
                         <span>{product.rating}</span>
                       </div>
                     </div>
@@ -337,11 +339,12 @@ function ShopContent() {
       </motion.section>
 
       {/* Squeeze the Day UGC slider */}
-      <section className="py-20 bg-white/40 border-t border-brand-charcoal/5">
-        <div className="max-w-container mx-auto px-6 md:px-12 text-center space-y-12">
+      <section className="py-20 relative border-t border-white/5">
+        <div className="absolute inset-0 bg-[url('/australian_morning_surf.png')] bg-cover bg-center opacity-10 mix-blend-luminosity" />
+        <div className="max-w-container mx-auto px-6 md:px-12 text-center space-y-12 relative z-10">
           <div className="space-y-4 max-w-xl mx-auto">
             <span className="text-xs font-black text-brand-orange uppercase tracking-widest">Squeeze the day</span>
-            <h3 className="text-3xl md:text-5xl font-black font-display text-[#2A1147]">Squeeze the day</h3>
+            <h3 className="text-3xl md:text-5xl font-black font-display text-[var(--foreground)] drop-shadow-md">A Morning Ritual</h3>
             <div className="flex items-center justify-center gap-1">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="w-4 h-4 fill-brand-yellow text-brand-yellow" />
@@ -376,11 +379,11 @@ function ShopContent() {
               >
                 <motion.div 
                   whileHover={{ scale: 1.02 }}
-                  className="aspect-square rounded-card overflow-hidden border border-brand-charcoal/10 shadow-sm cursor-pointer"
+                  className="aspect-square rounded-card overflow-hidden border border-white/10 shadow-lg cursor-pointer bg-white/5 backdrop-blur-md p-2"
                 >
-                  <img src={ugc.url} alt="UGC social" className="w-full h-full object-cover" />
+                  <img src={ugc.url} alt="UGC social" className="w-full h-full object-cover rounded-[20px]" />
                 </motion.div>
-                <p className="text-xs font-bold text-[#2A1147] italic">“{ugc.text}”</p>
+                <p className="text-xs font-light text-[var(--foreground)]/80 italic">“{ugc.text}”</p>
               </motion.div>
             ))}
           </div>
