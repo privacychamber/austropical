@@ -82,31 +82,42 @@ export default function Navbar() {
       <header
         className={`fixed top-4 left-4 right-4 md:left-1/2 md:-translate-x-1/2 md:w-full md:max-w-6xl z-50 transition-all duration-500 font-sans rounded-full ${
           scrolled
-            ? "py-3 bg-white/95 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.15)] border border-white/50"
-            : "py-3 md:py-4 bg-white/80 backdrop-blur-md shadow-lg border border-white/30"
+            ? "py-3 bg-white shadow-[0_10px_30px_rgba(0,0,0,0.1)] border border-gray-100"
+            : "py-3 md:py-4 bg-white shadow-lg border border-gray-100"
         }`}
       >
-        <div className="mx-auto px-4 md:px-8 flex items-center justify-between">
+        <div className="mx-auto px-4 md:px-8 grid grid-cols-2 lg:grid-cols-3 items-center w-full">
           {/* Graphic Logo */}
-          <Link href="/" className="flex items-center">
-            {/* mix-blend-darken hides the white background of the logo on the white island */}
+          <Link href="/" className="flex items-center justify-start">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo.png" alt="Austropical Logo" className="h-10 md:h-12 w-auto object-contain transition-transform hover:scale-105 mix-blend-darken" />
+            <img src="/logo.png" alt="Austropical Logo" className="h-10 md:h-12 w-auto object-contain transition-transform hover:scale-105" />
           </Link>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-6">
+          <nav className="hidden lg:flex items-center justify-center gap-8">
             {navLinks.map((link) => (
-              <div key={link.name} className="relative group/link">
+              <div key={link.name} className="relative group/link py-2">
+                {link.name === "RECIPES" && (
+                  <span className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#E71D85] text-white text-[9px] font-black uppercase tracking-widest px-2 py-0.5 rounded-full after:content-[''] after:absolute after:top-full after:left-1/2 after:-translate-x-1/2 after:border-4 after:border-transparent after:border-t-[#E71D85]">
+                    New
+                  </span>
+                )}
                 <Link
                   href={link.href}
-                  className={`text-xs md:text-sm font-bold tracking-wider flex items-center gap-1 transition-all duration-300 text-[#1A5D2C] hover:text-[#E71D85]`}
+                  className={`text-sm font-bold tracking-wide flex items-center gap-1 transition-all duration-300 text-[#1A5D2C] hover:text-[#F7931E]`}
                 >
                   <span>{link.name}</span>
                   {link.hasDropdown && (
                     <ChevronDown className="w-3.5 h-3.5 opacity-60 group-hover/link:rotate-180 transition-transform duration-300" />
                   )}
                 </Link>
+
+                {/* Animated Hover Underline matching screenshot */}
+                <span
+                  className={`absolute bottom-0 left-0 h-[2px] bg-[#F7931E] transition-all duration-300 ${
+                    pathname === link.href ? "w-full" : "w-0 group-hover/link:w-full"
+                  }`}
+                />
 
                 {/* Sub Menu Dropdown for Shop */}
                 {link.hasDropdown && (
@@ -161,11 +172,10 @@ export default function Navbar() {
               </div>
             ))}
 
-            {/* Admin Portal Shortcut */}
-            <div className="relative group/link">
+            <div className="relative group/link py-2">
               <Link
                 href="/admin"
-                className="text-[10px] font-black text-[#E71D85] border border-[#E71D85]/30 px-3 py-1 rounded-full hover:bg-[#E71D85] hover:text-white transition-all duration-300 uppercase tracking-widest"
+                className="text-xs font-bold tracking-wide text-[#E71D85] hover:text-[#F7931E] transition-all duration-300"
               >
                 CMS
               </Link>
@@ -173,7 +183,7 @@ export default function Navbar() {
           </nav>
 
           {/* Right Header Utilities */}
-          <div className="hidden lg:flex items-center gap-4">
+          <div className="hidden lg:flex items-center justify-end gap-5">
             
             <div className="flex items-center gap-3 text-xs font-bold text-[#1A5D2C]/70 border-r border-[#1A5D2C]/20 pr-4">
               <div className="flex items-center gap-1 cursor-pointer hover:text-[#E71D85] transition-colors">
@@ -225,14 +235,14 @@ export default function Navbar() {
             </button>
             <Link
               href="/shop"
-              className="bg-[#F7931E] hover:bg-[#1A5D2C] text-white font-black text-[10px] md:text-xs uppercase tracking-widest px-4 md:px-6 py-2.5 rounded-full shadow-[0_8px_20px_rgba(247,147,30,0.3)] transition-all hover:scale-105 ml-1"
+              className="bg-[#F7931E] hover:bg-[#1A5D2C] text-white font-bold text-sm tracking-wide px-6 py-2.5 rounded-full transition-all hover:scale-105 ml-2 flex items-center gap-2"
             >
-              SHOP NOW
+              Shop Now <span className="text-lg leading-none">→</span>
             </Link>
           </div>
 
           {/* Mobile Navigation controls */}
-          <div className="flex lg:hidden items-center gap-3">
+          <div className="flex lg:hidden items-center justify-end gap-3">
             <button
               onClick={() => setCartOpen(true)}
               className="text-[#1A5D2C] relative p-1"
