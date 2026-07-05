@@ -8,40 +8,23 @@ import { Button } from "@/components/ui/Button";
 import { TrustBadge } from "@/components/ui/TrustBadge";
 import { QuizModal } from "@/components/ui/QuizModal";
 import { CategorySection } from "@/components/sections/CategorySection";
+import Link from "next/link";
+import { ArrowRight, Star, Heart, CheckCircle2 } from "lucide-react";
 
-const BANNER_IMAGES = [
-  "/unmatched-excellence-buckets.jpg",
-  "/mornings-made-smoothie.jpg",
-  "/range-ledge.png"
-];
-
-export default function DreamlandHomepage() {
+export default function PremiumFMCGHomepage() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [currentBanner, setCurrentBanner] = useState(0);
   const [isQuizOpen, setIsQuizOpen] = useState(false);
   
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentBanner((prev) => (prev + 1) % BANNER_IMAGES.length);
-    }, 3000);
-    return () => clearInterval(timer);
-  }, []);
-
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"]
   });
 
   // Hero Parallax Transforms
-  const heroY = useTransform(scrollYProgress, [0, 0.2], ["0%", "50%"]);
+  const heroY = useTransform(scrollYProgress, [0, 0.2], ["0%", "40%"]);
   const heroOpacity = useTransform(scrollYProgress, [0, 0.15], [1, 0]);
-  const leafLeftX = useTransform(scrollYProgress, [0, 0.2], ["0%", "-50%"]);
-  const leafRightX = useTransform(scrollYProgress, [0, 0.2], ["0%", "50%"]);
-
-  // Floating Worlds Transforms
-  const world1Y = useTransform(scrollYProgress, [0.1, 0.4], ["100%", "0%"]);
-  const world2Y = useTransform(scrollYProgress, [0.2, 0.6], ["100%", "0%"]);
-  const world3Y = useTransform(scrollYProgress, [0.4, 0.8], ["100%", "0%"]);
+  
+  const originY = useTransform(scrollYProgress, [0.6, 0.9], ["20%", "0%"]);
 
   return (
     <main ref={containerRef} className="relative bg-[#FDFBF7] text-[#1A5D2C] min-h-[350vh] font-sans overflow-clip selection:bg-[#B2D235] selection:text-[#1A5D2C]">
@@ -49,20 +32,20 @@ export default function DreamlandHomepage() {
       
       {/* 
         ========================================
-        SCENE 01: THE NEW HERO BANNER
+        SCENE 01: THE UNFORGETTABLE HERO
         ========================================
       */}
-      <section className="relative w-full min-h-screen bg-[#FDFBF7] flex flex-col pt-0 z-10 overflow-hidden">
+      <section className="relative w-full min-h-[110vh] bg-gradient-to-br from-[#F7931E] via-[#FBB03B] to-[#E71D85] flex flex-col pt-0 z-10 overflow-hidden">
         
         {/* Top Notification Bar */}
         <div 
-          className="w-full bg-[#B2D235] py-2 overflow-hidden flex whitespace-nowrap cursor-pointer hover:bg-[#F7931E] transition-colors group"
+          className="w-full bg-[#B2D235] py-2 overflow-hidden flex whitespace-nowrap cursor-pointer hover:bg-white transition-colors group z-50"
           onClick={() => setIsQuizOpen(true)}
         >
           <motion.div 
             animate={{ x: [0, -1000] }} 
             transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
-            className="flex gap-8 text-[10px] md:text-xs font-bold text-[#1A5D2C] uppercase tracking-widest group-hover:text-white transition-colors"
+            className="flex gap-8 text-[10px] md:text-xs font-bold text-[#1A5D2C] uppercase tracking-widest group-hover:text-[#F7931E] transition-colors"
           >
             {[...Array(10)].map((_, i) => (
               <span key={i}>TRY BEFORE YOU BUY - TAKE OUR QUIZ FOR A FREE SAMPLE</span>
@@ -71,181 +54,194 @@ export default function DreamlandHomepage() {
         </div>
 
         {/* Hero Content */}
-        <div className="flex-1 flex flex-col items-center justify-center pt-20 pb-40 px-4 relative z-20 text-center">
+        <motion.div style={{ y: heroY, opacity: heroOpacity }} className="flex-1 flex flex-col items-center justify-center pt-20 pb-40 px-4 relative z-20 text-center">
           
+          <div className="absolute inset-0 bg-[url('/hero_explosion.png')] bg-cover bg-center mix-blend-screen opacity-90 pointer-events-none" />
+
           {/* Tilted Chunky Header */}
           <motion.h1 
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, type: "spring" }}
-            className="font-display text-5xl md:text-[7rem] leading-[0.85] text-[#1A5D2C] uppercase -rotate-3 drop-shadow-md z-20 relative max-w-4xl mx-auto"
+            initial={{ opacity: 0, scale: 0.9, y: 50 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 1, type: "spring", bounce: 0.4 }}
+            className="font-display text-6xl md:text-[8rem] lg:text-[10rem] leading-[0.8] text-white uppercase -rotate-2 drop-shadow-2xl z-20 relative max-w-6xl mx-auto"
           >
-            AUSTRALIA&apos;S <br/> BRIGHTER <br/> SNACK CHOICE
+            <span className="block text-[#B2D235] drop-shadow-[0_10px_20px_rgba(26,93,44,0.4)]">AUSTRALIA'S</span>
+            <span className="block drop-shadow-[0_10px_20px_rgba(231,29,133,0.4)]">BRIGHTER</span>
+            <span className="block text-[#1A5D2C] drop-shadow-[0_10px_20px_rgba(255,255,255,0.4)]">SNACK CHOICE</span>
           </motion.h1>
 
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="mt-8 font-sans text-[#1A5D2C]/80 text-lg md:text-xl max-w-lg mx-auto z-20"
+            transition={{ delay: 0.3 }}
+            className="mt-8 font-sans text-white text-xl md:text-3xl max-w-2xl mx-auto z-20 font-light drop-shadow-md"
           >
-            Packed with tropical flavour, made for everyday
+            Sustainably wild-harvested. Instantly frozen. Packed with joyful tropical energy.
           </motion.p>
 
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
+            transition={{ delay: 0.4 }}
             className="mt-12 z-20"
           >
-            <Button className="bg-white text-[#1A5D2C] hover:bg-[#1A5D2C] hover:text-white border-none shadow-[0_8px_30px_rgba(26,93,44,0.15)] rounded-full px-12 py-8 text-sm font-bold transition-all duration-300">
-              SHOP NOW
+            <Button className="bg-white text-[#E71D85] hover:bg-[#1A5D2C] hover:text-white border-none shadow-[0_20px_50px_rgba(231,29,133,0.5)] rounded-full px-16 py-8 text-lg font-black transition-all duration-300 transform hover:scale-105">
+              SHOP THE AMAZON
             </Button>
           </motion.div>
 
-          {/* Trust Badges scattered around the Hero */}
-          <TrustBadge type="circle" text="100% Vegan" color="#8B217D" className="top-10 left-[15%] md:left-[25%]" rotate={-10} />
-          <TrustBadge type="arch" text="Grab 'N' Go" color="#F49A8F" className="top-[30%] left-[5%] md:left-[10%]" rotate={15} />
-          <TrustBadge type="starburst" text="Wildly Natural" color="#29ABE2" className="bottom-[40%] left-[8%] md:left-[15%]" rotate={-5} />
-          <TrustBadge type="pill" text="Fat-Free" color="#E71D85" className="top-20 right-[15%] md:right-[25%]" rotate={5} />
-          <TrustBadge type="circle" text="Highest Grade Acai" color="#2A1147" className="top-[35%] right-[5%] md:right-[10%]" rotate={-12} />
-          <TrustBadge type="starburst" text="The Amazon Feels Good" color="#F7931E" className="bottom-[30%] right-[8%] md:right-[15%]" rotate={8} />
+          {/* Floating Trust Stickers */}
+          <TrustBadge type="circle" text="100% Vegan" color="#8B217D" className="top-10 left-[10%] md:left-[20%]" rotate={-10} />
+          <TrustBadge type="arch" text="Grab 'N' Go" color="#F49A8F" className="top-[40%] left-[5%] md:left-[10%]" rotate={15} />
+          <TrustBadge type="pill" text="Fat-Free" color="#B2D235" className="top-20 right-[15%] md:right-[25%]" rotate={5} />
+          <TrustBadge type="starburst" text="Real Fruit" color="#1A5D2C" className="bottom-[40%] right-[8%] md:right-[15%]" rotate={8} />
 
-          {/* Floating Product Arch (With Mix-Blend to remove white BG) */}
-          <div className="absolute -bottom-20 left-0 w-full flex justify-center items-end gap-2 md:gap-8 z-10 pointer-events-none">
-            
-            <motion.img 
-              animate={{ y: [0, -15, 0], rotate: [-15, -12, -15] }}
-              transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
-              src="/acai-zero-sugar-original.png" 
-              className="w-40 md:w-72 h-auto -mb-10 mix-blend-multiply" 
-              alt="Tub 1" 
-            />
-            
-            <motion.img 
-              animate={{ y: [0, -10, 0], rotate: [5, 2, 5] }}
-              transition={{ repeat: Infinity, duration: 6, ease: "easeInOut", delay: 0.5 }}
-              src="/dragonfruit_pack.png" 
-              className="w-48 md:w-80 h-auto mb-10 z-20 mix-blend-multiply" 
-              alt="Tub 2" 
-            />
-            
-            <motion.img 
-              animate={{ y: [0, -12, 0], rotate: [-8, -5, -8] }}
-              transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut", delay: 1 }}
-              src="/mango_pack.png" 
-              className="w-48 md:w-80 h-auto mb-5 mix-blend-multiply" 
-              alt="Tub 3" 
-            />
-
-            <motion.img 
-              animate={{ y: [0, -20, 0], rotate: [12, 15, 12] }}
-              transition={{ repeat: Infinity, duration: 5.5, ease: "easeInOut", delay: 0.2 }}
-              src="/acai-passionfruit-legs.png" 
-              className="w-40 md:w-72 h-auto -mb-12 mix-blend-multiply" 
-              alt="Tub 4" 
-            />
-          </div>
-
+        </motion.div>
+        
+        {/* Organic Wave Divider */}
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] z-30">
+          <svg className="relative block w-[calc(100%+1.3px)] h-[100px] md:h-[150px]" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118,137.93,126.9,207.2,120,246.3,116.14,284.18,97.7,321.39,56.44Z" fill="#FBB03B"></path>
+          </svg>
         </div>
       </section>
 
       {/* 
         ========================================
-        SCENE 01B: THE CATEGORY SCROLL
+        SCENE 02: CATEGORY ECOSYSTEM
         ========================================
       */}
-      <CategorySection />
-
-      {/* 
-        ========================================
-        SCENE 02: THE LIFESTYLE GALLERY
-        ========================================
-      */}
-      <div className="relative z-20 w-full max-w-7xl mx-auto px-6 space-y-[15vh] py-[15vh]">
-        
-        {/* Highlight 1 */}
-        <motion.div style={{ y: world1Y }} className="relative grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div className="flex justify-center relative">
-            <div className="absolute inset-0 bg-[#B2D235]/20 blur-[40px] rounded-full" />
-            <motion.img 
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0 }}
-              src="/bright_acai_bowl.png" 
-              alt="Bright Acai Bowl" 
-              className="relative z-10 w-full max-w-md h-auto rounded-[40px] drop-shadow-xl border-4 border-white" 
-            />
-          </div>
-          <div className="text-left">
-            <span className="font-sans text-sm tracking-[0.2em] text-[#B2D235] uppercase mb-4 block font-bold drop-shadow-sm">Fresh & Achievable</span>
-            <h2 className="font-display text-5xl md:text-7xl mb-6 text-[#1A5D2C] uppercase leading-[0.9]">Start Your <br/> Morning Right</h2>
-            <p className="font-sans text-lg font-light text-[#1A5D2C]/80 max-w-md mb-8">
-              Real food for real people. Our Açaí is sustainably wild-harvested and flash-frozen so you can create café-quality bowls in your own kitchen.
-            </p>
-            <Button className="bg-[#1A5D2C] text-white hover:bg-[#B2D235] hover:text-[#1A5D2C] shadow-[0_8px_30px_rgba(26,93,44,0.15)] rounded-full px-8 py-6 font-bold transition-colors">
-              Explore Açaí
-            </Button>
-          </div>
-        </motion.div>
-
-        {/* Highlight 2 */}
-        <motion.div style={{ y: world2Y }} className="relative grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div className="text-left order-2 md:order-1 md:pl-20">
-            <span className="font-sans text-sm tracking-[0.2em] text-[#F7931E] uppercase mb-4 block font-bold drop-shadow-sm">Sunshine in a cup</span>
-            <h2 className="font-display text-5xl md:text-7xl mb-6 text-[#1A5D2C] uppercase leading-[0.9]">Joyful <br/> Living</h2>
-            <p className="font-sans text-lg font-light text-[#1A5D2C]/80 max-w-md mb-8">
-              Healthy eating shouldn't be a chore. It should be vibrant, effortless, and full of bright tropical energy to fuel your outdoor adventures.
-            </p>
-            <Button className="bg-[#1A5D2C] text-white hover:bg-[#F7931E] hover:text-[#1A5D2C] shadow-[0_8px_30px_rgba(26,93,44,0.15)] rounded-full px-8 py-6 font-bold transition-colors">
-              Discover Cubes
-            </Button>
-          </div>
-          <div className="flex justify-center relative order-1 md:order-2">
-            <div className="absolute inset-0 bg-[#F7931E]/20 blur-[40px] rounded-full" />
-            <motion.img 
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              src="/smiling_woman_smoothie.png" 
-              alt="Woman with smoothie" 
-              className="relative z-10 w-full max-w-md h-auto rounded-[40px] drop-shadow-xl border-4 border-white" 
-            />
-          </div>
-        </motion.div>
-
-        {/* World 3: Ice Pops */}
-        <motion.div style={{ y: world3Y }} className="relative grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div className="flex justify-center relative">
-            <div className="absolute inset-0 bg-[url('/australian_summer_timber.png')] bg-cover bg-center opacity-60 blur-[40px] rounded-[60px]" />
-            <motion.img 
-              animate={{ y: [0, -25, 0], rotate: [0, -5, 0] }}
-              transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-              src="/acai-zero-sugar-original.png" 
-              alt="Ice Pops" 
-              className="relative z-10 w-full max-w-md h-auto drop-shadow-[0_40px_60px_rgba(0,0,0,0.8)]" 
-            />
-          </div>
-          <div className="text-left">
-            <span className="font-sans text-xs tracking-[0.4em] text-brand-orange uppercase mb-6 block drop-shadow-md">Summer Classic</span>
-            <h2 className="font-display text-5xl md:text-7xl mb-6 text-white drop-shadow-lg">Ice Pops</h2>
-            <p className="font-sans text-lg font-light text-white/80 max-w-md mb-8">
-              The healthy Australian summer classic. Zero added sugar, 100% real fruit joy.
-            </p>
-            <Button variant="outline" size="md" className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm">Shop Pops</Button>
-          </div>
-        </motion.div>
-
+      <div className="bg-[#FBB03B] relative z-20 pb-12">
+        <div className="text-center pb-8 pt-4">
+          <p className="text-[#1A5D2C] font-black uppercase tracking-widest text-sm flex justify-center items-center gap-2">
+            <Star className="w-4 h-4 fill-[#1A5D2C]" /> Trusted by families Australia-wide <Star className="w-4 h-4 fill-[#1A5D2C]" />
+          </p>
+        </div>
+        <CategorySection />
       </div>
 
       {/* 
         ========================================
-        SCENE 03: THE BRIGHT TIMELINE
+        SCENE 03: PRODUCT WORLDS
         ========================================
       */}
-      <section className="relative w-full z-20 bg-white py-32 rounded-t-[80px] overflow-hidden border-t border-[#1A5D2C]/5 shadow-[0_-20px_50px_rgba(0,0,0,0.02)]">
+      <section className="relative z-20 w-full max-w-7xl mx-auto px-6 space-y-32 py-24">
+        
+        {/* World 1: Smoothie Cubes */}
+        <div className="relative grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="flex justify-center relative group">
+            <div className="absolute inset-0 bg-[#29ABE2]/20 blur-[60px] rounded-full group-hover:bg-[#29ABE2]/40 transition-colors duration-700" />
+            <motion.div 
+              animate={{ y: [0, -15, 0] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <img 
+                src="/smoothie_cubes_splash.png" 
+                alt="Smoothie Cubes Splash" 
+                className="relative z-10 w-full max-w-lg h-auto rounded-[40px] shadow-2xl border-4 border-white transform transition-transform group-hover:scale-105" 
+              />
+            </motion.div>
+          </div>
+          <div className="text-left space-y-6">
+            <span className="inline-block px-4 py-2 bg-[#F7931E]/10 text-[#F7931E] rounded-full font-bold text-xs uppercase tracking-widest">
+              Blender Ready
+            </span>
+            <h2 className="font-display text-5xl md:text-7xl text-[#1A5D2C] uppercase leading-[0.9]">
+              Sunshine <br/> in a Cube
+            </h2>
+            <p className="font-sans text-lg font-light text-[#1A5D2C]/80 max-w-md">
+              Real mango and pineapple, perfectly portioned. Skip the prep and blend a world-class tropical smoothie in 30 seconds. Perfect for busy mornings.
+            </p>
+            <ul className="space-y-3 text-[#1A5D2C] font-bold text-sm">
+              <li className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 text-[#B2D235]" /> 100% Real Fruit</li>
+              <li className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 text-[#B2D235]" /> Zero Added Sugar</li>
+              <li className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 text-[#B2D235]" /> Perfect Portions</li>
+            </ul>
+            <Button className="mt-4 bg-[#F7931E] text-white hover:bg-[#1A5D2C] hover:text-white shadow-[0_8px_30px_rgba(247,147,30,0.3)] rounded-full px-10 py-6 font-bold transition-colors">
+              Shop Smoothie Cubes
+            </Button>
+          </div>
+        </div>
+
+        {/* World 2: Ice Pops */}
+        <div className="relative grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="text-left space-y-6 order-2 md:order-1 md:pl-20">
+            <span className="inline-block px-4 py-2 bg-[#E71D85]/10 text-[#E71D85] rounded-full font-bold text-xs uppercase tracking-widest">
+              Summer Classic
+            </span>
+            <h2 className="font-display text-5xl md:text-7xl text-[#1A5D2C] uppercase leading-[0.9]">
+              The Ultimate <br/> Beach Treat
+            </h2>
+            <p className="font-sans text-lg font-light text-[#1A5D2C]/80 max-w-md">
+              Dragon fruit and mixed berry ice pops that actually taste like real fruit. The guilt-free summer cooler your family will beg for.
+            </p>
+            <ul className="space-y-3 text-[#1A5D2C] font-bold text-sm">
+              <li className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 text-[#E71D85]" /> Kid Approved</li>
+              <li className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 text-[#E71D85]" /> High in Antioxidants</li>
+              <li className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 text-[#E71D85]" /> Dairy Free</li>
+            </ul>
+            <Button className="mt-4 bg-[#E71D85] text-white hover:bg-[#1A5D2C] shadow-[0_8px_30px_rgba(231,29,133,0.3)] rounded-full px-10 py-6 font-bold transition-colors">
+              Shop Ice Pops
+            </Button>
+          </div>
+          <div className="flex justify-center relative order-1 md:order-2 group">
+            <div className="absolute inset-0 bg-[#E71D85]/20 blur-[60px] rounded-full group-hover:bg-[#E71D85]/40 transition-colors duration-700" />
+            <motion.div 
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+            >
+              <img 
+                src="/ice_pops_beach.png" 
+                alt="Ice Pops Beach" 
+                className="relative z-10 w-full max-w-lg h-auto rounded-[40px] shadow-2xl border-4 border-white transform transition-transform group-hover:scale-105" 
+              />
+            </motion.div>
+          </div>
+        </div>
+
+      </section>
+
+      {/* 
+        ========================================
+        SCENE 04: LIFESTYLE STORYTELLING
+        ========================================
+      */}
+      <section className="bg-white py-32 border-y border-[#1A5D2C]/5 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16 space-y-4">
+            <h2 className="font-display text-4xl md:text-6xl text-[#1A5D2C] uppercase leading-[0.9]">
+              Fuelling The <br/> Australian Lifestyle
+            </h2>
+            <p className="text-[#1A5D2C]/70 max-w-lg mx-auto text-lg font-light">From the surf to the school run, we provide the clean, vibrant energy to make every day brighter.</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+            <div className="md:col-span-8 rounded-[40px] overflow-hidden relative group h-[400px]">
+              <img src="/family_breakfast.png" alt="Family Breakfast" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1A5D2C]/80 to-transparent flex items-end p-8">
+                <p className="text-white font-display text-3xl">Happy Mornings</p>
+              </div>
+            </div>
+            <div className="md:col-span-4 rounded-[40px] overflow-hidden relative group h-[400px] bg-[#B2D235] p-8 flex flex-col justify-center items-center text-center">
+              <Heart className="w-16 h-16 text-white mb-6" />
+              <h3 className="font-display text-3xl text-white mb-4">Join The Club</h3>
+              <p className="text-white/90 text-sm mb-8">Get 10% off your first order when you join the Austropical family.</p>
+              <Button className="bg-white text-[#1A5D2C] rounded-full font-bold px-8 py-4">Sign Up Now</Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 
+        ========================================
+        SCENE 05: THE ORIGIN STORY
+        ========================================
+      */}
+      <section className="relative w-full z-20 bg-[#FDFBF7] py-32 overflow-hidden">
         
         <div className="relative z-20 max-w-5xl mx-auto px-6 text-center space-y-16">
           <div className="space-y-6">
-            <span className="text-[#F7931E] font-bold uppercase tracking-[0.2em] text-sm">The Journey</span>
+            <span className="text-[#F7931E] font-bold uppercase tracking-[0.2em] text-sm bg-[#F7931E]/10 px-6 py-2 rounded-full">Sustainably Sourced</span>
             <h2 className="font-display text-5xl md:text-[5rem] text-[#1A5D2C] leading-[0.9] uppercase">
               From the Amazon <br/>to Australia
             </h2>
@@ -255,26 +251,26 @@ export default function DreamlandHomepage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-12">
-            <div className="bg-[#FDFBF7] border border-[#1A5D2C]/10 p-8 rounded-[40px] text-left hover:bg-white hover:shadow-xl transition-all duration-300 group">
-              <div className="w-16 h-16 bg-[#B2D235] rounded-full flex items-center justify-center text-[#1A5D2C] text-2xl font-black mb-6 group-hover:scale-110 transition-transform">01</div>
+            <div className="bg-white border-2 border-[#1A5D2C]/5 p-10 rounded-[40px] text-left hover:shadow-[0_20px_50px_rgba(26,93,44,0.1)] transition-all duration-300 group hover:-translate-y-2">
+              <div className="w-16 h-16 bg-[#B2D235] rounded-full flex items-center justify-center text-[#1A5D2C] text-2xl font-black mb-6 group-hover:rotate-12 transition-transform">01</div>
               <h3 className="text-2xl font-display uppercase text-[#1A5D2C] mb-3">Wild Harvest</h3>
               <p className="text-sm text-[#1A5D2C]/70">Hand-picked by local families in the Amazon rainforest, ensuring sustainability and fair trade.</p>
             </div>
-            <div className="bg-[#FDFBF7] border border-[#1A5D2C]/10 p-8 rounded-[40px] text-left hover:bg-white hover:shadow-xl transition-all duration-300 mt-0 md:mt-12 group">
-              <div className="w-16 h-16 bg-[#F7931E] rounded-full flex items-center justify-center text-white text-2xl font-black mb-6 group-hover:scale-110 transition-transform">02</div>
+            <div className="bg-white border-2 border-[#1A5D2C]/5 p-10 rounded-[40px] text-left hover:shadow-[0_20px_50px_rgba(247,147,30,0.1)] transition-all duration-300 mt-0 md:mt-12 group hover:-translate-y-2">
+              <div className="w-16 h-16 bg-[#F7931E] rounded-full flex items-center justify-center text-white text-2xl font-black mb-6 group-hover:rotate-12 transition-transform">02</div>
               <h3 className="text-2xl font-display uppercase text-[#1A5D2C] mb-3">Flash Frozen</h3>
               <p className="text-sm text-[#1A5D2C]/70">Instantly frozen at the source to preserve the vibrant nutrients, taste, and natural energy.</p>
             </div>
-            <div className="bg-[#FDFBF7] border border-[#1A5D2C]/10 p-8 rounded-[40px] text-left hover:bg-white hover:shadow-xl transition-all duration-300 mt-0 md:mt-24 group">
-              <div className="w-16 h-16 bg-[#29ABE2] rounded-full flex items-center justify-center text-white text-2xl font-black mb-6 group-hover:scale-110 transition-transform">03</div>
+            <div className="bg-white border-2 border-[#1A5D2C]/5 p-10 rounded-[40px] text-left hover:shadow-[0_20px_50px_rgba(41,171,226,0.1)] transition-all duration-300 mt-0 md:mt-24 group hover:-translate-y-2">
+              <div className="w-16 h-16 bg-[#29ABE2] rounded-full flex items-center justify-center text-white text-2xl font-black mb-6 group-hover:rotate-12 transition-transform">03</div>
               <h3 className="text-2xl font-display uppercase text-[#1A5D2C] mb-3">Pure Joy</h3>
               <p className="text-sm text-[#1A5D2C]/70">Blended into perfect portions for your morning rituals, post-surf fuel, and family breakfasts.</p>
             </div>
           </div>
           
           <div className="pt-20">
-            <Button className="bg-[#1A5D2C] text-white hover:bg-[#F7931E] hover:text-[#1A5D2C] shadow-[0_8px_30px_rgba(247,147,30,0.3)] rounded-full px-12 py-6 font-bold transition-colors">
-              Discover Our Goodness
+            <Button className="bg-[#1A5D2C] text-white hover:bg-[#F7931E] hover:text-[#1A5D2C] shadow-[0_8px_30px_rgba(247,147,30,0.3)] rounded-full px-12 py-6 font-bold transition-colors text-lg">
+              Learn About Sustainability
             </Button>
           </div>
         </div>
