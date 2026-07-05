@@ -99,11 +99,12 @@ export default function PremiumFMCGHomepage() {
           {/* Right Column: Floating Ledge Image and Badges */}
           <div className="flex-1 relative w-full h-[400px] md:h-[600px] z-20 mt-16 lg:mt-0">
             {/* Main Ledge Image */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <FloatingElement yOffset={15} duration={6}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/range-ledge.png" alt="Austropical Range" className="w-full max-w-[800px] h-auto object-contain drop-shadow-[0_30px_50px_rgba(0,0,0,0.4)]" />
-              </FloatingElement>
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <FloatingElement 
+                src="/range-ledge.png" 
+                alt="Austropical Range" 
+                className="w-full max-w-[800px] h-auto drop-shadow-[0_30px_50px_rgba(0,0,0,0.4)]"
+              />
             </div>
 
             {/* Floating Trust Badges scattered around the image */}
