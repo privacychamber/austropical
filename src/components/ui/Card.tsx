@@ -13,7 +13,7 @@ interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
 export function Card({ children, className, animate = true, ...props }: CardProps) {
   if (!animate) {
     return (
-      <div className={cn("bg-white rounded-[28px] p-8 shadow-sm border border-brand-purple/5", className)} {...props}>
+      <div className={cn("bg-white rounded-[28px] p-8 shadow-sm border border-brand-charcoal/5", className)} {...props}>
         {children}
       </div>
     );
@@ -24,7 +24,7 @@ export function Card({ children, className, animate = true, ...props }: CardProp
       variants={TILT_VARIANTS}
       initial="rest"
       whileHover="hover"
-      className={cn("bg-white rounded-[28px] p-8 shadow-sm border border-brand-purple/5 cursor-pointer relative overflow-hidden", className)}
+      className={cn("bg-white rounded-[28px] p-8 shadow-sm border border-brand-charcoal/5 cursor-pointer relative overflow-hidden", className)}
       {...props}
     >
       {children}

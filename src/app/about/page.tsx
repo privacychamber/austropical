@@ -8,15 +8,15 @@ import { CheckCircle2, ShieldCheck, Heart, Leaf, Star, Globe } from "lucide-reac
 
 export default function AboutPage() {
   return (
-    <div className="bg-brand-cream text-brand-purple min-h-screen relative overflow-x-hidden font-sans">
+    <div className="bg-brand-ivory text-brand-charcoal min-h-screen relative overflow-x-hidden font-sans">
       <Navbar />
 
       {/* Hero Header with Amazon forest overlay */}
-      <section className="relative pt-48 pb-32 flex items-center justify-center text-center text-white bg-brand-purple">
+      <section className="relative pt-48 pb-32 flex items-center justify-center text-center text-white bg-brand-charcoal">
         <div 
           className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1400&q=80')] bg-cover bg-center opacity-40 mix-blend-overlay"
         />
-        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-brand-cream to-transparent pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-brand-ivory to-transparent pointer-events-none" />
         
         <div className="max-w-container mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10 text-left">
           <div className="lg:col-span-7 space-y-6">
@@ -51,19 +51,19 @@ export default function AboutPage() {
       <section className="py-20 max-w-container mx-auto px-6 md:px-12 space-y-16 text-left">
         <div className="text-center space-y-4 max-w-2xl mx-auto">
           <span className="text-xs font-black text-brand-orange uppercase tracking-widest">Our Roots</span>
-          <h2 className="text-3xl md:text-5xl font-black font-display text-brand-purple">OUR STORY</h2>
+          <h2 className="text-3xl md:text-5xl font-black font-display text-brand-charcoal">OUR STORY</h2>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
           {/* Left Text */}
           <div className="lg:col-span-7 space-y-6">
-            <p className="text-brand-purple/80 text-sm md:text-base font-semibold leading-relaxed">
+            <p className="text-brand-charcoal/80 text-sm md:text-base font-semibold leading-relaxed">
               Austropical was founded by a team of wellness enthusiasts who fell in love with the vibrant energy and rich nutrition of Amazonian açaí.
             </p>
-            <p className="text-brand-purple/80 text-sm md:text-base font-semibold leading-relaxed">
+            <p className="text-brand-charcoal/80 text-sm md:text-base font-semibold leading-relaxed">
               They saw an opportunity to bring this pure, nutrient-dense superfood to Australia, but they wanted to do it differently. They wanted to create a brand that prioritized sustainability, ethical sourcing, and transparency.
             </p>
-            <p className="text-brand-purple/80 text-sm md:text-base font-semibold leading-relaxed">
+            <p className="text-brand-charcoal/80 text-sm md:text-base font-semibold leading-relaxed">
               So they traveled to the Amazon, built relationships with local cooperatives, and established a direct supply chain that guarantees the highest quality pulp and fair compensation for the harvesters.
             </p>
           </div>
@@ -71,7 +71,7 @@ export default function AboutPage() {
           {/* Right Image */}
           <div className="lg:col-span-5 relative group">
             <div className="absolute inset-0 bg-brand-orange/15 rounded-card blur-md scale-95 pointer-events-none" />
-            <div className="rounded-card overflow-hidden border border-brand-purple/5 aspect-[4/3] shadow-md relative">
+            <div className="rounded-card overflow-hidden border border-brand-charcoal/5 aspect-[4/3] shadow-md relative">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img 
                 src="https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=600&q=80" 
@@ -84,7 +84,7 @@ export default function AboutPage() {
 
         {/* Global Impact Banner */}
         <div className="bg-brand-orange/10 border-2 border-brand-orange/20 p-6 rounded-card text-center max-w-4xl mx-auto">
-          <p className="text-brand-purple font-extrabold text-sm md:text-base">
+          <p className="text-brand-charcoal font-extrabold text-sm md:text-base">
             🌱 Every product we sell helps fund global reforestation and ocean conservation initiatives.
           </p>
         </div>
@@ -93,8 +93,8 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center pt-8">
           {/* Left Delivery Image */}
           <div className="lg:col-span-5 relative order-last lg:order-first group">
-            <div className="absolute inset-0 bg-brand-purple/10 rounded-card blur-md scale-95 pointer-events-none" />
-            <div className="rounded-card overflow-hidden border border-brand-purple/5 aspect-[4/3] shadow-md relative">
+            <div className="absolute inset-0 bg-brand-charcoal/10 rounded-card blur-md scale-95 pointer-events-none" />
+            <div className="rounded-card overflow-hidden border border-brand-charcoal/5 aspect-[4/3] shadow-md relative">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img 
                 src="https://images.unsplash.com/photo-1553530666-ba11a7da3888?auto=format&fit=crop&w=600&q=80" 
@@ -106,18 +106,18 @@ export default function AboutPage() {
 
           {/* Right Text */}
           <div className="lg:col-span-7 space-y-6">
-            <p className="text-brand-purple/80 text-sm md:text-base font-semibold leading-relaxed">
+            <p className="text-brand-charcoal/80 text-sm md:text-base font-semibold leading-relaxed">
               Today, Austropical is a trusted provider of premium superfoods across Australia. We serve health-conscious individuals, smoothie bars, and cafes who value quality and sustainability.
             </p>
-            <p className="text-brand-purple/80 text-sm md:text-base font-semibold leading-relaxed">
+            <p className="text-brand-charcoal/80 text-sm md:text-base font-semibold leading-relaxed">
               Our products are flash-frozen at peak ripeness to lock in maximum nutrition and flavor. We never use artificial additives, preservatives, or excess sugars.
             </p>
-            <p className="text-brand-purple/80 text-sm md:text-base font-semibold leading-relaxed">
+            <p className="text-brand-charcoal/80 text-sm md:text-base font-semibold leading-relaxed">
               From the rainforest to your bowl, we are committed to providing the purest, most delicious superfoods on earth.
             </p>
             
-            <div className="bg-brand-purple/5 border border-brand-purple/10 p-4 rounded-btn max-w-md">
-              <p className="text-brand-purple text-xs font-black uppercase tracking-wider">
+            <div className="bg-brand-charcoal/5 border border-brand-charcoal/10 p-4 rounded-btn max-w-md">
+              <p className="text-brand-charcoal text-xs font-black uppercase tracking-wider">
                 🌱 100% Traceable. Direct from Amazonian co-ops to your bowl.
               </p>
             </div>
@@ -126,17 +126,17 @@ export default function AboutPage() {
       </section>
 
       {/* Our Mission Section */}
-      <section className="py-20 bg-white/40 border-y border-brand-purple/5 text-left">
+      <section className="py-20 bg-white/40 border-y border-brand-charcoal/5 text-left">
         <div className="max-w-container mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
           <div className="lg:col-span-7 space-y-6">
             <span className="text-xs font-black text-brand-orange uppercase tracking-widest">Purpose</span>
-            <h2 className="text-3xl md:text-5xl font-black font-display text-brand-purple">OUR MISSION</h2>
-            <p className="text-brand-purple/85 text-base md:text-lg font-semibold leading-relaxed">
+            <h2 className="text-3xl md:text-5xl font-black font-display text-brand-charcoal">OUR MISSION</h2>
+            <p className="text-brand-charcoal/85 text-base md:text-lg font-semibold leading-relaxed">
               Our mission is simple: to make healthy living delicious and sustainable. We believe that what you put into your body matters, and we are committed to providing the highest quality, most nutrient-dense superfoods on earth. We strive to inspire a healthier, happier world, one superfood bowl at a time.
             </p>
           </div>
           <div className="lg:col-span-5">
-            <div className="rounded-card overflow-hidden border border-brand-purple/5 aspect-square max-w-sm mx-auto shadow-md">
+            <div className="rounded-card overflow-hidden border border-brand-charcoal/5 aspect-square max-w-sm mx-auto shadow-md">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img 
                 src="https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=500&q=80" 
@@ -152,8 +152,8 @@ export default function AboutPage() {
       <section className="py-20 max-w-container mx-auto px-6 md:px-12 space-y-12 text-left">
         <div className="text-center space-y-4 max-w-2xl mx-auto">
           <span className="text-xs font-black text-brand-orange uppercase tracking-widest">Core Principles</span>
-          <h2 className="text-3xl md:text-5xl font-black font-display text-brand-purple">OUR VALUES</h2>
-          <p className="text-brand-purple/75 text-sm font-semibold">We guide our decisions with these core values:</p>
+          <h2 className="text-3xl md:text-5xl font-black font-display text-brand-charcoal">OUR VALUES</h2>
+          <p className="text-brand-charcoal/75 text-sm font-semibold">We guide our decisions with these core values:</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
@@ -179,13 +179,13 @@ export default function AboutPage() {
               desc: "We freeze-dry and freeze-lock our products at peak ripeness to deliver maximum nutrition."
             }
           ].map((val, idx) => (
-            <div key={idx} className="glass-card p-6 rounded-card border border-brand-purple/5 space-y-3 flex flex-col justify-between">
+            <div key={idx} className="glass-card p-6 rounded-card border border-brand-charcoal/5 space-y-3 flex flex-col justify-between">
               <div className="space-y-2">
                 <div className="w-8 h-8 rounded-full bg-brand-orange/15 flex items-center justify-center text-brand-orange font-bold text-xs">
                   {idx + 1}
                 </div>
-                <h4 className="text-base font-bold font-display text-brand-purple">{val.title}</h4>
-                <p className="text-brand-purple/70 text-xs leading-relaxed font-semibold">{val.desc}</p>
+                <h4 className="text-base font-bold font-display text-brand-charcoal">{val.title}</h4>
+                <p className="text-brand-charcoal/70 text-xs leading-relaxed font-semibold">{val.desc}</p>
               </div>
             </div>
           ))}
@@ -193,38 +193,38 @@ export default function AboutPage() {
       </section>
 
       {/* A Word From Our Founder Section */}
-      <section className="py-24 bg-brand-purple text-white text-left relative overflow-hidden">
-        <div className="absolute top-1/2 right-10 w-48 h-48 bg-brand-pink/15 rounded-full blur-[100px] pointer-events-none" />
+      <section className="py-24 bg-brand-charcoal text-white text-left relative overflow-hidden">
+        <div className="absolute top-1/2 right-10 w-48 h-48 bg-brand-orange/15 rounded-full blur-[100px] pointer-events-none" />
         <div className="max-w-3xl mx-auto px-6 relative z-10">
-          <div className="bg-white rounded-card border border-white/10 p-8 md:p-12 text-brand-purple space-y-6 shadow-2xl relative">
+          <div className="bg-white rounded-card border border-white/10 p-8 md:p-12 text-brand-charcoal space-y-6 shadow-2xl relative">
             <div className="absolute -top-4 -left-4 w-12 h-12 bg-brand-orange rounded-full flex items-center justify-center text-white text-3xl font-black font-display select-none">
               “
             </div>
             
-            <h3 className="text-2xl font-black font-display text-brand-purple">A WORD FROM OUR FOUNDER</h3>
+            <h3 className="text-2xl font-black font-display text-brand-charcoal">A WORD FROM OUR FOUNDER</h3>
             
-            <p className="text-brand-purple/90 text-sm md:text-base font-semibold leading-relaxed italic">
+            <p className="text-brand-charcoal/90 text-sm md:text-base font-semibold leading-relaxed italic">
               At Austropical, we believe that health and sustainability go hand in hand. Our mission is to provide the highest quality, most nutrient-dense superfoods while protecting the ecosystems that produce them. We are proud of our partnerships and the positive impact we make together. Thank you for being a part of our journey.
             </p>
 
-            <div className="pt-4 border-t border-brand-purple/10 flex items-center justify-between">
+            <div className="pt-4 border-t border-brand-charcoal/10 flex items-center justify-between">
               <div>
-                <p className="text-base font-bold font-display text-brand-purple">Varun</p>
+                <p className="text-base font-bold font-display text-brand-charcoal">Varun</p>
                 <p className="text-[10px] font-black text-brand-orange uppercase tracking-wider">Founder, Austropical Superfoods</p>
               </div>
-              <Heart className="w-6 h-6 text-brand-pink fill-brand-pink" />
+              <Heart className="w-6 h-6 text-brand-orange fill-brand-orange" />
             </div>
           </div>
         </div>
       </section>
 
       {/* Detailed Standards Certifications */}
-      <section className="py-20 bg-white/40 border-t border-brand-purple/5 text-left">
+      <section className="py-20 bg-white/40 border-t border-brand-charcoal/5 text-left">
         <div className="max-w-container mx-auto px-6 md:px-12 space-y-16">
           <div className="text-center space-y-4 max-w-2xl mx-auto">
             <span className="text-xs font-black text-brand-orange uppercase tracking-widest">Quality Assurance</span>
-            <h3 className="text-3xl md:text-5xl font-black font-display text-brand-purple">OUR CERTIFICATIONS</h3>
-            <p className="text-brand-purple/75 text-sm font-semibold">We hold ourselves to the highest standards of quality and purity:</p>
+            <h3 className="text-3xl md:text-5xl font-black font-display text-brand-charcoal">OUR CERTIFICATIONS</h3>
+            <p className="text-brand-charcoal/75 text-sm font-semibold">We hold ourselves to the highest standards of quality and purity:</p>
           </div>
 
           {/* Grid items */}
@@ -267,13 +267,13 @@ export default function AboutPage() {
                 desc: "Direct funding of schools and healthcare in indigenous farming regions."
               }
             ].map((item, idx) => (
-              <div key={idx} className="bg-white p-6 rounded-card border border-brand-purple/5 shadow-sm space-y-3 flex flex-col justify-between">
+              <div key={idx} className="bg-white p-6 rounded-card border border-brand-charcoal/5 shadow-sm space-y-3 flex flex-col justify-between">
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="w-5 h-5 text-brand-green flex-shrink-0" />
-                    <h4 className="text-base font-bold font-display text-brand-purple">{item.title}</h4>
+                    <h4 className="text-base font-bold font-display text-brand-charcoal">{item.title}</h4>
                   </div>
-                  <p className="text-brand-purple/75 text-xs font-semibold leading-relaxed">{item.desc}</p>
+                  <p className="text-brand-charcoal/75 text-xs font-semibold leading-relaxed">{item.desc}</p>
                 </div>
               </div>
             ))}

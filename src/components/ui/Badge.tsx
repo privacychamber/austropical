@@ -18,8 +18,8 @@ export function Badge({ children, variant = "generic", className, size = "md" }:
   if (variant === "vegan") {
     return (
       <div className={cn("relative z-10 animate-float-slow drop-shadow-md", className)}>
-         <div className="bg-brand-yellow rounded-full flex items-center justify-center p-3 border-4 border-dashed border-brand-purple">
-            <span className="text-brand-purple font-display font-bold text-center leading-tight uppercase text-[10px]">
+         <div className="bg-brand-yellow rounded-full flex items-center justify-center p-3 border-4 border-dashed border-brand-charcoal">
+            <span className="text-brand-charcoal font-display font-bold text-center leading-tight uppercase text-[10px]">
               100%<br/>Vegan
             </span>
          </div>
@@ -30,7 +30,7 @@ export function Badge({ children, variant = "generic", className, size = "md" }:
   if (variant === "glutenFree") {
     return (
       <div className={cn("relative z-10 animate-float-reverse drop-shadow-md", className)}>
-        <div className="bg-brand-pink text-white mask-star flex items-center justify-center p-4">
+        <div className="bg-brand-orange text-white mask-star flex items-center justify-center p-4">
            <span className="font-display font-bold text-center leading-tight uppercase text-[10px]">
              Gluten<br/>Free
            </span>
@@ -46,7 +46,7 @@ export function Badge({ children, variant = "generic", className, size = "md" }:
   };
 
   return (
-    <div className={cn("inline-flex items-center justify-center rounded-full bg-brand-cream text-brand-purple border border-brand-purple/10 font-medium", sizes[size], className)}>
+    <div className={cn("inline-flex items-center justify-center rounded-full bg-brand-ivory text-brand-charcoal border border-brand-charcoal/10 font-medium", sizes[size], className)}>
       {children}
     </div>
   );

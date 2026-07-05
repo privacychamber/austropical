@@ -21,15 +21,15 @@ export const GOODNESS_CARDS = [
     title: "Açai Superberry",
     description: "Packed with active antioxidants and vitamins.",
     icon: Sparkles,
-    color: "bg-brand-purple",
-    textColor: "text-brand-purple"
+    color: "bg-brand-charcoal",
+    textColor: "text-brand-charcoal"
   },
   {
     title: "Pure & Natural",
     description: "No syrups, chemicals, or refined sugars added.",
     icon: Droplet,
-    color: "bg-brand-pink",
-    textColor: "text-brand-pink"
+    color: "bg-brand-orange",
+    textColor: "text-brand-orange"
   },
   {
     title: "Frozen at Peak",
@@ -42,8 +42,8 @@ export const GOODNESS_CARDS = [
     title: "Good for You",
     description: "Clean organic nutrition to fuel your day.",
     icon: Heart,
-    color: "bg-brand-purple-light",
-    textColor: "text-brand-purple-light"
+    color: "bg-brand-charcoal-light",
+    textColor: "text-brand-charcoal-light"
   }
 ];
 

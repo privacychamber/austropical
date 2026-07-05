@@ -55,7 +55,7 @@ export default function Footer() {
   return (
     <footer className="bg-brand-charcoal text-white pt-24 pb-12 font-sans overflow-hidden border-t border-brand-charcoal/10 relative z-10">
       {/* Background radial soft light glow */}
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-brand-pink/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-brand-orange/5 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-brand-orange/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-container mx-auto px-6 md:px-12">
@@ -65,7 +65,7 @@ export default function Footer() {
           <div className="lg:col-span-4 space-y-6">
             <Link href="/" className="inline-flex items-center gap-2 group">
               <div className="w-9 h-9 bg-gradient-to-tr from-brand-orange to-brand-yellow rounded-btn flex items-center justify-center shadow-md">
-                <span className="text-brand-purple font-black text-lg">A</span>
+                <span className="text-brand-charcoal font-black text-lg">A</span>
               </div>
               <div className="flex flex-col">
                 <span className="text-xl font-black font-display tracking-tight text-white leading-none">
@@ -84,7 +84,7 @@ export default function Footer() {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noreferrer"
-                className="w-10 h-10 rounded-full bg-white/5 hover:bg-brand-orange hover:text-brand-purple transition-all duration-300 flex items-center justify-center text-white/80"
+                className="w-10 h-10 rounded-full bg-white/5 hover:bg-brand-orange hover:text-brand-charcoal transition-all duration-300 flex items-center justify-center text-white/80"
                 aria-label="Instagram"
               >
                 <InstagramIcon className="w-5 h-5" />
@@ -93,7 +93,7 @@ export default function Footer() {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noreferrer"
-                className="w-10 h-10 rounded-full bg-white/5 hover:bg-brand-orange hover:text-brand-purple transition-all duration-300 flex items-center justify-center text-white/80"
+                className="w-10 h-10 rounded-full bg-white/5 hover:bg-brand-orange hover:text-brand-charcoal transition-all duration-300 flex items-center justify-center text-white/80"
                 aria-label="Facebook"
               >
                 <FacebookIcon className="w-5 h-5" />

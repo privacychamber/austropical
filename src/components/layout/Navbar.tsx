@@ -113,7 +113,7 @@ export default function Navbar() {
 
                 {/* Sub Menu Dropdown for Shop */}
                 {link.hasDropdown && (
-                  <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-80 bg-brand-purple border border-white/15 rounded-card p-5 shadow-2xl opacity-0 invisible group-hover/link:opacity-100 group-hover/link:visible transition-all duration-350 transform translate-y-2 group-hover/link:translate-y-0 z-50">
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-80 bg-brand-charcoal border border-white/15 rounded-card p-5 shadow-2xl opacity-0 invisible group-hover/link:opacity-100 group-hover/link:visible transition-all duration-350 transform translate-y-2 group-hover/link:translate-y-0 z-50">
                     <div className="grid grid-cols-1 gap-4">
                       <div>
                         <p className="text-xs font-black text-brand-orange uppercase tracking-wider mb-2">
@@ -175,7 +175,7 @@ export default function Navbar() {
             <div className="relative group/link">
               <Link
                 href="/admin"
-                className="text-xs font-black text-brand-orange border border-brand-orange/30 px-3 py-1 rounded-btn hover:bg-brand-orange hover:text-brand-purple transition-all duration-300"
+                className="text-xs font-black text-brand-orange border border-brand-orange/30 px-3 py-1 rounded-btn hover:bg-brand-orange hover:text-brand-charcoal transition-all duration-300"
               >
                 CMS Admin
               </Link>
@@ -239,12 +239,12 @@ export default function Navbar() {
 
             <button
               onClick={() => setCartOpen(true)}
-              className="bg-brand-orange hover:bg-brand-yellow hover:scale-105 transition-all text-brand-purple p-2.5 rounded-full flex items-center justify-center relative shadow-md"
+              className="bg-brand-orange hover:bg-brand-yellow hover:scale-105 transition-all text-brand-charcoal p-2.5 rounded-full flex items-center justify-center relative shadow-md"
               aria-label="Open cart"
             >
               <ShoppingBag className="w-5 h-5" />
               {totalCartItems > 0 && (
-                <span className="absolute -top-1.5 -right-1.5 bg-white text-brand-purple text-[10px] font-black w-4.5 h-4.5 rounded-full flex items-center justify-center border border-brand-purple/20">
+                <span className="absolute -top-1.5 -right-1.5 bg-white text-brand-charcoal text-[10px] font-black w-4.5 h-4.5 rounded-full flex items-center justify-center border border-brand-charcoal/20">
                   {totalCartItems}
                 </span>
               )}
@@ -276,7 +276,7 @@ export default function Navbar() {
             >
               <ShoppingBag className="w-6 h-6" />
               {totalCartItems > 0 && (
-                <span className="absolute -top-1 -right-1 bg-brand-orange text-brand-purple text-[9px] font-black w-4.5 h-4.5 rounded-full flex items-center justify-center">
+                <span className="absolute -top-1 -right-1 bg-brand-orange text-brand-charcoal text-[9px] font-black w-4.5 h-4.5 rounded-full flex items-center justify-center">
                   {totalCartItems}
                 </span>
               )}
@@ -299,7 +299,7 @@ export default function Navbar() {
 
       {/* Search Overlay */}
       {searchOpen && (
-        <div className="fixed inset-0 z-50 bg-brand-purple/95 backdrop-blur-md flex flex-col justify-start pt-32 px-6">
+        <div className="fixed inset-0 z-50 bg-brand-charcoal/95 backdrop-blur-md flex flex-col justify-start pt-32 px-6">
           <button
             onClick={() => setSearchOpen(false)}
             className="absolute top-8 right-8 p-3 text-white/80 hover:text-white rounded-full bg-white/5 transition-all"
@@ -359,7 +359,7 @@ export default function Navbar() {
 
       {/* Mobile Drawer Navigation Menu */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-50 bg-brand-purple flex flex-col font-sans">
+        <div className="fixed inset-0 z-50 bg-brand-charcoal flex flex-col font-sans">
           {/* Header */}
           <div className="flex items-center justify-between px-6 py-6 border-b border-white/10">
             <Link href="/" className="flex items-center" onClick={() => setMobileMenuOpen(false)}>

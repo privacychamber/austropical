@@ -95,7 +95,7 @@ function ShopContent() {
       {/* Hero Header with blue/purple leafy background and sticker header */}
       <section className="pt-40 pb-20 bg-[#2A1147] bg-leaf-pattern text-white text-center relative overflow-hidden">
         {/* Ambient glow backgrounds */}
-        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-brand-pink/20 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-brand-orange/20 rounded-full blur-[100px] pointer-events-none" />
         
         {/* Floating Fruit Elements matching the mockup */}
         <motion.div 
@@ -154,7 +154,7 @@ function ShopContent() {
                 onClick={() => setSelectedCategory(cat)}
                 className={`text-[10px] md:text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-full border transition-all duration-300 ${
                   selectedCategory === cat
-                    ? "bg-brand-purple border-brand-purple text-white shadow-md"
+                    ? "bg-brand-charcoal border-brand-charcoal text-white shadow-md"
                     : "bg-[var(--card-bg)] border-[var(--border-color)] text-[var(--foreground)] hover:border-[var(--foreground)] hover:bg-[var(--foreground)]/5"
                 }`}
               >
@@ -204,14 +204,14 @@ function ShopContent() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                className="text-center py-20 bg-white border border-brand-purple/5 rounded-card space-y-4"
+                className="text-center py-20 bg-white border border-brand-charcoal/5 rounded-card space-y-4"
               >
                 <Search className="w-16 h-16 text-[#2A1147]/20 mx-auto" />
                 <div>
                   <p className="text-lg font-bold text-[#2A1147]">No products match your criteria</p>
                   <button
                     onClick={resetFilters}
-                    className="mt-4 px-6 py-2.5 bg-[#2A1147] hover:bg-brand-purple-light text-white text-xs font-bold rounded-btn transition-colors"
+                    className="mt-4 px-6 py-2.5 bg-[#2A1147] hover:bg-brand-charcoal-light text-white text-xs font-bold rounded-btn transition-colors"
                   >
                     Reset Filters
                   </button>
@@ -279,12 +279,12 @@ function ShopContent() {
                         {/* Wishlist Heart Button */}
                         <button
                           onClick={() => toggleWishlist(product.id)}
-                          className="absolute top-4 right-4 p-2.5 rounded-full bg-white/80 hover:bg-white text-brand-purple hover:text-brand-pink transition-colors shadow-md z-20"
+                          className="absolute top-4 right-4 p-2.5 rounded-full bg-white/80 hover:bg-white text-brand-charcoal hover:text-brand-orange transition-colors shadow-md z-20"
                           aria-label="Toggle wishlist"
                         >
                           <Heart
                             className={`w-4 h-4 ${
-                              isInWishlist(product.id) ? "fill-brand-pink text-brand-pink" : ""
+                              isInWishlist(product.id) ? "fill-brand-orange text-brand-orange" : ""
                             }`}
                           />
                         </button>
@@ -337,7 +337,7 @@ function ShopContent() {
       </motion.section>
 
       {/* Squeeze the Day UGC slider */}
-      <section className="py-20 bg-white/40 border-t border-brand-purple/5">
+      <section className="py-20 bg-white/40 border-t border-brand-charcoal/5">
         <div className="max-w-container mx-auto px-6 md:px-12 text-center space-y-12">
           <div className="space-y-4 max-w-xl mx-auto">
             <span className="text-xs font-black text-brand-orange uppercase tracking-widest">Squeeze the day</span>
@@ -376,7 +376,7 @@ function ShopContent() {
               >
                 <motion.div 
                   whileHover={{ scale: 1.02 }}
-                  className="aspect-square rounded-card overflow-hidden border border-brand-purple/10 shadow-sm cursor-pointer"
+                  className="aspect-square rounded-card overflow-hidden border border-brand-charcoal/10 shadow-sm cursor-pointer"
                 >
                   <img src={ugc.url} alt="UGC social" className="w-full h-full object-cover" />
                 </motion.div>
@@ -396,7 +396,7 @@ function ShopContent() {
 export default function ShopPage() {
   return (
     <Suspense fallback={
-      <div className="min-h-screen bg-brand-cream flex items-center justify-center">
+      <div className="min-h-screen bg-brand-ivory flex items-center justify-center">
         <div className="w-12 h-12 border-4 border-brand-orange border-t-transparent rounded-full animate-spin"></div>
       </div>
     }>

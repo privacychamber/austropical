@@ -22,12 +22,12 @@ export default function FAQPage() {
   );
 
   return (
-    <div className="bg-brand-cream text-brand-purple min-h-screen relative overflow-x-hidden font-sans">
+    <div className="bg-brand-ivory text-brand-charcoal min-h-screen relative overflow-x-hidden font-sans">
       <Navbar />
 
       {/* Hero Header */}
-      <section className="pt-36 pb-12 bg-brand-purple text-white text-center relative">
-        <div className="absolute inset-0 bg-brand-pink/5 blur-[80px]" />
+      <section className="pt-36 pb-12 bg-brand-charcoal text-white text-center relative">
+        <div className="absolute inset-0 bg-brand-orange/5 blur-[80px]" />
         <div className="max-w-container mx-auto px-6 md:px-12 relative z-10 space-y-4">
           <span className="text-xs font-black text-brand-orange bg-brand-orange/15 px-3 py-1.5 rounded-btn uppercase tracking-wider">
             Help Center
@@ -51,18 +51,18 @@ export default function FAQPage() {
             placeholder="Search FAQs..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-10 pr-4 py-3 bg-white border border-brand-purple/10 rounded-input text-xs font-semibold focus:border-brand-purple outline-none"
+            className="w-full pl-10 pr-4 py-3 bg-white border border-brand-charcoal/10 rounded-input text-xs font-semibold focus:border-brand-charcoal outline-none"
           />
-          <Search className="absolute left-3.5 top-3.5 w-4.5 h-4.5 text-brand-purple/40" />
+          <Search className="absolute left-3.5 top-3.5 w-4.5 h-4.5 text-brand-charcoal/40" />
         </div>
 
         {/* Accordions */}
-        <div className="border border-brand-purple/10 rounded-card bg-white p-6 divide-y divide-brand-purple/5 shadow-sm">
+        <div className="border border-brand-charcoal/10 rounded-card bg-white p-6 divide-y divide-brand-charcoal/5 shadow-sm">
           {filteredFaqs.map((faq) => (
             <div key={faq.id} className="py-4 first:pt-0 last:pb-0">
               <button
                 onClick={() => setActiveFAQ(activeFAQ === faq.id ? null : faq.id)}
-                className="w-full flex justify-between items-center text-left font-bold text-sm text-brand-purple"
+                className="w-full flex justify-between items-center text-left font-bold text-sm text-brand-charcoal"
               >
                 <div className="space-y-1 pr-4">
                   <span className="text-[10px] font-bold text-brand-orange uppercase tracking-wider block">
@@ -70,17 +70,17 @@ export default function FAQPage() {
                   </span>
                   <span>{faq.q}</span>
                 </div>
-                <ChevronDown className={`w-4 h-4 text-brand-purple/50 transition-transform duration-300 ${activeFAQ === faq.id ? "rotate-180" : ""}`} />
+                <ChevronDown className={`w-4 h-4 text-brand-charcoal/50 transition-transform duration-300 ${activeFAQ === faq.id ? "rotate-180" : ""}`} />
               </button>
               {activeFAQ === faq.id && (
-                <p className="mt-3 text-xs text-brand-purple/70 font-semibold leading-relaxed">
+                <p className="mt-3 text-xs text-brand-charcoal/70 font-semibold leading-relaxed">
                   {faq.a}
                 </p>
               )}
             </div>
           ))}
           {filteredFaqs.length === 0 && (
-            <p className="text-center py-6 text-xs text-brand-purple/50 font-semibold">
+            <p className="text-center py-6 text-xs text-brand-charcoal/50 font-semibold">
               No matching FAQs found. Please contact our support team.
             </p>
           )}

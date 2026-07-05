@@ -41,7 +41,7 @@ export default function ComingSoonPage() {
   };
 
   return (
-    <div className="bg-brand-cream text-brand-purple min-h-screen flex flex-col justify-between font-sans">
+    <div className="bg-brand-ivory text-brand-charcoal min-h-screen flex flex-col justify-between font-sans">
       <Navbar />
 
       <main className="max-w-xl mx-auto text-center py-40 px-6 space-y-12">
@@ -49,11 +49,11 @@ export default function ComingSoonPage() {
           <span className="text-xs font-black text-brand-orange bg-brand-orange/15 px-3 py-1.5 rounded-btn uppercase tracking-wider">
             Launching Soon
           </span>
-          <h1 className="text-4xl md:text-6xl font-black font-display tracking-tight text-brand-purple">
+          <h1 className="text-4xl md:text-6xl font-black font-display tracking-tight text-brand-charcoal">
             Something Bright <br />
             Is Blending.
           </h1>
-          <p className="text-brand-purple/70 text-sm font-semibold max-w-sm mx-auto leading-relaxed">
+          <p className="text-brand-charcoal/70 text-sm font-semibold max-w-sm mx-auto leading-relaxed">
             Our upcoming organic, certified active prebiotic functional cubes collection is launching. Subscribe to get early access.
           </p>
         </div>
@@ -66,9 +66,9 @@ export default function ComingSoonPage() {
             { val: timeLeft.minutes, unit: "Mins" },
             { val: timeLeft.seconds, unit: "Secs" }
           ].map((item, idx) => (
-            <div key={idx} className="bg-white border border-brand-purple/10 p-4 rounded-card shadow-sm space-y-1.5">
-              <p className="text-2xl md:text-3xl font-black font-display text-brand-purple">{item.val}</p>
-              <p className="text-[10px] font-black text-brand-purple/40 uppercase tracking-wider">{item.unit}</p>
+            <div key={idx} className="bg-white border border-brand-charcoal/10 p-4 rounded-card shadow-sm space-y-1.5">
+              <p className="text-2xl md:text-3xl font-black font-display text-brand-charcoal">{item.val}</p>
+              <p className="text-[10px] font-black text-brand-charcoal/40 uppercase tracking-wider">{item.unit}</p>
             </div>
           ))}
         </div>
@@ -88,11 +88,11 @@ export default function ComingSoonPage() {
                 placeholder="Enter your email address"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-2.5 text-xs bg-white border border-brand-purple/10 rounded-input focus:border-brand-purple outline-none"
+                className="w-full px-4 py-2.5 text-xs bg-white border border-brand-charcoal/10 rounded-input focus:border-brand-charcoal outline-none"
               />
               <button
                 type="submit"
-                className="px-5 py-2.5 bg-brand-purple hover:bg-brand-purple-light text-white font-bold text-xs rounded-btn flex items-center gap-1.5"
+                className="px-5 py-2.5 bg-brand-charcoal hover:bg-brand-charcoal-light text-white font-bold text-xs rounded-btn flex items-center gap-1.5"
               >
                 <span>Notify</span>
                 <Send className="w-4 h-4 text-brand-orange" />

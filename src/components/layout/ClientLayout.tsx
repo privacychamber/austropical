@@ -67,11 +67,11 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
             variants={waveTransitionVariants}
             initial="initial"
             animate="animate"
-            className="fixed inset-0 w-full h-screen bg-brand-purple z-[9999] pointer-events-none flex flex-col justify-end"
+            className="fixed inset-0 w-full h-screen bg-brand-charcoal z-[9999] pointer-events-none flex flex-col justify-end"
           >
             {/* Wave Divider attached to sweep */}
             <svg
-              className="absolute left-0 bottom-full w-full h-[120px] text-brand-purple fill-current"
+              className="absolute left-0 bottom-full w-full h-[120px] text-brand-charcoal fill-current"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 1200 120"
               preserveAspectRatio="none"

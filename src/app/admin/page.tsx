@@ -59,16 +59,16 @@ export default function AdminDashboardPage() {
   };
 
   return (
-    <div className="bg-brand-cream text-brand-purple min-h-screen relative overflow-x-hidden font-sans">
+    <div className="bg-brand-ivory text-brand-charcoal min-h-screen relative overflow-x-hidden font-sans">
       <Navbar />
 
       <section className="pt-32 pb-24 max-w-container mx-auto px-6 md:px-12 text-left">
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-6 border-b border-brand-purple/10">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-6 border-b border-brand-charcoal/10">
           <div>
-            <h1 className="text-3xl font-black font-display text-brand-purple">
+            <h1 className="text-3xl font-black font-display text-brand-charcoal">
               CMS Admin Dashboard
             </h1>
-            <p className="text-xs font-semibold text-brand-purple/50">
+            <p className="text-xs font-semibold text-brand-charcoal/50">
               Manage live landing pages, modify pricing models, and monitor analytics.
             </p>
           </div>
@@ -78,8 +78,8 @@ export default function AdminDashboardPage() {
               onClick={() => setActiveSubTab("cms")}
               className={`px-4 py-2 rounded-btn font-bold text-xs transition-colors flex items-center gap-1.5 ${
                 activeSubTab === "cms"
-                  ? "bg-brand-purple text-white shadow-md"
-                  : "bg-white border border-brand-purple/10 text-brand-purple hover:bg-brand-purple/5"
+                  ? "bg-brand-charcoal text-white shadow-md"
+                  : "bg-white border border-brand-charcoal/10 text-brand-charcoal hover:bg-brand-charcoal/5"
               }`}
             >
               <Settings className="w-3.5 h-3.5" />
@@ -90,8 +90,8 @@ export default function AdminDashboardPage() {
               onClick={() => setActiveSubTab("analytics")}
               className={`px-4 py-2 rounded-btn font-bold text-xs transition-colors flex items-center gap-1.5 ${
                 activeSubTab === "analytics"
-                  ? "bg-brand-purple text-white shadow-md"
-                  : "bg-white border border-brand-purple/10 text-brand-purple hover:bg-brand-purple/5"
+                  ? "bg-brand-charcoal text-white shadow-md"
+                  : "bg-white border border-brand-charcoal/10 text-brand-charcoal hover:bg-brand-charcoal/5"
               }`}
             >
               <BarChart3 className="w-3.5 h-3.5" />
@@ -102,7 +102,7 @@ export default function AdminDashboardPage() {
 
         {/* Floating Notification */}
         {showNotification && (
-          <div className="fixed bottom-8 right-8 z-50 bg-brand-purple border border-white/10 text-brand-cream py-4 px-6 rounded-card shadow-2xl flex items-center gap-3 animate-slide-up">
+          <div className="fixed bottom-8 right-8 z-50 bg-brand-charcoal border border-white/10 text-brand-ivory py-4 px-6 rounded-card shadow-2xl flex items-center gap-3 animate-slide-up">
             <CheckCircle2 className="w-5 h-5 text-brand-orange" />
             <span className="text-sm font-bold">CMS Changes Saved &amp; Updated Live!</span>
           </div>
@@ -113,8 +113,8 @@ export default function AdminDashboardPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-8">
             
             {/* Left CMS Form Fields */}
-            <form onSubmit={handleSaveCMS} className="lg:col-span-8 space-y-6 bg-white border border-brand-purple/5 p-8 rounded-card shadow-sm">
-              <h3 className="text-lg font-bold font-display text-brand-purple pb-3 border-b border-brand-purple/5">
+            <form onSubmit={handleSaveCMS} className="lg:col-span-8 space-y-6 bg-white border border-brand-charcoal/5 p-8 rounded-card shadow-sm">
+              <h3 className="text-lg font-bold font-display text-brand-charcoal pb-3 border-b border-brand-charcoal/5">
                 Front-End Copy Setup
               </h3>
 
@@ -123,86 +123,86 @@ export default function AdminDashboardPage() {
                 <p className="text-xs font-black text-brand-orange uppercase tracking-wider">Hero Section Settings</p>
                 <div className="grid grid-cols-1 gap-4">
                   <div className="space-y-1.5">
-                    <label className="text-[10px] font-black text-brand-purple/50 uppercase tracking-widest block">Hero Title</label>
+                    <label className="text-[10px] font-black text-brand-charcoal/50 uppercase tracking-widest block">Hero Title</label>
                     <input
                       type="text"
                       required
                       value={heroTitle}
                       onChange={(e) => setHeroTitle(e.target.value)}
-                      className="w-full px-4 py-2.5 bg-brand-cream border border-brand-purple/10 rounded-input text-xs font-semibold focus:border-brand-purple outline-none"
+                      className="w-full px-4 py-2.5 bg-brand-ivory border border-brand-charcoal/10 rounded-input text-xs font-semibold focus:border-brand-charcoal outline-none"
                     />
                   </div>
                   <div className="space-y-1.5">
-                    <label className="text-[10px] font-black text-brand-purple/50 uppercase tracking-widest block">Hero Subtitle</label>
+                    <label className="text-[10px] font-black text-brand-charcoal/50 uppercase tracking-widest block">Hero Subtitle</label>
                     <textarea
                       required
                       rows={2}
                       value={heroSubtitle}
                       onChange={(e) => setHeroSubtitle(e.target.value)}
-                      className="w-full px-4 py-2.5 bg-brand-cream border border-brand-purple/10 rounded-input text-xs font-semibold focus:border-brand-purple outline-none"
+                      className="w-full px-4 py-2.5 bg-brand-ivory border border-brand-charcoal/10 rounded-input text-xs font-semibold focus:border-brand-charcoal outline-none"
                     />
                   </div>
                 </div>
               </div>
 
               {/* Story section */}
-              <div className="space-y-4 pt-4 border-t border-brand-purple/5">
+              <div className="space-y-4 pt-4 border-t border-brand-charcoal/5">
                 <p className="text-xs font-black text-brand-green uppercase tracking-wider font-sans">Story Section Settings</p>
                 <div className="grid grid-cols-1 gap-4">
                   <div className="space-y-1.5">
-                    <label className="text-[10px] font-black text-brand-purple/50 uppercase tracking-widest block">Story Header</label>
+                    <label className="text-[10px] font-black text-brand-charcoal/50 uppercase tracking-widest block">Story Header</label>
                     <input
                       type="text"
                       required
                       value={storyTitle}
                       onChange={(e) => setStoryTitle(e.target.value)}
-                      className="w-full px-4 py-2.5 bg-brand-cream border border-brand-purple/10 rounded-input text-xs font-semibold focus:border-brand-purple outline-none"
+                      className="w-full px-4 py-2.5 bg-brand-ivory border border-brand-charcoal/10 rounded-input text-xs font-semibold focus:border-brand-charcoal outline-none"
                     />
                   </div>
                   <div className="space-y-1.5">
-                    <label className="text-[10px] font-black text-brand-purple/50 uppercase tracking-widest block">Story Copy</label>
+                    <label className="text-[10px] font-black text-brand-charcoal/50 uppercase tracking-widest block">Story Copy</label>
                     <textarea
                       required
                       rows={3}
                       value={storyText}
                       onChange={(e) => setStoryText(e.target.value)}
-                      className="w-full px-4 py-2.5 bg-brand-cream border border-brand-purple/10 rounded-input text-xs font-semibold focus:border-brand-purple outline-none"
+                      className="w-full px-4 py-2.5 bg-brand-ivory border border-brand-charcoal/10 rounded-input text-xs font-semibold focus:border-brand-charcoal outline-none"
                     />
                   </div>
                 </div>
               </div>
 
               {/* Sustainability numbers */}
-              <div className="space-y-4 pt-4 border-t border-brand-purple/5">
-                <p className="text-xs font-black text-brand-pink uppercase tracking-wider">Sustainability &amp; counters</p>
+              <div className="space-y-4 pt-4 border-t border-brand-charcoal/5">
+                <p className="text-xs font-black text-brand-orange uppercase tracking-wider">Sustainability &amp; counters</p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-1.5">
-                    <label className="text-[10px] font-black text-brand-purple/50 uppercase tracking-widest block">Sustainability Header</label>
+                    <label className="text-[10px] font-black text-brand-charcoal/50 uppercase tracking-widest block">Sustainability Header</label>
                     <input
                       type="text"
                       required
                       value={sustainabilityTitle}
                       onChange={(e) => setSustainabilityTitle(e.target.value)}
-                      className="w-full px-4 py-2.5 bg-brand-cream border border-brand-purple/10 rounded-input text-xs font-semibold focus:border-brand-purple outline-none"
+                      className="w-full px-4 py-2.5 bg-brand-ivory border border-brand-charcoal/10 rounded-input text-xs font-semibold focus:border-brand-charcoal outline-none"
                     />
                   </div>
                   <div className="space-y-1.5">
-                    <label className="text-[10px] font-black text-brand-purple/50 uppercase tracking-widest block">Trees Planted Counter</label>
+                    <label className="text-[10px] font-black text-brand-charcoal/50 uppercase tracking-widest block">Trees Planted Counter</label>
                     <input
                       type="number"
                       required
                       value={sustainabilityNumber}
                       onChange={(e) => setSustainabilityNumber(Number(e.target.value))}
-                      className="w-full px-4 py-2.5 bg-brand-cream border border-brand-purple/10 rounded-input text-xs font-semibold focus:border-brand-purple outline-none"
+                      className="w-full px-4 py-2.5 bg-brand-ivory border border-brand-charcoal/10 rounded-input text-xs font-semibold focus:border-brand-charcoal outline-none"
                     />
                   </div>
                 </div>
               </div>
 
-              <div className="pt-6 border-t border-brand-purple/5 flex justify-end">
+              <div className="pt-6 border-t border-brand-charcoal/5 flex justify-end">
                 <button
                   type="submit"
-                  className="px-6 py-3.5 bg-brand-purple hover:bg-brand-purple-light text-white font-bold text-xs rounded-btn transition-colors flex items-center gap-2"
+                  className="px-6 py-3.5 bg-brand-charcoal hover:bg-brand-charcoal-light text-white font-bold text-xs rounded-btn transition-colors flex items-center gap-2"
                 >
                   <Save className="w-4 h-4 text-brand-orange" />
                   <span>Update Live Landing Page</span>
@@ -211,31 +211,31 @@ export default function AdminDashboardPage() {
             </form>
 
             {/* Right side live pricing editor */}
-            <div className="lg:col-span-4 bg-white border border-brand-purple/5 p-6 rounded-card shadow-sm space-y-6">
-              <h3 className="text-base font-bold font-display text-brand-purple pb-3 border-b border-brand-purple/5 flex items-center gap-2">
+            <div className="lg:col-span-4 bg-white border border-brand-charcoal/5 p-6 rounded-card shadow-sm space-y-6">
+              <h3 className="text-base font-bold font-display text-brand-charcoal pb-3 border-b border-brand-charcoal/5 flex items-center gap-2">
                 <Database className="w-4.5 h-4.5 text-brand-orange" />
                 Live Pricing Panel
               </h3>
 
-              <p className="text-xs text-brand-purple/60 leading-relaxed font-semibold">
+              <p className="text-xs text-brand-charcoal/60 leading-relaxed font-semibold">
                 Changing a price below will write to local state and persist immediately on search, catalogs, and cart recalculations.
               </p>
 
               <div className="space-y-4">
                 {products.map((p) => (
-                  <div key={p.id} className="flex items-center justify-between gap-4 p-3.5 bg-brand-cream rounded-card border border-brand-purple/5">
+                  <div key={p.id} className="flex items-center justify-between gap-4 p-3.5 bg-brand-ivory rounded-card border border-brand-charcoal/5">
                     <div className="min-w-0">
-                      <p className="font-bold text-xs text-brand-purple truncate">{p.name}</p>
-                      <p className="text-[9px] text-brand-purple/50 font-bold uppercase mt-0.5">{p.category}</p>
+                      <p className="font-bold text-xs text-brand-charcoal truncate">{p.name}</p>
+                      <p className="text-[9px] text-brand-charcoal/50 font-bold uppercase mt-0.5">{p.category}</p>
                     </div>
                     <div className="flex items-center gap-1.5 w-24">
-                      <span className="text-xs font-bold text-brand-purple">$</span>
+                      <span className="text-xs font-bold text-brand-charcoal">$</span>
                       <input
                         type="number"
                         step="0.01"
                         value={productPrices[p.id] !== undefined ? productPrices[p.id] : p.price}
                         onChange={(e) => handlePriceChange(p.id, Number(e.target.value))}
-                        className="w-full text-right bg-white px-2 py-1 border border-brand-purple/10 rounded-md text-xs font-bold text-brand-purple focus:border-brand-purple outline-none"
+                        className="w-full text-right bg-white px-2 py-1 border border-brand-charcoal/10 rounded-md text-xs font-bold text-brand-charcoal focus:border-brand-charcoal outline-none"
                       />
                     </div>
                   </div>
@@ -252,21 +252,21 @@ export default function AdminDashboardPage() {
               {[
                 { title: "Today's Revenue", val: "$1,842.50", desc: "+12.4% vs yesterday", icon: DollarSign, color: "text-brand-green bg-brand-green/10" },
                 { title: "Completed Orders", val: "42 orders", desc: "Average order: $43.80", icon: ShoppingBag, color: "text-brand-orange bg-brand-orange/10" },
-                { title: "Registered Users", val: "1,520 accounts", desc: "+8 signup rates this week", icon: Users, color: "text-brand-pink bg-brand-pink/10" },
+                { title: "Registered Users", val: "1,520 accounts", desc: "+8 signup rates this week", icon: Users, color: "text-brand-orange bg-brand-orange/10" },
                 { title: "Antioxidant Tubs Stock", val: "248 units", desc: "Healthy warehouse counts", icon: Package, color: "text-brand-yellow bg-brand-yellow/10" }
               ].map((m) => {
                 const Icon = m.icon;
                 return (
-                  <div key={m.title} className="bg-white border border-brand-purple/5 p-6 rounded-card shadow-sm space-y-4 text-left">
+                  <div key={m.title} className="bg-white border border-brand-charcoal/5 p-6 rounded-card shadow-sm space-y-4 text-left">
                     <div className="flex justify-between items-start">
-                      <span className="text-[10px] font-bold text-brand-purple/50 uppercase tracking-wider">{m.title}</span>
+                      <span className="text-[10px] font-bold text-brand-charcoal/50 uppercase tracking-wider">{m.title}</span>
                       <div className={`w-9 h-9 rounded-btn ${m.color} flex items-center justify-center`}>
                         <Icon className="w-5 h-5" />
                       </div>
                     </div>
                     <div>
-                      <p className="text-2xl font-black font-display text-brand-purple">{m.val}</p>
-                      <p className="text-[10px] text-brand-purple/60 font-semibold mt-1 flex items-center gap-1">
+                      <p className="text-2xl font-black font-display text-brand-charcoal">{m.val}</p>
+                      <p className="text-[10px] text-brand-charcoal/60 font-semibold mt-1 flex items-center gap-1">
                         <TrendingUp className="w-3 h-3 text-brand-green" />
                         {m.desc}
                       </p>
@@ -280,14 +280,14 @@ export default function AdminDashboardPage() {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
               
               {/* Sales breakdown */}
-              <div className="lg:col-span-2 bg-white border border-brand-purple/5 p-6 rounded-card shadow-sm space-y-6">
-                <h4 className="text-base font-bold font-display text-brand-purple pb-3 border-b border-brand-purple/5 flex items-center gap-2">
+              <div className="lg:col-span-2 bg-white border border-brand-charcoal/5 p-6 rounded-card shadow-sm space-y-6">
+                <h4 className="text-base font-bold font-display text-brand-charcoal pb-3 border-b border-brand-charcoal/5 flex items-center gap-2">
                   <BarChart3 className="w-4.5 h-4.5 text-brand-orange" />
                   Monthly Performance Trends
                 </h4>
                 
                 {/* Visual Chart representations */}
-                <div className="h-56 flex items-end gap-3.5 border-b border-brand-purple/10 pb-2">
+                <div className="h-56 flex items-end gap-3.5 border-b border-brand-charcoal/10 pb-2">
                   {[
                     { month: "Jan", val: 35 },
                     { month: "Feb", val: 55 },
@@ -299,25 +299,25 @@ export default function AdminDashboardPage() {
                   ].map((data, idx) => (
                     <div key={data.month} className="flex-1 flex flex-col items-center gap-2">
                       <div
-                        className="w-full bg-gradient-to-t from-brand-purple to-brand-pink rounded-t-md hover:opacity-85 transition-opacity"
+                        className="w-full bg-gradient-to-t from-brand-charcoal to-brand-orange rounded-t-md hover:opacity-85 transition-opacity"
                         style={{ height: `${data.val}%` }}
                       />
-                      <span className="text-[10px] font-bold text-brand-purple/50">{data.month}</span>
+                      <span className="text-[10px] font-bold text-brand-charcoal/50">{data.month}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
               {/* Best selling chart list */}
-              <div className="lg:col-span-1 bg-white border border-brand-purple/5 p-6 rounded-card shadow-sm space-y-6">
-                <h4 className="text-base font-bold font-display text-brand-purple pb-3 border-b border-brand-purple/5 flex items-center gap-2">
+              <div className="lg:col-span-1 bg-white border border-brand-charcoal/5 p-6 rounded-card shadow-sm space-y-6">
+                <h4 className="text-base font-bold font-display text-brand-charcoal pb-3 border-b border-brand-charcoal/5 flex items-center gap-2">
                   <Layers className="w-4.5 h-4.5 text-brand-orange" />
                   Best Sellers Share
                 </h4>
 
-                <div className="space-y-4 text-xs font-semibold text-brand-purple/80">
+                <div className="space-y-4 text-xs font-semibold text-brand-charcoal/80">
                   {[
-                    { name: "Açaí Superberry Tub", share: 45, color: "bg-brand-purple" },
+                    { name: "Açaí Superberry Tub", share: 45, color: "bg-brand-charcoal" },
                     { name: "Smoothie Cubes Blend", share: 30, color: "bg-brand-orange" },
                     { name: "Organic Pure Packs", share: 25, color: "bg-brand-green" }
                   ].map((item) => (
@@ -326,7 +326,7 @@ export default function AdminDashboardPage() {
                         <span>{item.name}</span>
                         <span>{item.share}%</span>
                       </div>
-                      <div className="w-full bg-brand-purple/10 h-1.5 rounded-full overflow-hidden">
+                      <div className="w-full bg-brand-charcoal/10 h-1.5 rounded-full overflow-hidden">
                         <div className={`h-full ${item.color} rounded-full`} style={{ width: `${item.share}%` }} />
                       </div>
                     </div>
