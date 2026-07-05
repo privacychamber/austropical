@@ -173,15 +173,6 @@ export default function Navbar() {
                 )}
               </div>
             ))}
-
-            <div className="relative group/link py-2">
-              <Link
-                href="/admin"
-                className="text-xs font-bold tracking-wide text-[#E71D85] hover:text-[#F7931E] transition-all duration-300 whitespace-nowrap"
-              >
-                CMS
-              </Link>
-            </div>
           </nav>
 
           {/* Right Header Utilities */}
@@ -359,14 +350,6 @@ export default function Navbar() {
                 {link.name}
               </Link>
             ))}
-            <Link
-              href="/admin"
-              className="text-lg font-bold text-brand-orange flex items-center gap-1.5"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              <span>CMS Admin Portal</span>
-              <span>→</span>
-            </Link>
           </div>
 
           {/* Footer Utilities */}
