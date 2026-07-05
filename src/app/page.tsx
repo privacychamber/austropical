@@ -6,6 +6,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { Button } from "@/components/ui/Button";
 import { TrustBadge } from "@/components/ui/TrustBadge";
+import { QuizModal } from "@/components/ui/QuizModal";
 
 const BANNER_IMAGES = [
   "/unmatched-excellence-buckets.jpg",
@@ -16,6 +17,7 @@ const BANNER_IMAGES = [
 export default function DreamlandHomepage() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [currentBanner, setCurrentBanner] = useState(0);
+  const [isQuizOpen, setIsQuizOpen] = useState(false);
   
   useEffect(() => {
     const timer = setInterval(() => {
@@ -52,11 +54,14 @@ export default function DreamlandHomepage() {
       <section className="relative w-full min-h-screen bg-[#FDFBF7] flex flex-col pt-0 z-10 overflow-hidden">
         
         {/* Top Notification Bar */}
-        <div className="w-full bg-[#B2D235] py-2 overflow-hidden flex whitespace-nowrap">
+        <div 
+          className="w-full bg-[#B2D235] py-2 overflow-hidden flex whitespace-nowrap cursor-pointer hover:bg-[#F7931E] transition-colors group"
+          onClick={() => setIsQuizOpen(true)}
+        >
           <motion.div 
             animate={{ x: [0, -1000] }} 
             transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
-            className="flex gap-8 text-[10px] md:text-xs font-bold text-[#1A5D2C] uppercase tracking-widest"
+            className="flex gap-8 text-[10px] md:text-xs font-bold text-[#1A5D2C] uppercase tracking-widest group-hover:text-white transition-colors"
           >
             {[...Array(10)].map((_, i) => (
               <span key={i}>TRY BEFORE YOU BUY - TAKE OUR QUIZ FOR A FREE SAMPLE</span>
@@ -268,6 +273,9 @@ export default function DreamlandHomepage() {
       </section>
 
       <Footer />
+      
+      {/* Interactive Flow */}
+      <QuizModal isOpen={isQuizOpen} onClose={() => setIsQuizOpen(false)} />
     </main>
   );
 }
