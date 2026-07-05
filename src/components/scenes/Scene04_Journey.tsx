@@ -34,9 +34,9 @@ export function Scene04_Journey() {
   }, []);
 
   return (
-    <section ref={containerRef} className="relative min-h-screen w-full bg-[#1A1C1B] py-32 overflow-hidden flex items-center justify-center">
-      {/* Soft Overhead Bounce Light */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-white/5 rounded-full blur-[100px] pointer-events-none" />
+    <section ref={containerRef} className="relative min-h-screen w-full bg-brand-ivory py-32 overflow-hidden flex items-center justify-center">
+      {/* Soft Overhead Bounce Light (Sunlight) */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-brand-sunlight/20 rounded-full blur-[100px] pointer-events-none" />
       
       {/* Desk Composition */}
       <div ref={deskRef} className="relative w-full max-w-[1000px] aspect-[4/3] mx-auto px-6">

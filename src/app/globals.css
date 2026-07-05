@@ -6,19 +6,19 @@
 
 @layer base {
   :root {
-    --background: #FAF8F5; /* Cream */
-    --foreground: #2A1147; /* Dark Text */
-    --card-bg: #ffffff;
-    --border-color: rgba(42, 17, 71, 0.06);
-    --text-muted: rgba(42, 17, 71, 0.7);
+    --background: #F9F7F1; /* Warm Ivory */
+    --foreground: #1F3D2C; /* Forest Green Text */
+    --card-bg: #EFEBE1;
+    --border-color: rgba(31, 61, 44, 0.08);
+    --text-muted: rgba(31, 61, 44, 0.7);
   }
 
   .dark {
-    --background: #101211; /* Extremely dark forest/stone */
-    --foreground: #FAF8F5; /* Light Cream Text */
-    --card-bg: #1A1C1B;
-    --border-color: rgba(255, 255, 255, 0.08);
-    --text-muted: rgba(255, 255, 255, 0.5);
+    --background: #F9F7F1; /* Force warm ivory even in dark mode */
+    --foreground: #1F3D2C;
+    --card-bg: #EFEBE1;
+    --border-color: rgba(31, 61, 44, 0.08);
+    --text-muted: rgba(31, 61, 44, 0.7);
   }
 
   body {

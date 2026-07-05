@@ -63,40 +63,40 @@ export function Scene02_Harvest() {
   }, []);
 
   return (
-    <section ref={containerRef} className="relative h-screen w-full overflow-hidden bg-brand-stone">
+    <section ref={containerRef} className="relative h-screen w-full overflow-hidden bg-brand-ivory">
       <div ref={scrollWrapperRef} className="flex h-full w-[300vw]">
         {HABITATS.map((habitat) => (
           <div key={habitat.id} className="habitat-panel relative w-screen h-full flex items-center justify-center shrink-0">
             {/* Environment Background */}
             <div 
-              className="absolute inset-0 bg-cover bg-center opacity-80"
+              className="absolute inset-0 bg-cover bg-center opacity-90"
               style={{ backgroundImage: `url('${habitat.bg}')` }}
             />
-            {/* Atmospheric Gradient */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-black/80" />
+            {/* Atmospheric Gradient (Warm instead of harsh black) */}
+            <div className="absolute inset-0 bg-gradient-to-r from-brand-ivory-dark/90 via-brand-ivory/60 to-brand-ivory-dark/90" />
             
             <div className="relative z-10 w-full max-w-content mx-auto px-6 md:px-16 flex flex-col md:flex-row items-center justify-between gap-12">
               
               {/* Product */}
               <div className="w-full md:w-1/2 flex justify-center items-center relative">
-                <div className="absolute -bottom-10 w-[60%] h-8 bg-black/90 blur-2xl rounded-full" />
+                <div className="absolute -bottom-10 w-[60%] h-8 bg-brand-forest-dark/40 blur-xl rounded-full" />
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img 
                   src={habitat.product} 
                   alt={habitat.title}
-                  className="w-full max-w-sm h-auto object-contain drop-shadow-2xl"
+                  className="w-full max-w-sm h-auto object-contain drop-shadow-xl"
                 />
               </div>
 
               {/* Typography */}
-              <div className="w-full md:w-1/2 flex flex-col items-start text-brand-cream">
-                <span className="font-sans text-sm tracking-[0.2em] text-brand-accent uppercase mb-6">
+              <div className="w-full md:w-1/2 flex flex-col items-start text-brand-forest">
+                <span className="font-sans text-sm tracking-[0.2em] text-brand-forest-light uppercase mb-6">
                   {habitat.env}
                 </span>
                 <h2 className="font-display text-5xl md:text-7xl mb-6 leading-tight">
                   {habitat.title}
                 </h2>
-                <p className="font-sans text-lg font-light tracking-wide text-brand-cream/80 border-l-2 border-brand-accent pl-6">
+                <p className="font-sans text-lg font-light tracking-wide text-brand-forest/80 border-l-2 border-brand-forest-light pl-6">
                   {habitat.desc}
                 </p>
               </div>

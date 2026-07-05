@@ -35,7 +35,7 @@ export function Scene03_Science() {
   }, []);
 
   return (
-    <section ref={containerRef} className="relative min-h-screen w-full bg-[#E8E5E1] py-32 overflow-hidden flex items-center">
+    <section ref={containerRef} className="relative min-h-screen w-full bg-brand-ivory py-32 overflow-hidden flex items-center">
       {/* Recycled Paper Texture */}
       <div 
         className="absolute inset-0 opacity-40 mix-blend-multiply pointer-events-none"

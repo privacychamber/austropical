@@ -49,10 +49,10 @@ export function Button({
   const baseStyles = "relative inline-flex items-center justify-center font-sans tracking-wide font-medium transition-all duration-500 overflow-hidden";
   
   const variants = {
-    primary: "bg-brand-accent text-white hover:bg-[#E3C04F] rounded-btn shadow-ambient hover:shadow-premium border border-brand-accent/20",
-    secondary: "bg-brand-forest-dark text-brand-cream hover:bg-brand-forest rounded-btn shadow-contact",
-    outline: "border border-brand-stone-dark text-brand-forest hover:bg-brand-forest hover:text-white rounded-btn",
-    ghost: "bg-transparent text-brand-forest-dark hover:bg-black/5 rounded-btn",
+    primary: "bg-brand-forest text-brand-ivory hover:bg-brand-forest-light rounded-btn shadow-ambient hover:shadow-premium border border-brand-forest/20",
+    secondary: "bg-brand-acai text-white hover:bg-brand-acai-light rounded-btn shadow-contact",
+    outline: "border border-brand-stone text-brand-forest hover:bg-brand-ivory-dark rounded-btn",
+    ghost: "bg-transparent text-brand-forest hover:bg-brand-forest/5 rounded-btn",
   };
 
   const sizes = {

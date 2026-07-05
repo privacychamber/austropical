@@ -12,30 +12,34 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         brand: {
-          purple: {
-            DEFAULT: "#2A1147",
-            dark: "#1A0B2E",
+          // 40% Ivory (Warm, inviting, breathable space)
+          ivory: {
+            DEFAULT: "#F9F7F1",
+            dark: "#EFEBE1",
+          },
+          // 25% Rainforest Green (Grounding, natural)
+          forest: {
+            DEFAULT: "#1F3D2C",
+            light: "#2C5E43",
+          },
+          // 15% Earthy Stone (Basalt, tactile)
+          stone: {
+            DEFAULT: "#B0ABA0",
+            dark: "#5E5B55",
+          },
+          // 10% Deep Acai Purple (Signature hero accent)
+          acai: {
+            DEFAULT: "#350457",
             light: "#4D2677",
           },
-          // Shifting to natural tones
-          stone: {
-            DEFAULT: "#E8E5E1",
-            dark: "#D0CCC5",
-            light: "#F5F3F0",
+          // 5% Sunlight Gold (Warmth, morning rays)
+          sunlight: {
+            DEFAULT: "#FFD166",
+            soft: "#FFE8A1",
           },
-          wood: {
-            DEFAULT: "#8B5A2B",
-            dark: "#5C3A21",
-            light: "#A07855",
-          },
-          forest: {
-            DEFAULT: "#2d4a22",
-            dark: "#1a2f14",
-            light: "#3f6331",
-          },
-          cream: "#FAF8F5",
-          sand: "#E3DCCF",
-          accent: "#D4AF37", // Muted gold/yellow
+          // 5% Tropical Accents (Vibrancy)
+          dragonfruit: "#FF1E7D",
+          ocean: "#19B4FF",
         },
       },
       fontFamily: {

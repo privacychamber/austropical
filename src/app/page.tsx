@@ -17,7 +17,7 @@ export default function Homepage() {
   // Smooth scrolling is handled globally by Lenis in ClientLayout, which pairs perfectly with GSAP ScrollTrigger.
   
   return (
-    <main className="relative bg-brand-cream text-brand-forest-dark min-h-screen">
+    <main className="relative bg-brand-ivory text-brand-forest min-h-screen">
       <Navbar />
       
       {/* 

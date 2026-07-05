@@ -35,7 +35,7 @@ export function Scene06_Planet() {
   }, []);
 
   return (
-    <section ref={containerRef} className="relative bg-[#FAF8F5] py-40 overflow-hidden">
+    <section ref={containerRef} className="relative bg-brand-ivory py-40 overflow-hidden">
       <div className="mx-auto max-w-container px-6 md:px-16 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
         
         {/* Lifestyle Photography Parallax */}

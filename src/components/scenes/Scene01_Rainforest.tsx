@@ -43,44 +43,46 @@ export function Scene01_Rainforest() {
   }, []);
 
   return (
-    <section ref={containerRef} className="relative h-screen w-full overflow-hidden bg-[#0a0f0d] flex items-center justify-center">
-      {/* Background Atmosphere */}
+    <section ref={containerRef} className="relative h-screen w-full overflow-hidden bg-brand-ivory flex items-center justify-center">
+      {/* Background Atmosphere - Lush Morning Rainforest */}
       <div 
-        className="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-screen"
-        style={{ backgroundImage: "url('/rainforest_placeholder.jpg')" }}
+        className="absolute inset-0 bg-cover bg-center opacity-80"
+        style={{ backgroundImage: "url('/rainforest_morning_placeholder.jpg')" }}
       />
-      <div className="absolute inset-0 bg-noise-pattern opacity-10 mix-blend-overlay" />
       
-      {/* Sun rays & Mist */}
-      <div className="absolute top-0 right-1/4 w-[200px] h-full bg-gradient-to-b from-white/20 to-transparent skew-x-[-20deg] blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-full h-[50vh] bg-gradient-to-t from-black to-transparent z-10" />
+      {/* Sun rays & Mist (Warm) */}
+      <div className="absolute top-0 right-1/4 w-[300px] h-full bg-gradient-to-b from-brand-sunlight/40 to-transparent skew-x-[-25deg] blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-full h-[40vh] bg-gradient-to-t from-brand-ivory to-transparent z-10" />
 
       {/* Typography */}
       <div ref={textRef} className="relative z-20 flex flex-col items-center justify-center text-center">
-        <h1 className="font-display text-5xl md:text-7xl lg:text-[100px] text-brand-cream leading-tight tracking-wide drop-shadow-2xl">
+        <h1 className="font-display text-5xl md:text-7xl lg:text-[100px] text-brand-forest leading-tight tracking-wide drop-shadow-md">
           Wildly Natural.
         </h1>
-        <h2 className="font-display text-3xl md:text-5xl text-brand-accent italic mt-4 drop-shadow-lg">
+        <h2 className="font-display text-3xl md:text-5xl text-brand-forest/70 italic mt-4">
           Crafted by Rainforests.
         </h2>
       </div>
 
-      {/* Product Emerging */}
-      <div ref={productRef} className="absolute bottom-[10%] z-30 flex items-end justify-center">
-        {/* Contact Shadow / Ambient Occlusion */}
-        <div className="absolute -bottom-8 w-48 h-10 bg-black blur-2xl rounded-full" />
-        
+      {/* Product Emerging on Wet Volcanic Rock */}
+      <div ref={productRef} className="absolute bottom-[10%] z-30 flex flex-col items-center justify-center">
         {/* Product Image */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img 
           src="/acai-passionfruit-legs.png" 
           alt="Acai product emerging" 
-          className="w-64 h-auto object-contain drop-shadow-[0_20px_30px_rgba(0,0,0,0.8)]"
+          className="w-64 h-auto object-contain relative z-20 drop-shadow-[0_20px_30px_rgba(31,61,44,0.3)]"
         />
+        
+        {/* Wet Volcanic Rock Base */}
+        <div className="absolute -bottom-8 w-80 h-32 bg-brand-stone-dark rounded-[100%] blur-[2px] z-10 opacity-90 shadow-ambient" style={{ transform: "rotateX(75deg)" }} />
+        
+        {/* Contact Shadow / Ambient Occlusion */}
+        <div className="absolute -bottom-4 w-40 h-8 bg-brand-forest blur-xl rounded-full z-10 opacity-80" />
         
         {/* Foreground Leaves Overlay */}
         <div 
-          className="absolute -bottom-20 -left-20 w-80 h-80 bg-contain bg-no-repeat bg-center opacity-90 blur-[2px] z-40"
+          className="absolute -bottom-10 -left-32 w-[500px] h-64 bg-contain bg-no-repeat bg-center opacity-90 blur-[4px] z-40"
           style={{ backgroundImage: "url('/leaves_foreground_placeholder.png')" }}
         />
       </div>
