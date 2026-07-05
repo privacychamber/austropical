@@ -92,20 +92,20 @@ function ShopContent() {
     <div className="bg-[var(--background)] text-[var(--foreground)] min-h-screen relative overflow-x-hidden font-sans transition-colors duration-500">
       <Navbar />
 
-      {/* Hero Header with Cinematic Dreamland styling */}
-      <section className="pt-40 pb-20 relative overflow-hidden flex items-center justify-center min-h-[40vh]">
+      {/* Hero Header with Bright Lifestyle styling */}
+      <section className="pt-40 pb-20 relative overflow-hidden flex items-center justify-center min-h-[40vh] bg-[#FDFBF7]">
         {/* Background Imagery */}
-        <div className="absolute inset-0 bg-[url('/crushed_ice_macro.png')] bg-cover bg-center opacity-40 mix-blend-luminosity" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1A0B2E]/90 via-transparent to-[#1A0B2E]" />
+        <div className="absolute inset-0 bg-[url('/bright_acai_bowl.png')] bg-cover bg-center opacity-30 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#FDFBF7]/90 via-transparent to-[#FDFBF7]" />
         
         {/* Ambient glow backgrounds */}
-        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-brand-blue/30 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#B2D235]/30 rounded-full blur-[100px] pointer-events-none" />
         
         {/* Floating Fruit Elements matching the mockup */}
         <motion.div 
           animate={{ y: [0, -10, 0], rotate: [0, 5, 0] }}
           transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-          className="absolute top-10 left-[10%] w-24 h-24 pointer-events-none opacity-80 hidden md:block drop-shadow-[0_20px_40px_rgba(0,0,0,0.8)]"
+          className="absolute top-10 left-[10%] w-24 h-24 pointer-events-none opacity-90 hidden md:block drop-shadow-[0_20px_40px_rgba(0,0,0,0.2)]"
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/acai-zero-sugar-original.png" alt="acai" className="w-full h-full object-contain rounded-full" />
@@ -114,7 +114,7 @@ function ShopContent() {
         <motion.div 
           animate={{ y: [0, 15, 0], rotate: [0, -10, 0] }}
           transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 0.5 }}
-          className="absolute bottom-10 right-[15%] w-32 h-32 pointer-events-none opacity-90 hidden md:block drop-shadow-[0_20px_40px_rgba(0,0,0,0.8)]"
+          className="absolute bottom-10 right-[15%] w-32 h-32 pointer-events-none opacity-90 hidden md:block drop-shadow-[0_20px_40px_rgba(0,0,0,0.2)]"
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/dragonfruit_pack.png" alt="dragonfruit" className="w-full h-full object-contain rounded-full" />
@@ -125,15 +125,15 @@ function ShopContent() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="text-5xl md:text-7xl font-black font-display tracking-tight text-white leading-none drop-shadow-[0_0_30px_rgba(255,255,255,0.2)]"
+            className="text-6xl md:text-8xl font-black font-display uppercase tracking-tight text-[#1A5D2C] leading-none drop-shadow-sm"
           >
-            The Collection.
+            The Collection
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0 }}
-            animate={{ opacity: 0.8 }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-white/80 text-lg font-light max-w-xl mx-auto leading-relaxed"
+            className="text-[#1A5D2C]/80 text-lg font-light max-w-xl mx-auto leading-relaxed"
           >
             Experience the purest tropical flavors on earth, wild-harvested and flash-frozen for unparalleled freshness.
           </motion.p>
@@ -158,8 +158,8 @@ function ShopContent() {
                 onClick={() => setSelectedCategory(cat)}
                 className={`text-[10px] md:text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-full border transition-all duration-300 ${
                   selectedCategory === cat
-                    ? "bg-brand-charcoal border-brand-charcoal text-white shadow-md"
-                    : "bg-[var(--card-bg)] border-[var(--border-color)] text-[var(--foreground)] hover:border-[var(--foreground)] hover:bg-[var(--foreground)]/5"
+                    ? "bg-[#1A5D2C] border-[#1A5D2C] text-white shadow-md"
+                    : "bg-white border-[#1A5D2C]/10 text-[#1A5D2C] hover:border-[#1A5D2C]/30 hover:bg-[#1A5D2C]/5"
                 }`}
               >
                 {cat === "All" ? "ALL PRODUCTS" : cat}
@@ -256,22 +256,22 @@ function ShopContent() {
                         />
                         
                         {/* Quick Add Overlay on hover */}
-                        <div className="absolute inset-0 bg-[#1A0B2E]/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-6 gap-3 z-10 backdrop-blur-sm">
-                          <p className="text-xs font-bold text-white/95 text-center leading-relaxed">
+                        <div className="absolute inset-0 bg-white/95 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-6 gap-3 z-10 backdrop-blur-sm">
+                          <p className="text-xs font-bold text-[#1A5D2C] text-center leading-relaxed">
                             {product.description}
                           </p>
-                          <span className="text-lg font-black text-brand-orange">${product.price}</span>
+                          <span className="text-lg font-black text-[#F7931E]">${product.price}</span>
                           <div className="flex items-center gap-2">
                             <button
                               onClick={() => addToCart(product, 1)}
-                              className="px-4 py-2 bg-brand-orange hover:bg-brand-yellow text-white text-xs font-black rounded-btn transition-colors flex items-center gap-1.5"
+                              className="px-4 py-2 bg-[#1A5D2C] hover:bg-[#B2D235] hover:text-[#1A5D2C] text-white text-xs font-black rounded-btn transition-colors flex items-center gap-1.5"
                             >
                               <ShoppingBag className="w-3.5 h-3.5" />
-                              Add to Cart
+                              Add
                             </button>
                             <Link
                               href={`/shop/${product.id}`}
-                              className="px-4 py-2 bg-white/20 hover:bg-white/30 text-white text-xs font-black rounded-btn transition-colors"
+                              className="px-4 py-2 bg-[#FDFBF7] border border-[#1A5D2C]/10 hover:bg-[#1A5D2C]/5 text-[#1A5D2C] text-xs font-black rounded-btn transition-colors"
                             >
                               Details
                             </Link>
