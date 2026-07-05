@@ -30,7 +30,7 @@ export function CategorySection() {
                 <img 
                   src={cat.image} 
                   alt={cat.name} 
-                  className="w-24 md:w-32 h-auto relative z-10 drop-shadow-xl transition-transform group-hover:scale-110 object-contain"
+                  className="w-24 md:w-32 h-auto relative z-10 transition-transform group-hover:scale-110 object-contain mix-blend-multiply"
                 />
               </motion.div>
               

@@ -171,13 +171,20 @@ export default function PremiumFMCGHomepage() {
         SCENE 02: CATEGORY ECOSYSTEM
         ========================================
       */}
-      <div className="bg-[#FBB03B] relative z-20 pb-12">
-        <div className="text-center pb-8 pt-4">
+      <div className="bg-[#FBB03B] relative z-20 pb-16 pt-4">
+        <div className="text-center pb-8">
           <p className="text-[#1A5D2C] font-black uppercase tracking-widest text-sm flex justify-center items-center gap-2">
             <Star className="w-4 h-4 fill-[#1A5D2C]" /> Trusted by families Australia-wide <Star className="w-4 h-4 fill-[#1A5D2C]" />
           </p>
         </div>
         <CategorySection />
+        
+        {/* Bottom Wavy Divider */}
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] z-30 translate-y-[1px] rotate-180">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none" className="relative block w-full h-[60px] md:h-[120px]">
+            <path fill="#ffffff" fillOpacity="1" d="M0,128L80,122.7C160,117,320,107,480,128C640,149,800,203,960,213.3C1120,224,1280,192,1360,176L1440,160L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
+          </svg>
+        </div>
       </div>
 
       {/* 
