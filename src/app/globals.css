@@ -6,19 +6,19 @@
 
 @layer base {
   :root {
-    --background: #FDFBF7; /* Cream */
-    --foreground: #4A154B; /* Acai Text */
+    --background: #F9F8F6; /* Ivory */
+    --foreground: #2C2A29; /* Charcoal Text */
     --card-bg: #FFFFFF;
-    --border-color: rgba(74, 21, 75, 0.08);
-    --text-muted: rgba(74, 21, 75, 0.7);
+    --border-color: rgba(44, 42, 41, 0.1);
+    --text-muted: rgba(44, 42, 41, 0.6);
   }
 
   .dark {
-    --background: #FDFBF7; /* Force cream even in dark mode for FMCG vibe */
-    --foreground: #4A154B;
+    --background: #F9F8F6; /* Force ivory for cinematic photography baseline */
+    --foreground: #2C2A29;
     --card-bg: #FFFFFF;
-    --border-color: rgba(74, 21, 75, 0.08);
-    --text-muted: rgba(74, 21, 75, 0.7);
+    --border-color: rgba(44, 42, 41, 0.1);
+    --text-muted: rgba(44, 42, 41, 0.6);
   }
 
   body {

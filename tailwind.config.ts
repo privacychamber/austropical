@@ -12,27 +12,27 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         brand: {
-          // FMCG High-Energy Palette
-          acai: {
-            DEFAULT: "#4A154B",
-            light: "#6B216D",
-            dark: "#2A0A2B",
+          // Logo Accent Colors
+          green: {
+            DEFAULT: "#8DC63F",
+            dark: "#6FA32B",
           },
-          dragonfruit: {
-            DEFAULT: "#FF007F",
-            light: "#FF4D9F",
+          orange: {
+            DEFAULT: "#F7931E",
+            dark: "#F08C3B",
           },
-          mango: {
-            DEFAULT: "#FFC107",
-            light: "#FFD54F",
+          blue: {
+            DEFAULT: "#29ABE2",
+            dark: "#1D86CB",
           },
-          teal: {
-            DEFAULT: "#00C4CC",
-            light: "#4DE3E8",
+          // Cinematic Natural Roots
+          charcoal: {
+            DEFAULT: "#2C2A29",
+            light: "#4A4745",
           },
-          cream: {
-            DEFAULT: "#FDFBF7",
-            dark: "#F0EBE1",
+          ivory: {
+            DEFAULT: "#F9F8F6",
+            dark: "#F0EFEA",
           },
         },
       },

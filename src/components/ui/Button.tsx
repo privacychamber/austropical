@@ -46,19 +46,19 @@ export function Button({
     setIsHovered(false);
   };
 
-  const baseStyles = "relative inline-flex items-center justify-center font-sans font-bold transition-all duration-300 overflow-hidden rounded-full hover:-translate-y-1";
+  const baseStyles = "relative inline-flex items-center justify-center font-sans font-medium transition-all duration-500 overflow-hidden rounded-[2px] tracking-wide";
   
   const variants = {
-    primary: "bg-brand-mango text-brand-acai-dark hover:bg-brand-mango-light shadow-lg hover:shadow-xl border-b-4 border-brand-mango-light/50",
-    secondary: "bg-brand-dragonfruit text-white hover:bg-brand-dragonfruit-light shadow-lg hover:shadow-xl border-b-4 border-brand-dragonfruit-light/50",
-    outline: "border-2 border-brand-acai text-brand-acai hover:bg-brand-acai hover:text-white",
-    ghost: "bg-transparent text-brand-acai hover:bg-brand-acai/10",
+    primary: "bg-brand-orange text-white hover:bg-brand-orange-dark shadow-sm hover:shadow-md",
+    secondary: "bg-brand-green text-white hover:bg-brand-green-dark shadow-sm hover:shadow-md",
+    outline: "border border-brand-charcoal/20 text-brand-charcoal hover:bg-brand-charcoal hover:text-white",
+    ghost: "bg-transparent text-brand-charcoal hover:bg-brand-charcoal/5",
   };
 
   const sizes = {
-    sm: "px-6 py-3 text-sm",
-    md: "px-8 py-4 text-base uppercase tracking-wide",
-    lg: "px-12 py-5 text-lg uppercase tracking-wide",
+    sm: "px-6 py-2.5 text-xs",
+    md: "px-8 py-3.5 text-sm uppercase tracking-widest",
+    lg: "px-10 py-4 text-sm uppercase tracking-widest",
   };
 
   return (
