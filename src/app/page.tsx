@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { Button } from "@/components/ui/Button";
+import { TrustBadge } from "@/components/ui/TrustBadge";
 
 const BANNER_IMAGES = [
   "/unmatched-excellence-buckets.jpg",
@@ -89,15 +90,23 @@ export default function DreamlandHomepage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="mt-8 z-20"
+            className="mt-12 z-20"
           >
-            <Button className="bg-white text-[#1A5D2C] hover:bg-[#1A5D2C] hover:text-white border-none shadow-[0_8px_30px_rgba(26,93,44,0.15)] rounded-full px-8 py-6 text-sm font-bold transition-all duration-300">
+            <Button className="bg-white text-[#1A5D2C] hover:bg-[#1A5D2C] hover:text-white border-none shadow-[0_8px_30px_rgba(26,93,44,0.15)] rounded-full px-12 py-8 text-sm font-bold transition-all duration-300">
               SHOP NOW
             </Button>
           </motion.div>
 
-          {/* Floating Product Arch (Mocked with existing assets) */}
-          <div className="absolute -bottom-20 left-0 w-full flex justify-center items-end gap-2 md:gap-8 z-10 pointer-events-none">
+          {/* Trust Badges scattered around the Hero */}
+          <TrustBadge type="circle" text="100% Vegan" color="#8B217D" className="top-10 left-[15%] md:left-[25%]" rotate={-10} />
+          <TrustBadge type="arch" text="Grab 'N' Go" color="#F49A8F" className="top-[30%] left-[5%] md:left-[10%]" rotate={15} />
+          <TrustBadge type="starburst" text="Wildly Natural" color="#29ABE2" className="bottom-[40%] left-[8%] md:left-[15%]" rotate={-5} />
+          <TrustBadge type="pill" text="Fat-Free" color="#E71D85" className="top-20 right-[15%] md:right-[25%]" rotate={5} />
+          <TrustBadge type="circle" text="Highest Grade Acai" color="#2A1147" className="top-[35%] right-[5%] md:right-[10%]" rotate={-12} />
+          <TrustBadge type="starburst" text="The Amazon Feels Good" color="#F7931E" className="bottom-[30%] right-[8%] md:right-[15%]" rotate={8} />
+
+          {/* Floating Product Arch (With Mix-Blend to remove white BG) */}
+          <div className="absolute -bottom-20 left-0 w-full flex justify-center items-end gap-2 md:gap-8 z-10 pointer-events-none mix-blend-darken">
             
             <motion.img 
               animate={{ y: [0, -15, 0], rotate: [-15, -12, -15] }}
