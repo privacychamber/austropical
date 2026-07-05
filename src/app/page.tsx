@@ -57,8 +57,8 @@ export default function PremiumFMCGHomepage() {
         <motion.div style={{ y: heroY, opacity: heroOpacity }} className="flex-1 flex flex-col items-center justify-center pt-24 pb-40 px-4 relative z-20 text-center w-full max-w-[1400px] mx-auto mt-20">
           
           {/* Opaque Background Image with Darker Overlay for Contrast */}
-          <div className="absolute inset-0 bg-[url('/hero_explosion.png')] bg-cover bg-center bg-no-repeat pointer-events-none -z-10" style={{ position: 'fixed' }} />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/40 pointer-events-none -z-10" style={{ position: 'fixed' }} />
+          <div className="absolute inset-0 bg-[url('/hero_explosion.png')] bg-cover bg-center bg-no-repeat pointer-events-none -z-10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/40 pointer-events-none -z-10" />
 
           {/* Tilted Chunky Header - Solid White for better readability */}
           <motion.h1 
@@ -105,10 +105,10 @@ export default function PremiumFMCGHomepage() {
 
         </motion.div>
         
-        {/* Organic Wave Divider */}
-        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] z-30">
-          <svg className="relative block w-[calc(100%+1.3px)] h-[100px] md:h-[150px]" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118,137.93,126.9,207.2,120,246.3,116.14,284.18,97.7,321.39,56.44Z" fill="#FBB03B"></path>
+        {/* Smooth Sweeping Wave Divider */}
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] z-30 translate-y-[1px]">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none" className="relative block w-full h-[60px] md:h-[120px]">
+            <path fill="#FBB03B" fillOpacity="1" d="M0,128L80,122.7C160,117,320,107,480,128C640,149,800,203,960,213.3C1120,224,1280,192,1360,176L1440,160L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
           </svg>
         </div>
       </section>
