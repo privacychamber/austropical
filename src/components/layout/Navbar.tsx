@@ -82,7 +82,7 @@ export default function Navbar() {
       <header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 font-sans ${
           scrolled
-            ? "py-3 bg-brand-purple/90 backdrop-blur-xl border-b border-white/10 shadow-lg"
+            ? "py-3 bg-white/95 backdrop-blur-xl border-b border-brand-charcoal/10 shadow-lg"
             : "py-6 bg-transparent"
         }`}
       >
@@ -102,7 +102,7 @@ export default function Navbar() {
                   className={`text-sm font-semibold tracking-wide flex items-center gap-1 transition-all duration-300 ${
                     pathname === link.href
                       ? "text-brand-orange"
-                      : "text-white/80 hover:text-white"
+                      : scrolled ? "text-brand-charcoal/80 hover:text-brand-charcoal" : "text-white/80 hover:text-white"
                   }`}
                 >
                   <span>{link.name}</span>
@@ -185,12 +185,12 @@ export default function Navbar() {
           {/* Right Header Utilities (Search, Wishlist, Account, Cart) */}
           <div className="hidden lg:flex items-center gap-6">
             {/* Language & Currency selection */}
-            <div className="flex items-center gap-3 text-xs text-white/70 font-semibold border-r border-white/10 pr-6">
-              <div className="flex items-center gap-1 cursor-pointer hover:text-white transition-colors">
+            <div className={`flex items-center gap-3 text-xs font-semibold border-r pr-6 ${scrolled ? 'text-brand-charcoal/70 border-brand-charcoal/10' : 'text-white/70 border-white/10'}`}>
+              <div className={`flex items-center gap-1 cursor-pointer transition-colors ${scrolled ? 'hover:text-brand-charcoal' : 'hover:text-white'}`}>
                 <Globe className="w-3.5 h-3.5 text-brand-orange" />
                 <span>{language}</span>
               </div>
-              <div className="flex items-center gap-0.5 cursor-pointer hover:text-white transition-colors">
+              <div className={`flex items-center gap-0.5 cursor-pointer transition-colors ${scrolled ? 'hover:text-brand-charcoal' : 'hover:text-white'}`}>
                 <DollarSign className="w-3.5 h-3.5 text-brand-orange" />
                 <span>{currency}</span>
               </div>
@@ -199,7 +199,7 @@ export default function Navbar() {
             {/* Search Trigger */}
             <button
               onClick={() => setSearchOpen(true)}
-              className="text-white/85 hover:text-brand-orange hover:scale-110 transition-all"
+              className={`transition-all hover:scale-110 hover:text-brand-orange ${scrolled ? 'text-brand-charcoal/85' : 'text-white/85'}`}
               aria-label="Search site"
             >
               <Search className="w-5 h-5" />
@@ -208,12 +208,12 @@ export default function Navbar() {
             {/* Wishlist Link */}
             <Link
               href="/account?tab=wishlist"
-              className="text-white/85 hover:text-brand-orange hover:scale-110 transition-all relative"
+              className={`transition-all hover:scale-110 hover:text-brand-orange relative ${scrolled ? 'text-brand-charcoal/85' : 'text-white/85'}`}
               aria-label="Wishlist"
             >
               <Heart className="w-5 h-5" />
               {totalWishlistItems > 0 && (
-                <span className="absolute -top-1.5 -right-1.5 bg-brand-pink text-white text-[9px] font-black w-4 h-4 rounded-full flex items-center justify-center scale-95 animate-pulse">
+                <span className="absolute -top-1.5 -right-1.5 bg-brand-orange text-white text-[9px] font-black w-4 h-4 rounded-full flex items-center justify-center scale-95 animate-pulse">
                   {totalWishlistItems}
                 </span>
               )}
@@ -222,7 +222,7 @@ export default function Navbar() {
             {/* User Account Link */}
             <Link
               href="/account"
-              className="text-white/85 hover:text-brand-orange hover:scale-110 transition-all"
+              className={`transition-all hover:scale-110 hover:text-brand-orange ${scrolled ? 'text-brand-charcoal/85' : 'text-white/85'}`}
               aria-label="User Account"
             >
               <User className="w-5 h-5" />
@@ -231,7 +231,7 @@ export default function Navbar() {
             {/* Theme Toggle Button */}
             <button
               onClick={toggleTheme}
-              className="text-white/85 hover:text-brand-orange hover:scale-110 transition-all flex items-center justify-center mr-1"
+              className={`transition-all hover:scale-110 hover:text-brand-orange flex items-center justify-center mr-1 ${scrolled ? 'text-brand-charcoal/85' : 'text-white/85'}`}
               aria-label="Toggle theme"
             >
               {theme === "dark" ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
@@ -262,7 +262,7 @@ export default function Navbar() {
             {/* Theme Toggle for Mobile */}
             <button
               onClick={toggleTheme}
-              className="text-white/95 p-1 flex items-center justify-center mr-1"
+              className={`p-1 flex items-center justify-center mr-1 ${scrolled ? 'text-brand-charcoal' : 'text-white/95'}`}
               aria-label="Toggle theme"
             >
               {theme === "dark" ? <Sun className="w-5.5 h-5.5" /> : <Moon className="w-5.5 h-5.5" />}
@@ -271,7 +271,7 @@ export default function Navbar() {
             {/* Cart Icon for Mobile */}
             <button
               onClick={() => setCartOpen(true)}
-              className="text-white/95 p-1 relative"
+              className={`p-1 relative ${scrolled ? 'text-brand-charcoal' : 'text-white/95'}`}
               aria-label="Open cart"
             >
               <ShoppingBag className="w-6 h-6" />
@@ -285,7 +285,7 @@ export default function Navbar() {
             {/* Hamburger button */}
             <button
               onClick={() => setMobileMenuOpen(true)}
-              className="text-white/95 p-1"
+              className={`p-1 ${scrolled ? 'text-brand-charcoal' : 'text-white/95'}`}
               aria-label="Open menu"
             >
               <Menu className="w-6 h-6" />

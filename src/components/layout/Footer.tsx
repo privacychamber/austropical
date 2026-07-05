@@ -53,7 +53,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-brand-purple text-white pt-24 pb-12 font-sans overflow-hidden border-t border-white/5 relative z-10">
+    <footer className="bg-brand-charcoal text-white pt-24 pb-12 font-sans overflow-hidden border-t border-brand-charcoal/10 relative z-10">
       {/* Background radial soft light glow */}
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-brand-pink/5 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-brand-orange/5 rounded-full blur-[120px] pointer-events-none" />
