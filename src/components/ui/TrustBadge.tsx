@@ -77,7 +77,7 @@ export function TrustBadge({ type, text, color, textColor = 'white', className =
         scale: { type: "spring", bounce: 0.5 },
         rotate: { repeat: Infinity, duration: Math.random() * 2 + 4, ease: "easeInOut" } 
       }}
-      className={`absolute z-30 pointer-events-none drop-shadow-xl ${className}`}
+      className={`z-30 pointer-events-none drop-shadow-xl ${className}`}
     >
       {renderShape()}
     </motion.div>

@@ -35,11 +35,11 @@ export default function PremiumFMCGHomepage() {
         SCENE 01: THE UNFORGETTABLE HERO
         ========================================
       */}
-      <section className="relative w-full min-h-[110vh] bg-gradient-to-br from-[#F7931E] via-[#FBB03B] to-[#E71D85] flex flex-col pt-0 z-10 overflow-hidden">
+      <section className="relative w-full min-h-[110vh] flex flex-col pt-0 z-10 overflow-hidden bg-black">
         
         {/* Top Notification Bar */}
         <div 
-          className="w-full bg-[#B2D235] py-2 overflow-hidden flex whitespace-nowrap cursor-pointer hover:bg-white transition-colors group z-50"
+          className="w-full bg-[#B2D235] py-2 overflow-hidden flex whitespace-nowrap cursor-pointer hover:bg-white transition-colors group z-50 absolute top-0 left-0"
           onClick={() => setIsQuizOpen(true)}
         >
           <motion.div 
@@ -54,27 +54,27 @@ export default function PremiumFMCGHomepage() {
         </div>
 
         {/* Hero Content */}
-        <motion.div style={{ y: heroY, opacity: heroOpacity }} className="flex-1 flex flex-col items-center justify-center pt-20 pb-40 px-4 relative z-20 text-center">
+        <motion.div style={{ y: heroY, opacity: heroOpacity }} className="flex-1 flex flex-col items-center justify-center pt-24 pb-40 px-4 relative z-20 text-center w-full max-w-[1400px] mx-auto mt-20">
           
-          <div className="absolute inset-0 bg-[url('/hero_explosion.png')] bg-cover bg-center mix-blend-screen opacity-90 pointer-events-none" />
+          {/* Opaque Background Image with Darker Overlay for Contrast */}
+          <div className="absolute inset-0 bg-[url('/hero_explosion.png')] bg-cover bg-center bg-no-repeat pointer-events-none -z-10" style={{ position: 'fixed' }} />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/40 pointer-events-none -z-10" style={{ position: 'fixed' }} />
 
-          {/* Tilted Chunky Header */}
+          {/* Tilted Chunky Header - Solid White for better readability */}
           <motion.h1 
             initial={{ opacity: 0, scale: 0.9, y: 50 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 1, type: "spring", bounce: 0.4 }}
-            className="font-display text-6xl md:text-[8rem] lg:text-[10rem] leading-[0.8] text-white uppercase -rotate-2 drop-shadow-2xl z-20 relative max-w-6xl mx-auto"
+            className="font-display text-5xl md:text-[7rem] lg:text-[8.5rem] leading-[0.9] text-white uppercase drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-20 relative max-w-6xl mx-auto"
           >
-            <span className="block text-[#B2D235] drop-shadow-[0_10px_20px_rgba(26,93,44,0.4)]">AUSTRALIA'S</span>
-            <span className="block drop-shadow-[0_10px_20px_rgba(231,29,133,0.4)]">BRIGHTER</span>
-            <span className="block text-[#1A5D2C] drop-shadow-[0_10px_20px_rgba(255,255,255,0.4)]">SNACK CHOICE</span>
+            AUSTRALIA'S <br/> BRIGHTER <br/> SNACK CHOICE
           </motion.h1>
 
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="mt-8 font-sans text-white text-xl md:text-3xl max-w-2xl mx-auto z-20 font-light drop-shadow-md"
+            className="mt-8 font-sans text-white text-lg md:text-2xl max-w-2xl mx-auto z-20 font-bold drop-shadow-[0_4px_10px_rgba(0,0,0,0.5)]"
           >
             Sustainably wild-harvested. Instantly frozen. Packed with joyful tropical energy.
           </motion.p>
@@ -85,16 +85,23 @@ export default function PremiumFMCGHomepage() {
             transition={{ delay: 0.4 }}
             className="mt-12 z-20"
           >
-            <Button className="bg-white text-[#E71D85] hover:bg-[#1A5D2C] hover:text-white border-none shadow-[0_20px_50px_rgba(231,29,133,0.5)] rounded-full px-16 py-8 text-lg font-black transition-all duration-300 transform hover:scale-105">
-              SHOP THE AMAZON
+            <Button className="bg-[#B2D235] text-[#1A5D2C] hover:bg-white border-none shadow-[0_20px_50px_rgba(0,0,0,0.4)] rounded-full px-16 py-8 text-lg font-black transition-all duration-300 transform hover:scale-105 uppercase tracking-wider">
+              Shop The Amazon
             </Button>
           </motion.div>
 
-          {/* Floating Trust Stickers */}
-          <TrustBadge type="circle" text="100% Vegan" color="#8B217D" className="top-10 left-[10%] md:left-[20%]" rotate={-10} />
-          <TrustBadge type="arch" text="Grab 'N' Go" color="#F49A8F" className="top-[40%] left-[5%] md:left-[10%]" rotate={15} />
-          <TrustBadge type="pill" text="Fat-Free" color="#B2D235" className="top-20 right-[15%] md:right-[25%]" rotate={5} />
-          <TrustBadge type="starburst" text="Real Fruit" color="#1A5D2C" className="bottom-[40%] right-[8%] md:right-[15%]" rotate={8} />
+          {/* Grouped Trust Stickers below the CTA */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+            className="mt-16 flex flex-wrap justify-center items-center gap-6 md:gap-12 z-20"
+          >
+            <TrustBadge type="circle" text="100% Vegan" color="#8B217D" rotate={-5} />
+            <TrustBadge type="arch" text="Grab 'N' Go" color="#F49A8F" rotate={10} />
+            <TrustBadge type="pill" text="Fat-Free" color="#B2D235" textColor="#1A5D2C" rotate={-5} />
+            <TrustBadge type="starburst" text="Real Fruit" color="#1A5D2C" rotate={8} />
+          </motion.div>
 
         </motion.div>
         
