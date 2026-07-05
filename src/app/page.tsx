@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/Button";
 import { TrustBadge } from "@/components/ui/TrustBadge";
 import { QuizModal } from "@/components/ui/QuizModal";
 import { CategorySection } from "@/components/sections/CategorySection";
+import { TestimonialsMarquee } from "@/components/sections/TestimonialsMarquee";
 import { FloatingElement } from "@/components/ui/FloatingElement";
 import Link from "next/link";
 import { ArrowRight, Star, Heart, CheckCircle2 } from "lucide-react";
@@ -298,6 +299,13 @@ export default function PremiumFMCGHomepage() {
           </div>
         </div>
       </section>
+
+      {/* 
+        ========================================
+        SCENE 04.5: TESTIMONIALS
+        ========================================
+      */}
+      <TestimonialsMarquee />
 
       {/* 
         ========================================
