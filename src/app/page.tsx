@@ -7,6 +7,7 @@ import Footer from "@/components/layout/Footer";
 import { Button } from "@/components/ui/Button";
 import { TrustBadge } from "@/components/ui/TrustBadge";
 import { QuizModal } from "@/components/ui/QuizModal";
+import { CategorySection } from "@/components/sections/CategorySection";
 
 const BANNER_IMAGES = [
   "/unmatched-excellence-buckets.jpg",
@@ -148,6 +149,13 @@ export default function DreamlandHomepage() {
 
         </div>
       </section>
+
+      {/* 
+        ========================================
+        SCENE 01B: THE CATEGORY SCROLL
+        ========================================
+      */}
+      <CategorySection />
 
       {/* 
         ========================================
