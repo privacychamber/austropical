@@ -89,10 +89,10 @@ export default function Navbar() {
         <div className="max-w-container mx-auto px-6 md:px-12 flex items-center justify-between">
           {/* Typographic Logo */}
           <Link href="/" className="flex flex-col group">
-            <span className={`text-2xl font-black font-display tracking-tight leading-none transition-colors ${scrolled ? 'text-brand-charcoal' : 'text-white'}`}>
+            <span className={`text-2xl font-black font-display tracking-tight leading-none transition-colors text-brand-charcoal`}>
               austropical
             </span>
-            <span className="text-[9px] font-bold text-brand-orange uppercase tracking-widest leading-none mt-0.5 group-hover:text-brand-green transition-colors">
+            <span className="text-[9px] font-bold text-[#1A5D2C] uppercase tracking-widest leading-none mt-0.5 group-hover:text-brand-green transition-colors">
               Superfoods
             </span>
           </Link>
@@ -103,11 +103,7 @@ export default function Navbar() {
               <div key={link.name} className="relative group/link">
                 <Link
                   href={link.href}
-                  className={`text-sm font-semibold tracking-wide flex items-center gap-1 transition-all duration-300 ${
-                    pathname === link.href
-                      ? "text-brand-orange"
-                      : scrolled ? "text-brand-charcoal/80 hover:text-brand-charcoal" : "text-white/80 hover:text-white"
-                  }`}
+                  className={`text-sm font-semibold tracking-wide flex items-center gap-1 transition-all duration-300 text-brand-charcoal/80 hover:text-brand-charcoal`}
                 >
                   <span>{link.name}</span>
                   {link.hasDropdown && (

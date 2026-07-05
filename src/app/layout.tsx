@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
+import { Space_Grotesk, Titan_One } from "next/font/google";
 import "./globals.css";
 import ClientLayout from "@/components/layout/ClientLayout";
+
+const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-sans" });
+const titanOne = Titan_One({ weight: "400", subsets: ["latin"], variable: "--font-display" });
 
 export const metadata: Metadata = {
   title: "Austropical Superfoods | Australia's Brightest Snack Choice",
@@ -28,8 +32,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="antialiased selection:bg-brand-accent selection:text-white">
+    <html lang="en" className={`${spaceGrotesk.variable} ${titanOne.variable}`}>
+      <body className="antialiased selection:bg-brand-orange selection:text-white font-sans">
         <div className="fixed inset-0 pointer-events-none bg-noise-pattern opacity-10 z-[9999] mix-blend-overlay"></div>
         <ClientLayout>{children}</ClientLayout>
       </body>

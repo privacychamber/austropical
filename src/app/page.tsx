@@ -45,56 +45,95 @@ export default function DreamlandHomepage() {
       
       {/* 
         ========================================
-        SCENE 01: THE CANOPY ENTRANCE
+        SCENE 01: THE NEW HERO BANNER
         ========================================
       */}
-      <div className="fixed inset-0 pointer-events-none z-0">
-        {/* Deep Dreamland Background */}
-        <div className="absolute inset-0 bg-[url('/rainforest_canopy_hero.png')] bg-cover bg-center opacity-60 mix-blend-luminosity" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1A0B2E]/70 via-[#2D0B38]/60 to-[#1A0B2E]" />
+      <section className="relative w-full min-h-screen bg-[#FDFBF7] flex flex-col pt-0 z-10 overflow-hidden">
         
-        {/* Floating Bioluminescent Spores */}
-        <div className="absolute top-1/4 left-1/4 w-3 h-3 bg-brand-green rounded-full blur-[2px] animate-ping opacity-50" />
-        <div className="absolute top-1/2 right-1/3 w-4 h-4 bg-brand-blue rounded-full blur-[3px] animate-pulse opacity-40" />
-        <div className="absolute bottom-1/3 left-1/2 w-2 h-2 bg-brand-orange rounded-full blur-[1px] animate-ping opacity-60" />
-      </div>
+        {/* Top Notification Bar */}
+        <div className="w-full bg-[#B2D235] py-2 overflow-hidden flex whitespace-nowrap">
+          <motion.div 
+            animate={{ x: [0, -1000] }} 
+            transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
+            className="flex gap-8 text-[10px] md:text-xs font-bold text-[#1A5D2C] uppercase tracking-widest"
+          >
+            {[...Array(10)].map((_, i) => (
+              <span key={i}>TRY BEFORE YOU BUY - TAKE OUR QUIZ FOR A FREE SAMPLE</span>
+            ))}
+          </motion.div>
+        </div>
 
-      <motion.section style={{ y: heroY, opacity: heroOpacity }} className="relative h-screen w-full flex flex-col items-center justify-center z-10 pt-20">
-        
-        {/* Floating Auto-Slider Banner */}
-        <motion.div 
-          animate={{ y: [0, -15, 0] }}
-          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-          className="relative z-20 w-full max-w-5xl mx-auto px-4 mt-12 h-[300px] md:h-[500px]"
-        >
-          <AnimatePresence mode="wait">
+        {/* Hero Content */}
+        <div className="flex-1 flex flex-col items-center justify-center pt-20 pb-40 px-4 relative z-20 text-center">
+          
+          {/* Tilted Chunky Header */}
+          <motion.h1 
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, type: "spring" }}
+            className="font-display text-5xl md:text-[7rem] leading-[0.85] text-[#1A5D2C] uppercase -rotate-3 drop-shadow-md z-20 relative max-w-4xl mx-auto"
+          >
+            AUSTRALIA&apos;S <br/> BRIGHTER <br/> SNACK CHOICE
+          </motion.h1>
+
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="mt-8 font-sans text-[#1A5D2C]/80 text-lg md:text-xl max-w-lg mx-auto z-20"
+          >
+            Packed with tropical flavour, made for everyday
+          </motion.p>
+
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="mt-8 z-20"
+          >
+            <Button className="bg-white text-[#1A5D2C] hover:bg-[#1A5D2C] hover:text-white border-none shadow-[0_8px_30px_rgba(26,93,44,0.15)] rounded-full px-8 py-6 text-sm font-bold transition-all duration-300">
+              SHOP NOW
+            </Button>
+          </motion.div>
+
+          {/* Floating Product Arch (Mocked with existing assets) */}
+          <div className="absolute -bottom-20 left-0 w-full flex justify-center items-end gap-2 md:gap-8 z-10 pointer-events-none">
+            
             <motion.img 
-              key={currentBanner}
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 1.05 }}
-              transition={{ duration: 0.8, ease: "easeInOut" }}
-              src={BANNER_IMAGES[currentBanner]} 
-              alt="Austropical Highlights" 
-              className="absolute inset-0 w-full h-full object-contain drop-shadow-[0_0_80px_rgba(45,11,56,0.8)]"
+              animate={{ y: [0, -15, 0], rotate: [-15, -12, -15] }}
+              transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
+              src="/acai-zero-sugar-original.png" 
+              className="w-40 md:w-72 h-auto drop-shadow-2xl -mb-10" 
+              alt="Tub 1" 
             />
-          </AnimatePresence>
-        </motion.div>
+            
+            <motion.img 
+              animate={{ y: [0, -10, 0], rotate: [5, 2, 5] }}
+              transition={{ repeat: Infinity, duration: 6, ease: "easeInOut", delay: 0.5 }}
+              src="/dragonfruit_pack.png" 
+              className="w-48 md:w-80 h-auto drop-shadow-2xl mb-10 z-20" 
+              alt="Tub 2" 
+            />
+            
+            <motion.img 
+              animate={{ y: [0, -12, 0], rotate: [-8, -5, -8] }}
+              transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut", delay: 1 }}
+              src="/mango_pack.png" 
+              className="w-48 md:w-80 h-auto drop-shadow-2xl mb-5" 
+              alt="Tub 3" 
+            />
 
-        {/* Parallax Foreground Leaves */}
-        <motion.img 
-          style={{ x: leafLeftX }}
-          src="/leaves_foreground_placeholder.png" 
-          alt="" 
-          className="absolute -bottom-20 -left-20 w-[600px] opacity-90 blur-[4px] z-30 pointer-events-none drop-shadow-[0_20px_50px_rgba(0,0,0,0.8)]" 
-        />
-        <motion.img 
-          style={{ x: leafRightX }}
-          src="/leaves_foreground_placeholder.png" 
-          alt="" 
-          className="absolute -bottom-20 -right-20 w-[600px] opacity-90 blur-[5px] z-30 pointer-events-none scale-x-[-1] drop-shadow-[0_20px_50px_rgba(0,0,0,0.8)]" 
-        />
-      </motion.section>
+            <motion.img 
+              animate={{ y: [0, -20, 0], rotate: [12, 15, 12] }}
+              transition={{ repeat: Infinity, duration: 5.5, ease: "easeInOut", delay: 0.2 }}
+              src="/acai-passionfruit-legs.png" 
+              className="w-40 md:w-72 h-auto drop-shadow-2xl -mb-12" 
+              alt="Tub 4" 
+            />
+          </div>
+
+        </div>
+      </section>
 
       {/* 
         ========================================
