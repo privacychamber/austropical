@@ -54,12 +54,12 @@ export default function PremiumFMCGHomepage() {
           </motion.div>
         </div>
 
+        {/* Rainforest Background Image (Full Width) */}
+        <div className="absolute inset-0 bg-[url('/rainforest_bg.png')] bg-cover bg-center bg-no-repeat pointer-events-none z-0" />
+        <div className="absolute inset-0 bg-black/30 pointer-events-none z-0" /> {/* Overlay for readability */}
+
         {/* Hero Content */}
         <motion.div style={{ y: heroY, opacity: heroOpacity }} className="flex-1 flex flex-col lg:flex-row items-center justify-between pt-32 pb-40 px-6 md:px-12 relative z-20 w-full max-w-[1400px] mx-auto mt-12 gap-8">
-          
-          {/* Rainforest Background Image */}
-          <div className="absolute inset-0 bg-[url('/rainforest_bg.png')] bg-cover bg-center bg-no-repeat pointer-events-none -z-10" />
-          <div className="absolute inset-0 bg-black/30 pointer-events-none -z-10" /> {/* Overlay for readability */}
 
           {/* Left Column: Typography */}
           <div className="flex-1 flex flex-col items-start justify-center text-left max-w-xl z-20">
