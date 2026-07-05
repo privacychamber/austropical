@@ -40,18 +40,20 @@ export default function PremiumFMCGHomepage() {
         
         {/* Top Notification Bar */}
         <div 
-          className="w-full bg-[#B2D235] py-2 overflow-hidden flex whitespace-nowrap cursor-pointer hover:bg-white transition-colors group z-50 absolute top-0 left-0"
+          className="fixed top-0 left-0 w-full bg-[#B2D235] py-2 flex whitespace-nowrap cursor-pointer hover:bg-white transition-colors group z-[60] border-b border-black/10"
           onClick={() => setIsQuizOpen(true)}
         >
-          <motion.div 
-            animate={{ x: [0, -1000] }} 
-            transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
-            className="flex gap-8 text-[10px] md:text-xs font-bold text-[#1A5D2C] uppercase tracking-widest group-hover:text-[#F7931E] transition-colors"
-          >
-            {[...Array(10)].map((_, i) => (
-              <span key={i}>TRY BEFORE YOU BUY - TAKE OUR QUIZ FOR A FREE SAMPLE</span>
-            ))}
-          </motion.div>
+          <div className="overflow-hidden w-full relative flex">
+            <motion.div 
+              animate={{ x: [0, -1000] }} 
+              transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
+              className="flex gap-8 text-[10px] md:text-xs font-bold text-[#1A5D2C] uppercase tracking-widest group-hover:text-[#F7931E] transition-colors"
+            >
+              {[...Array(20)].map((_, i) => (
+                <span key={i}>TRY BEFORE YOU BUY - TAKE OUR QUIZ FOR A FREE SAMPLE</span>
+              ))}
+            </motion.div>
+          </div>
         </div>
 
         {/* Rainforest Background Image (Full Width) */}
@@ -67,12 +69,10 @@ export default function PremiumFMCGHomepage() {
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, type: "spring", bounce: 0.4 }}
-              className="font-display text-5xl md:text-[6rem] lg:text-[7rem] leading-[0.9] uppercase drop-shadow-[0_8px_8px_rgba(0,0,0,0.3)]"
+              className="font-display text-5xl md:text-[6rem] lg:text-[7rem] leading-[0.9] text-white uppercase drop-shadow-[0_8px_8px_rgba(0,0,0,0.3)]"
               style={{ WebkitTextStroke: "2px rgba(0,0,0,0.8)" }}
             >
-              <span className="text-[#B2D235]">AUSTRALIA'S</span> <br/> 
-              <span className="text-[#F7931E]">BRIGHTER</span> <br/> 
-              <span className="text-[#E71D85]">SNACK CHOICE</span>
+              AUSTRALIA'S <br/> BRIGHTER <br/> SNACK CHOICE
             </motion.h1>
 
             <motion.ul 
@@ -206,9 +206,8 @@ export default function PremiumFMCGHomepage() {
             <span className="inline-block px-4 py-2 bg-[#F7931E]/10 text-[#F7931E] rounded-full font-bold text-xs uppercase tracking-widest">
               Blender Ready
             </span>
-            <h2 className="font-display text-5xl md:text-7xl uppercase leading-[0.9]">
-              <span className="text-[#F7931E]">Sunshine</span> <br/> 
-              <span className="text-[#B2D235]">in a</span> <span className="text-[#E71D85]">Cube</span>
+            <h2 className="font-display text-5xl md:text-7xl text-[#1A5D2C] uppercase leading-[0.9]">
+              Sunshine <br/> in a Cube
             </h2>
             <p className="font-sans text-lg font-light text-[#1A5D2C]/80 max-w-md">
               Real mango and pineapple, perfectly portioned. Skip the prep and blend a world-class tropical smoothie in 30 seconds. Perfect for busy mornings.
@@ -230,9 +229,8 @@ export default function PremiumFMCGHomepage() {
             <span className="inline-block px-4 py-2 bg-[#E71D85]/10 text-[#E71D85] rounded-full font-bold text-xs uppercase tracking-widest">
               Summer Classic
             </span>
-            <h2 className="font-display text-5xl md:text-7xl uppercase leading-[0.9]">
-              <span className="text-[#E71D85]">The Ultimate</span> <br/> 
-              <span className="text-[#29ABE2]">Beach</span> <span className="text-[#F7931E]">Treat</span>
+            <h2 className="font-display text-5xl md:text-7xl text-[#1A5D2C] uppercase leading-[0.9]">
+              The Ultimate <br/> Beach Treat
             </h2>
             <p className="font-sans text-lg font-light text-[#1A5D2C]/80 max-w-md">
               Dragon fruit and mixed berry ice pops that actually taste like real fruit. The guilt-free summer cooler your family will beg for.

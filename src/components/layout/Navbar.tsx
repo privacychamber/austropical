@@ -80,7 +80,7 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-4 left-4 right-4 md:left-1/2 md:-translate-x-1/2 md:w-full md:max-w-[1200px] xl:max-w-[1400px] z-50 transition-all duration-500 font-sans rounded-full ${
+        className={`fixed top-[44px] left-4 right-4 md:left-1/2 md:-translate-x-1/2 md:w-full md:max-w-[1200px] xl:max-w-[1400px] z-50 transition-all duration-500 font-sans rounded-full ${
           scrolled
             ? "py-3 bg-white shadow-[0_10px_30px_rgba(0,0,0,0.1)] border border-gray-100"
             : "py-3 md:py-4 bg-white shadow-lg border border-gray-100"
