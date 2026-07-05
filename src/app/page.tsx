@@ -106,13 +106,13 @@ export default function DreamlandHomepage() {
           <TrustBadge type="starburst" text="The Amazon Feels Good" color="#F7931E" className="bottom-[30%] right-[8%] md:right-[15%]" rotate={8} />
 
           {/* Floating Product Arch (With Mix-Blend to remove white BG) */}
-          <div className="absolute -bottom-20 left-0 w-full flex justify-center items-end gap-2 md:gap-8 z-10 pointer-events-none mix-blend-darken">
+          <div className="absolute -bottom-20 left-0 w-full flex justify-center items-end gap-2 md:gap-8 z-10 pointer-events-none">
             
             <motion.img 
               animate={{ y: [0, -15, 0], rotate: [-15, -12, -15] }}
               transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
               src="/acai-zero-sugar-original.png" 
-              className="w-40 md:w-72 h-auto drop-shadow-2xl -mb-10" 
+              className="w-40 md:w-72 h-auto -mb-10 mix-blend-multiply" 
               alt="Tub 1" 
             />
             
@@ -120,7 +120,7 @@ export default function DreamlandHomepage() {
               animate={{ y: [0, -10, 0], rotate: [5, 2, 5] }}
               transition={{ repeat: Infinity, duration: 6, ease: "easeInOut", delay: 0.5 }}
               src="/dragonfruit_pack.png" 
-              className="w-48 md:w-80 h-auto drop-shadow-2xl mb-10 z-20" 
+              className="w-48 md:w-80 h-auto mb-10 z-20 mix-blend-multiply" 
               alt="Tub 2" 
             />
             
@@ -128,7 +128,7 @@ export default function DreamlandHomepage() {
               animate={{ y: [0, -12, 0], rotate: [-8, -5, -8] }}
               transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut", delay: 1 }}
               src="/mango_pack.png" 
-              className="w-48 md:w-80 h-auto drop-shadow-2xl mb-5" 
+              className="w-48 md:w-80 h-auto mb-5 mix-blend-multiply" 
               alt="Tub 3" 
             />
 
@@ -136,7 +136,7 @@ export default function DreamlandHomepage() {
               animate={{ y: [0, -20, 0], rotate: [12, 15, 12] }}
               transition={{ repeat: Infinity, duration: 5.5, ease: "easeInOut", delay: 0.2 }}
               src="/acai-passionfruit-legs.png" 
-              className="w-40 md:w-72 h-auto drop-shadow-2xl -mb-12" 
+              className="w-40 md:w-72 h-auto -mb-12 mix-blend-multiply" 
               alt="Tub 4" 
             />
           </div>
