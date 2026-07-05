@@ -88,19 +88,9 @@ export default function Navbar() {
       >
         <div className="max-w-container mx-auto px-6 md:px-12 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
-            {/* Custom vector-like Superfood Leaf Logo */}
-            <div className="w-9 h-9 bg-gradient-to-tr from-brand-orange to-brand-yellow rounded-btn flex items-center justify-center shadow-md transform group-hover:rotate-12 transition-transform duration-300">
-              <span className="text-brand-purple font-black text-lg">A</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="text-xl font-black font-display tracking-tight text-white group-hover:text-brand-yellow transition-colors leading-none">
-                austropical
-              </span>
-              <span className="text-[9px] font-bold text-brand-orange uppercase tracking-widest leading-none mt-0.5">
-                Superfoods
-              </span>
-            </div>
+          <Link href="/" className="flex items-center group">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logo.png" alt="Austropical Logo" className="h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
           </Link>
 
           {/* Desktop Navigation Links */}
@@ -372,13 +362,9 @@ export default function Navbar() {
         <div className="fixed inset-0 z-50 bg-brand-purple flex flex-col font-sans">
           {/* Header */}
           <div className="flex items-center justify-between px-6 py-6 border-b border-white/10">
-            <Link href="/" className="flex items-center gap-2" onClick={() => setMobileMenuOpen(false)}>
-              <div className="w-8 h-8 bg-gradient-to-tr from-brand-orange to-brand-yellow rounded-btn flex items-center justify-center">
-                <span className="text-brand-purple font-black text-sm">A</span>
-              </div>
-              <span className="text-lg font-black font-display tracking-tight text-white">
-                austropical
-              </span>
+            <Link href="/" className="flex items-center" onClick={() => setMobileMenuOpen(false)}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/logo.png" alt="Austropical Logo" className="h-10 w-auto object-contain" />
             </Link>
             <button
               onClick={() => setMobileMenuOpen(false)}
