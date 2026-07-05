@@ -46,19 +46,19 @@ export function Button({
     setIsHovered(false);
   };
 
-  const baseStyles = "relative inline-flex items-center justify-center font-sans tracking-wide font-medium transition-all duration-500 overflow-hidden";
+  const baseStyles = "relative inline-flex items-center justify-center font-sans font-bold transition-all duration-300 overflow-hidden rounded-full hover:-translate-y-1";
   
   const variants = {
-    primary: "bg-brand-forest text-brand-ivory hover:bg-brand-forest-light rounded-btn shadow-ambient hover:shadow-premium border border-brand-forest/20",
-    secondary: "bg-brand-acai text-white hover:bg-brand-acai-light rounded-btn shadow-contact",
-    outline: "border border-brand-stone text-brand-forest hover:bg-brand-ivory-dark rounded-btn",
-    ghost: "bg-transparent text-brand-forest hover:bg-brand-forest/5 rounded-btn",
+    primary: "bg-brand-mango text-brand-acai-dark hover:bg-brand-mango-light shadow-lg hover:shadow-xl border-b-4 border-brand-mango-light/50",
+    secondary: "bg-brand-dragonfruit text-white hover:bg-brand-dragonfruit-light shadow-lg hover:shadow-xl border-b-4 border-brand-dragonfruit-light/50",
+    outline: "border-2 border-brand-acai text-brand-acai hover:bg-brand-acai hover:text-white",
+    ghost: "bg-transparent text-brand-acai hover:bg-brand-acai/10",
   };
 
   const sizes = {
-    sm: "px-5 py-2.5 text-sm",
-    md: "px-7 py-3.5 text-sm uppercase tracking-widest",
-    lg: "px-10 py-5 text-sm uppercase tracking-widest",
+    sm: "px-6 py-3 text-sm",
+    md: "px-8 py-4 text-base uppercase tracking-wide",
+    lg: "px-12 py-5 text-lg uppercase tracking-wide",
   };
 
   return (

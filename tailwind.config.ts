@@ -12,34 +12,28 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         brand: {
-          // 40% Ivory (Warm, inviting, breathable space)
-          ivory: {
-            DEFAULT: "#F9F7F1",
-            dark: "#EFEBE1",
-          },
-          // 25% Rainforest Green (Grounding, natural)
-          forest: {
-            DEFAULT: "#1F3D2C",
-            light: "#2C5E43",
-          },
-          // 15% Earthy Stone (Basalt, tactile)
-          stone: {
-            DEFAULT: "#B0ABA0",
-            dark: "#5E5B55",
-          },
-          // 10% Deep Acai Purple (Signature hero accent)
+          // FMCG High-Energy Palette
           acai: {
-            DEFAULT: "#350457",
-            light: "#4D2677",
+            DEFAULT: "#4A154B",
+            light: "#6B216D",
+            dark: "#2A0A2B",
           },
-          // 5% Sunlight Gold (Warmth, morning rays)
-          sunlight: {
-            DEFAULT: "#FFD166",
-            soft: "#FFE8A1",
+          dragonfruit: {
+            DEFAULT: "#FF007F",
+            light: "#FF4D9F",
           },
-          // 5% Tropical Accents (Vibrancy)
-          dragonfruit: "#FF1E7D",
-          ocean: "#19B4FF",
+          mango: {
+            DEFAULT: "#FFC107",
+            light: "#FFD54F",
+          },
+          teal: {
+            DEFAULT: "#00C4CC",
+            light: "#4DE3E8",
+          },
+          cream: {
+            DEFAULT: "#FDFBF7",
+            dark: "#F0EBE1",
+          },
         },
       },
       fontFamily: {
