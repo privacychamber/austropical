@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/Button";
 import { TrustBadge } from "@/components/ui/TrustBadge";
 import { QuizModal } from "@/components/ui/QuizModal";
 import { CategorySection } from "@/components/sections/CategorySection";
+import { FloatingElement } from "@/components/ui/FloatingElement";
 import Link from "next/link";
 import { ArrowRight, Star, Heart, CheckCircle2 } from "lucide-react";
 
@@ -102,6 +103,14 @@ export default function PremiumFMCGHomepage() {
             <TrustBadge type="pill" text="Fat-Free" color="#B2D235" textColor="#1A5D2C" rotate={-5} />
             <TrustBadge type="starburst" text="Real Fruit" color="#1A5D2C" rotate={8} />
           </motion.div>
+
+          {/* Floating Ledge Image */}
+          <div className="absolute bottom-10 -right-20 md:-right-10 w-72 md:w-[450px] z-20 pointer-events-none opacity-80 md:opacity-100 hidden md:block">
+            <FloatingElement yOffset={30} duration={8}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/range-ledge.png" alt="Austropical Range" className="w-full h-auto object-contain drop-shadow-2xl" />
+            </FloatingElement>
+          </div>
 
         </motion.div>
         
