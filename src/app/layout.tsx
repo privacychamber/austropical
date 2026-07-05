@@ -29,7 +29,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased selection:bg-brand-orange selection:text-brand-purple">
+      <body className="antialiased selection:bg-brand-accent selection:text-white">
+        <div className="fixed inset-0 pointer-events-none bg-noise-pattern opacity-10 z-[9999] mix-blend-overlay"></div>
         <ClientLayout>{children}</ClientLayout>
       </body>
     </html>

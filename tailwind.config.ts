@@ -14,49 +14,66 @@ const config: Config = {
         brand: {
           purple: {
             DEFAULT: "#2A1147",
-            dark: "#2A1147",
+            dark: "#1A0B2E",
             light: "#4D2677",
           },
-          orange: "#FF9F1C",
-          yellow: "#FFC531",
-          cream: "#FFF9F2",
-          offwhite: "#FAFAFA",
-          dark: "#1A1A1A",
-          green: "#4F8F46",
-          pink: "#E9418A",
+          // Shifting to natural tones
+          stone: {
+            DEFAULT: "#E8E5E1",
+            dark: "#D0CCC5",
+            light: "#F5F3F0",
+          },
+          wood: {
+            DEFAULT: "#8B5A2B",
+            dark: "#5C3A21",
+            light: "#A07855",
+          },
+          forest: {
+            DEFAULT: "#2d4a22",
+            dark: "#1a2f14",
+            light: "#3f6331",
+          },
+          cream: "#FAF8F5",
+          sand: "#E3DCCF",
+          accent: "#D4AF37", // Muted gold/yellow
         },
-      },
-      borderRadius: {
-        card: "28px",
-        btn: "999px",
-        input: "18px",
-        img: "24px",
-        section: "32px",
-      },
-      spacing: {
-        '18': '4.5rem', // 72px
-        '28': '7rem',   // 112px
-        '36': '9rem',   // 144px
       },
       fontFamily: {
-        sans: ["General Sans", "Inter", "system-ui", "sans-serif"],
-        display: ["Clash Display", "sans-serif"],
+        sans: ["Inter", "system-ui", "sans-serif"],
+        display: ["'Playfair Display'", "Georgia", "serif"],
       },
-      maxWidth: {
-        container: "1440px",
-        content: "1320px",
-        text: "680px",
+      backgroundImage: {
+        'noise-pattern': "url('/noise.png')", // Assume we will generate/use a noise image or CSS
+      },
+      boxShadow: {
+        'ambient': '0 30px 60px -12px rgba(0, 0, 0, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.1)',
+        'contact': '0 2px 4px rgba(0,0,0,0.4)',
+        'premium': '0 20px 40px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.05)',
       },
       animation: {
+        "drift": "drift 20s linear infinite",
+        "sway": "sway 10s ease-in-out infinite",
         "float": "float 6s ease-in-out infinite",
         "pulse-slow": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
-        "spin-slow": "spin 20s linear infinite",
+        "shimmer": "shimmer 8s infinite linear",
       },
       keyframes: {
-        float: {
-          "0%, 100%": { transform: "translateY(0px) rotate(0deg)" },
-          "50%": { transform: "translateY(-15px) rotate(3deg)" },
+        drift: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(100px)" },
         },
+        sway: {
+          "0%, 100%": { transform: "rotate(-2deg)" },
+          "50%": { transform: "rotate(2deg)" },
+        },
+        float: {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-15px)" },
+        },
+        shimmer: {
+          "0%": { backgroundPosition: "0% 50%" },
+          "100%": { backgroundPosition: "100% 50%" },
+        }
       },
     },
   },

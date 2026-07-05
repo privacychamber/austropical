@@ -5,6 +5,7 @@ import { useSearchParams } from "next/navigation";
 import { useStore, Product } from "@/context/StoreContext";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import WavyDivider from "@/components/layout/WavyDivider";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Star, ShoppingBag, Heart, Search } from "lucide-react";
@@ -56,7 +57,7 @@ function ShopContent() {
     "ACAÍ SEED",
     "ICE BOX",
     "SUPERFRUITS BUCKETS",
-    "SUPERFRUITS ICE POP LINE",
+    "ICE POPS",
     "OTHER FRUITS SMOOTHIE CUBES",
     "SUPER FRUITS SORBET"
   ];
@@ -134,6 +135,7 @@ function ShopContent() {
           </motion.p>
         </div>
       </section>
+        <WavyDivider src="/dividers/wave1.png" alt="Hero bottom divider" className="absolute bottom-0 left-0 right-0 w-full h-[30px]" />
 
       {/* Main Catalog Area */}
       <section className="py-12 max-w-container mx-auto px-6 md:px-12 space-y-10">
@@ -304,6 +306,7 @@ function ShopContent() {
           </AnimatePresence>
         </div>
       </section>
+        <WavyDivider src="/dividers/wave2.png" alt="Catalog bottom divider" className="absolute bottom-0 left-0 right-0 w-full h-[35px]" />
 
       {/* Subscription banner */}
       <motion.section 
@@ -383,6 +386,7 @@ function ShopContent() {
           </div>
         </div>
       </section>
+        <WavyDivider src="/dividers/wave2.png" alt="UGC bottom divider" className="absolute bottom-0 left-0 right-0 w-full h-[30px]" />
 
       <Footer />
     </div>
