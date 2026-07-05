@@ -10,53 +10,28 @@ export default function Homepage() {
       
       {/* 
         ========================================
-        SCENE 01: THE HERO (Rainforest Origin)
+        SCENE 01: TROPICAL EXCELLENCE HERO
         ========================================
       */}
-      <section className="relative min-h-[95vh] w-full flex items-center overflow-hidden pt-20">
+      <section className="relative min-h-[85vh] w-full flex flex-col items-center justify-center overflow-hidden bg-[#2D0B38]">
+        {/* Tropical Leaf Background Pattern */}
+        <div className="absolute inset-0 bg-[url('/leaves_foreground_placeholder.png')] bg-cover bg-center opacity-10 mix-blend-color-dodge" />
         
-        {/* Background Atmosphere */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/rainforest_morning_placeholder.jpg')", backgroundColor: "#1A1F16" }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-charcoal/40 via-transparent to-brand-charcoal/90" />
-
-        {/* Foreground Depth (Leaves) */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/leaves_foreground_placeholder.png" alt="" className="absolute -bottom-10 -left-20 w-[600px] opacity-80 blur-[8px] z-30 pointer-events-none" />
-
-        <div className="relative z-20 w-full max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center h-full">
-          
-          {/* Confident Apple-style Typography */}
-          <div className="text-left flex flex-col justify-center h-full text-white pt-20">
-            <h1 className="font-display text-7xl md:text-[110px] leading-[0.9] tracking-tight mb-8 drop-shadow-2xl">
-              Wildly<br />Natural.
-            </h1>
-            <p className="text-lg md:text-xl font-light text-white/80 max-w-sm mb-12">
-              Born in the Amazon basin. Perfected for the Australian sun.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-6">
-              <Button variant="primary" size="lg">Explore Range</Button>
-            </div>
-          </div>
-
-          {/* Offset Product Composition on Wet Rock */}
-          <div className="flex justify-end relative h-full items-end pb-20">
-            <div className="relative">
-              {/* The Rock */}
-              <div className="absolute -bottom-12 -right-12 w-[500px] h-40 bg-[url('/wet_rock_texture_placeholder.jpg')] bg-cover rounded-[100%] blur-[2px] opacity-90 shadow-2xl" style={{ transform: "rotateX(70deg)" }} />
-              {/* Product */}
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img 
-                src="/acai-passionfruit-legs.png" 
-                alt="Acai product" 
-                className="relative z-20 w-full max-w-[400px] h-auto object-contain drop-shadow-[0_30px_40px_rgba(0,0,0,0.6)] right-10"
-              />
-            </div>
-          </div>
-
+        {/* The Banner Image */}
+        <div className="relative z-20 w-full max-w-6xl mx-auto px-4 mt-12">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img 
+            src="/unmatched-excellence-buckets.jpg" 
+            alt="Unmatched Excellence - Organic Acai Tubs" 
+            className="w-full h-auto object-contain rounded-2xl shadow-2xl drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
+          />
         </div>
+
+        {/* Tropical Foreground Elements */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/leaves_foreground_placeholder.png" alt="" className="absolute -bottom-20 -left-20 w-[400px] opacity-80 blur-[4px] z-30 pointer-events-none drop-shadow-2xl" />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/leaves_foreground_placeholder.png" alt="" className="absolute -bottom-20 -right-20 w-[400px] opacity-80 blur-[5px] z-30 pointer-events-none scale-x-[-1] drop-shadow-2xl" />
       </section>
 
       {/* 
