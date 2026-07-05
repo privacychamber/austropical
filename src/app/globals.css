@@ -6,11 +6,11 @@
 
 @layer base {
   :root {
-    --background: #1A0B2E; /* Deep Dreamland Space */
-    --foreground: #F9F8F6; /* Ivory Text */
-    --card-bg: rgba(255, 255, 255, 0.05); /* Glassmorphic Cards */
-    --border-color: rgba(255, 255, 255, 0.1);
-    --text-muted: rgba(255, 255, 255, 0.6);
+    --background: #FDFBF7; /* Bright Cream */
+    --foreground: #1A5D2C; /* Dark Brand Green */
+    --card-bg: #FFFFFF; /* White Cards */
+    --border-color: rgba(26, 93, 44, 0.1);
+    --text-muted: rgba(26, 93, 44, 0.6);
   }
 
   .dark {

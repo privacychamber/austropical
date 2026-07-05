@@ -40,7 +40,7 @@ export default function DreamlandHomepage() {
   const world3Y = useTransform(scrollYProgress, [0.4, 0.8], ["100%", "0%"]);
 
   return (
-    <main ref={containerRef} className="relative bg-[#1A0B2E] text-brand-ivory min-h-[350vh] font-sans overflow-clip selection:bg-brand-orange selection:text-white">
+    <main ref={containerRef} className="relative bg-[#FDFBF7] text-[#1A5D2C] min-h-[350vh] font-sans overflow-clip selection:bg-[#B2D235] selection:text-[#1A5D2C]">
       <Navbar />
       
       {/* 
@@ -137,51 +137,55 @@ export default function DreamlandHomepage() {
 
       {/* 
         ========================================
-        SCENE 02: FLOATING WORLDS
+        SCENE 02: THE LIFESTYLE GALLERY
         ========================================
       */}
-      <div className="relative z-20 w-full max-w-7xl mx-auto px-6 space-y-[30vh] pb-[20vh]">
+      <div className="relative z-20 w-full max-w-7xl mx-auto px-6 space-y-[15vh] py-[15vh]">
         
-        {/* World 1: Açaí */}
+        {/* Highlight 1 */}
         <motion.div style={{ y: world1Y }} className="relative grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="flex justify-center relative">
-            <div className="absolute inset-0 bg-[url('/mossy_rainforest_cave.png')] bg-cover bg-center opacity-40 blur-[40px] rounded-[60px]" />
+            <div className="absolute inset-0 bg-[#B2D235]/20 blur-[40px] rounded-full" />
             <motion.img 
-              animate={{ y: [0, -20, 0] }}
+              animate={{ y: [0, -10, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0 }}
-              src="/acai-passionfruit-legs.png" 
-              alt="Açaí Superberry" 
-              className="relative z-10 w-full max-w-md h-auto drop-shadow-[0_40px_60px_rgba(0,0,0,0.8)]" 
+              src="/bright_acai_bowl.png" 
+              alt="Bright Acai Bowl" 
+              className="relative z-10 w-full max-w-md h-auto rounded-[40px] drop-shadow-xl border-4 border-white" 
             />
           </div>
           <div className="text-left">
-            <span className="font-sans text-xs tracking-[0.4em] text-brand-green uppercase mb-6 block drop-shadow-md">The Original</span>
-            <h2 className="font-display text-5xl md:text-7xl mb-6 text-white drop-shadow-lg">Açaí Bowls</h2>
-            <p className="font-sans text-lg font-light text-white/80 max-w-md mb-8">
-              Deep purple antioxidant power. Wild-harvested directly from the Amazon canopy.
+            <span className="font-sans text-sm tracking-[0.2em] text-[#B2D235] uppercase mb-4 block font-bold drop-shadow-sm">Fresh & Achievable</span>
+            <h2 className="font-display text-5xl md:text-7xl mb-6 text-[#1A5D2C] uppercase leading-[0.9]">Start Your <br/> Morning Right</h2>
+            <p className="font-sans text-lg font-light text-[#1A5D2C]/80 max-w-md mb-8">
+              Real food for real people. Our Açaí is sustainably wild-harvested and flash-frozen so you can create café-quality bowls in your own kitchen.
             </p>
-            <Button variant="outline" size="md" className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm">Shop Tubs</Button>
+            <Button className="bg-[#1A5D2C] text-white hover:bg-[#B2D235] hover:text-[#1A5D2C] shadow-[0_8px_30px_rgba(26,93,44,0.15)] rounded-full px-8 py-6 font-bold transition-colors">
+              Explore Açaí
+            </Button>
           </div>
         </motion.div>
 
-        {/* World 2: Cubes */}
+        {/* Highlight 2 */}
         <motion.div style={{ y: world2Y }} className="relative grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="text-left order-2 md:order-1 md:pl-20">
-            <span className="font-sans text-xs tracking-[0.4em] text-brand-blue uppercase mb-6 block drop-shadow-md">Flash Frozen</span>
-            <h2 className="font-display text-5xl md:text-7xl mb-6 text-white drop-shadow-lg">Smoothie Cubes</h2>
-            <p className="font-sans text-lg font-light text-white/80 max-w-md mb-8">
-              A perfectly portioned blend of raw, tropical energy. Just drop, blend, and glow.
+            <span className="font-sans text-sm tracking-[0.2em] text-[#F7931E] uppercase mb-4 block font-bold drop-shadow-sm">Sunshine in a cup</span>
+            <h2 className="font-display text-5xl md:text-7xl mb-6 text-[#1A5D2C] uppercase leading-[0.9]">Joyful <br/> Living</h2>
+            <p className="font-sans text-lg font-light text-[#1A5D2C]/80 max-w-md mb-8">
+              Healthy eating shouldn't be a chore. It should be vibrant, effortless, and full of bright tropical energy to fuel your outdoor adventures.
             </p>
-            <Button variant="outline" size="md" className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm">Shop Cubes</Button>
+            <Button className="bg-[#1A5D2C] text-white hover:bg-[#F7931E] hover:text-[#1A5D2C] shadow-[0_8px_30px_rgba(26,93,44,0.15)] rounded-full px-8 py-6 font-bold transition-colors">
+              Discover Cubes
+            </Button>
           </div>
           <div className="flex justify-center relative order-1 md:order-2">
-            <div className="absolute inset-0 bg-[url('/crushed_ice_macro.png')] bg-cover bg-center opacity-50 blur-[50px] rounded-[60px]" />
+            <div className="absolute inset-0 bg-[#F7931E]/20 blur-[40px] rounded-full" />
             <motion.img 
-              animate={{ y: [0, -15, 0], rotate: [0, 5, 0] }}
+              animate={{ y: [0, -10, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              src="/dragonfruit_pack.png" 
-              alt="Smoothie Cubes" 
-              className="relative z-10 w-full max-w-md h-auto drop-shadow-[0_40px_60px_rgba(0,0,0,0.8)]" 
+              src="/smiling_woman_smoothie.png" 
+              alt="Woman with smoothie" 
+              className="relative z-10 w-full max-w-md h-auto rounded-[40px] drop-shadow-xl border-4 border-white" 
             />
           </div>
         </motion.div>
@@ -212,46 +216,44 @@ export default function DreamlandHomepage() {
 
       {/* 
         ========================================
-        SCENE 03: STORYTELLING TIMELINE
+        SCENE 03: THE BRIGHT TIMELINE
         ========================================
       */}
-      <section className="relative w-full z-20 bg-brand-charcoal py-32 rounded-t-[80px] overflow-hidden border-t border-white/5">
+      <section className="relative w-full z-20 bg-white py-32 rounded-t-[80px] overflow-hidden border-t border-[#1A5D2C]/5 shadow-[0_-20px_50px_rgba(0,0,0,0.02)]">
         
-        {/* Background Australian Beach Lifestyle */}
-        <div className="absolute inset-0 bg-[url('/australian_morning_surf.png')] bg-cover bg-center opacity-20 mix-blend-luminosity blur-[2px]" />
-        <div className="absolute inset-0 bg-gradient-to-t from-brand-charcoal via-brand-charcoal/80 to-brand-charcoal/20" />
-
         <div className="relative z-20 max-w-5xl mx-auto px-6 text-center space-y-16">
           <div className="space-y-6">
-            <span className="text-brand-orange font-bold uppercase tracking-[0.3em] text-sm">The Journey</span>
-            <h2 className="font-display text-5xl md:text-7xl text-white drop-shadow-lg leading-tight">
-              From the Amazon Canopy <br/><span className="italic text-white/70 font-light">to the Australian Coast</span>
+            <span className="text-[#F7931E] font-bold uppercase tracking-[0.2em] text-sm">The Journey</span>
+            <h2 className="font-display text-5xl md:text-[5rem] text-[#1A5D2C] leading-[0.9] uppercase">
+              From the Amazon <br/>to Australia
             </h2>
-            <p className="font-sans text-lg text-white/80 font-light max-w-2xl mx-auto leading-relaxed">
+            <p className="font-sans text-lg text-[#1A5D2C]/80 font-light max-w-2xl mx-auto leading-relaxed mt-6">
               We travel to the heart of the Amazon to sustainably wild-harvest the most nutrient-dense superfoods on earth, freezing them instantly to lock in their magic before they reach your breakfast table.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-12">
-            <div className="bg-white/5 border border-white/10 backdrop-blur-md p-8 rounded-[40px] text-left hover:bg-white/10 transition-colors">
-              <span className="text-4xl mb-4 block">01</span>
-              <h3 className="text-2xl font-display font-bold text-white mb-3">Wild Harvest</h3>
-              <p className="text-sm text-white/70">Hand-picked by local families in the Amazon rainforest, ensuring sustainability and fair trade.</p>
+            <div className="bg-[#FDFBF7] border border-[#1A5D2C]/10 p-8 rounded-[40px] text-left hover:bg-white hover:shadow-xl transition-all duration-300 group">
+              <div className="w-16 h-16 bg-[#B2D235] rounded-full flex items-center justify-center text-[#1A5D2C] text-2xl font-black mb-6 group-hover:scale-110 transition-transform">01</div>
+              <h3 className="text-2xl font-display uppercase text-[#1A5D2C] mb-3">Wild Harvest</h3>
+              <p className="text-sm text-[#1A5D2C]/70">Hand-picked by local families in the Amazon rainforest, ensuring sustainability and fair trade.</p>
             </div>
-            <div className="bg-white/5 border border-white/10 backdrop-blur-md p-8 rounded-[40px] text-left hover:bg-white/10 transition-colors mt-0 md:mt-12">
-              <span className="text-4xl mb-4 block">02</span>
-              <h3 className="text-2xl font-display font-bold text-white mb-3">Flash Frozen</h3>
-              <p className="text-sm text-white/70">Instantly frozen at the source to preserve the vibrant nutrients, taste, and magical energy.</p>
+            <div className="bg-[#FDFBF7] border border-[#1A5D2C]/10 p-8 rounded-[40px] text-left hover:bg-white hover:shadow-xl transition-all duration-300 mt-0 md:mt-12 group">
+              <div className="w-16 h-16 bg-[#F7931E] rounded-full flex items-center justify-center text-white text-2xl font-black mb-6 group-hover:scale-110 transition-transform">02</div>
+              <h3 className="text-2xl font-display uppercase text-[#1A5D2C] mb-3">Flash Frozen</h3>
+              <p className="text-sm text-[#1A5D2C]/70">Instantly frozen at the source to preserve the vibrant nutrients, taste, and natural energy.</p>
             </div>
-            <div className="bg-white/5 border border-white/10 backdrop-blur-md p-8 rounded-[40px] text-left hover:bg-white/10 transition-colors mt-0 md:mt-24">
-              <span className="text-4xl mb-4 block">03</span>
-              <h3 className="text-2xl font-display font-bold text-white mb-3">Pure Joy</h3>
-              <p className="text-sm text-white/70">Blended into perfect portions for your morning rituals, post-surf fuel, and family breakfasts.</p>
+            <div className="bg-[#FDFBF7] border border-[#1A5D2C]/10 p-8 rounded-[40px] text-left hover:bg-white hover:shadow-xl transition-all duration-300 mt-0 md:mt-24 group">
+              <div className="w-16 h-16 bg-[#29ABE2] rounded-full flex items-center justify-center text-white text-2xl font-black mb-6 group-hover:scale-110 transition-transform">03</div>
+              <h3 className="text-2xl font-display uppercase text-[#1A5D2C] mb-3">Pure Joy</h3>
+              <p className="text-sm text-[#1A5D2C]/70">Blended into perfect portions for your morning rituals, post-surf fuel, and family breakfasts.</p>
             </div>
           </div>
           
           <div className="pt-20">
-            <Button variant="primary" size="lg" className="shadow-[0_0_40px_rgba(247,147,30,0.4)]">Discover Our Goodness</Button>
+            <Button className="bg-[#1A5D2C] text-white hover:bg-[#F7931E] hover:text-[#1A5D2C] shadow-[0_8px_30px_rgba(247,147,30,0.3)] rounded-full px-12 py-6 font-bold transition-colors">
+              Discover Our Goodness
+            </Button>
           </div>
         </div>
       </section>
