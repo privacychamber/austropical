@@ -41,19 +41,6 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
     }
   }, []);
 
-  const waveTransitionVariants = {
-    initial: {
-      y: "100%",
-    },
-    animate: {
-      y: "-100%",
-      transition: {
-        duration: 1.2,
-        ease: [0.76, 0, 0.24, 1],
-      },
-    },
-  };
-
   return (
     <StoreProvider>
       <AnimatePresence mode="wait">
@@ -61,24 +48,6 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
           
           {/* Custom spring inertia follow cursor */}
           <CustomCursor />
-
-          {/* Animated Route Sweep Overlay */}
-          <motion.div
-            variants={waveTransitionVariants}
-            initial="initial"
-            animate="animate"
-            className="fixed inset-0 w-full h-screen bg-brand-charcoal z-[9999] pointer-events-none flex flex-col justify-end"
-          >
-            {/* Wave Divider attached to sweep */}
-            <svg
-              className="absolute left-0 bottom-full w-full h-[120px] text-brand-charcoal fill-current"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 1200 120"
-              preserveAspectRatio="none"
-            >
-              <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C50.21,21.84,95.34,44.75,148.66,54.8,206.51,65.73,264.44,67.12,321.39,56.44Z"></path>
-            </svg>
-          </motion.div>
 
           {children}
         </motion.div>
