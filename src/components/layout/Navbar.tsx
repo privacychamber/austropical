@@ -80,26 +80,27 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 font-sans ${
+        className={`fixed top-4 left-4 right-4 md:left-1/2 md:-translate-x-1/2 md:w-full md:max-w-6xl z-50 transition-all duration-500 font-sans rounded-full ${
           scrolled
-            ? "py-3 bg-white/95 backdrop-blur-xl border-b border-brand-charcoal/10 shadow-lg"
-            : "py-6 bg-transparent"
+            ? "py-3 bg-white/95 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.15)] border border-white/50"
+            : "py-3 md:py-4 bg-white/80 backdrop-blur-md shadow-lg border border-white/30"
         }`}
       >
-        <div className="max-w-container mx-auto px-6 md:px-12 flex items-center justify-between">
+        <div className="mx-auto px-4 md:px-8 flex items-center justify-between">
           {/* Graphic Logo */}
           <Link href="/" className="flex items-center">
+            {/* mix-blend-darken hides the white background of the logo on the white island */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo.png" alt="Austropical Logo" className="h-10 md:h-12 w-auto object-contain transition-transform hover:scale-105" />
+            <img src="/logo.png" alt="Austropical Logo" className="h-10 md:h-12 w-auto object-contain transition-transform hover:scale-105 mix-blend-darken" />
           </Link>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-6">
             {navLinks.map((link) => (
               <div key={link.name} className="relative group/link">
                 <Link
                   href={link.href}
-                  className={`text-sm font-semibold tracking-wide flex items-center gap-1 transition-all duration-300 text-brand-charcoal/80 hover:text-brand-charcoal`}
+                  className={`text-xs md:text-sm font-bold tracking-wider flex items-center gap-1 transition-all duration-300 text-[#1A5D2C] hover:text-[#E71D85]`}
                 >
                   <span>{link.name}</span>
                   {link.hasDropdown && (
@@ -109,46 +110,46 @@ export default function Navbar() {
 
                 {/* Sub Menu Dropdown for Shop */}
                 {link.hasDropdown && (
-                  <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-80 bg-brand-charcoal border border-white/15 rounded-card p-5 shadow-2xl opacity-0 invisible group-hover/link:opacity-100 group-hover/link:visible transition-all duration-350 transform translate-y-2 group-hover/link:translate-y-0 z-50">
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-80 bg-white border border-[#1A5D2C]/10 rounded-[20px] p-5 shadow-2xl opacity-0 invisible group-hover/link:opacity-100 group-hover/link:visible transition-all duration-350 transform translate-y-2 group-hover/link:translate-y-0 z-50">
                     <div className="grid grid-cols-1 gap-4">
                       <div>
-                        <p className="text-xs font-black text-brand-orange uppercase tracking-wider mb-2">
+                        <p className="text-xs font-black text-[#F7931E] uppercase tracking-wider mb-2">
                           Collections
                         </p>
                         <div className="space-y-2.5">
                           <Link
                             href="/shop?category=Tubs"
-                            className="block text-sm font-bold text-white/90 hover:text-brand-orange transition-colors"
+                            className="block text-sm font-bold text-[#1A5D2C] hover:text-[#E71D85] transition-colors"
                           >
                             Açaí Bowls & Tubs
-                            <span className="block text-[11px] font-normal text-white/50">
+                            <span className="block text-[11px] font-normal text-[#1A5D2C]/60">
                               Direct Amazon wild pulp frozen fresh
                             </span>
                           </Link>
                           <Link
                             href="/shop?category=Cubes"
-                            className="block text-sm font-bold text-white/90 hover:text-brand-orange transition-colors"
+                            className="block text-sm font-bold text-[#1A5D2C] hover:text-[#E71D85] transition-colors"
                           >
                             Smoothie Cubes Blend
-                            <span className="block text-[11px] font-normal text-white/50">
+                            <span className="block text-[11px] font-normal text-[#1A5D2C]/60">
                               Pre-portioned freeze-dried glow boosters
                             </span>
                           </Link>
                           <Link
                             href="/shop?category=Packs"
-                            className="block text-sm font-bold text-white/90 hover:text-brand-orange transition-colors"
+                            className="block text-sm font-bold text-[#1A5D2C] hover:text-[#E71D85] transition-colors"
                           >
                             Organic Açaí Packs
-                            <span className="block text-[11px] font-normal text-white/50">
+                            <span className="block text-[11px] font-normal text-[#1A5D2C]/60">
                               Unsweetened pure fruit pulp block packs
                             </span>
                           </Link>
                         </div>
                       </div>
-                      <div className="border-t border-white/10 pt-3">
+                      <div className="border-t border-[#1A5D2C]/10 pt-3">
                         <Link
                           href="/shop"
-                          className="text-xs font-black text-white/80 hover:text-brand-orange transition-colors uppercase tracking-wider flex items-center justify-between"
+                          className="text-xs font-black text-[#1A5D2C]/80 hover:text-[#E71D85] transition-colors uppercase tracking-wider flex items-center justify-between"
                         >
                           <span>Explore All Products</span>
                           <span>→</span>
@@ -157,13 +158,6 @@ export default function Navbar() {
                     </div>
                   </div>
                 )}
-
-                {/* Animated Hover Underline */}
-                <span
-                  className={`absolute -bottom-1.5 left-0 w-0 h-0.5 bg-brand-orange transition-all duration-300 group-hover/link:w-full ${
-                    pathname === link.href ? "w-full" : ""
-                  }`}
-                />
               </div>
             ))}
 
@@ -171,118 +165,88 @@ export default function Navbar() {
             <div className="relative group/link">
               <Link
                 href="/admin"
-                className="text-xs font-black text-brand-orange border border-brand-orange/30 px-3 py-1 rounded-btn hover:bg-brand-orange hover:text-brand-charcoal transition-all duration-300"
+                className="text-[10px] font-black text-[#E71D85] border border-[#E71D85]/30 px-3 py-1 rounded-full hover:bg-[#E71D85] hover:text-white transition-all duration-300 uppercase tracking-widest"
               >
-                CMS Admin
+                CMS
               </Link>
             </div>
           </nav>
 
-          {/* Right Header Utilities (Search, Wishlist, Account, Cart) */}
-          <div className="hidden lg:flex items-center gap-6">
-            {/* Language & Currency selection */}
-            <div className={`flex items-center gap-3 text-xs font-semibold border-r pr-6 ${scrolled ? 'text-brand-charcoal/70 border-brand-charcoal/10' : 'text-white/70 border-white/10'}`}>
-              <div className={`flex items-center gap-1 cursor-pointer transition-colors ${scrolled ? 'hover:text-brand-charcoal' : 'hover:text-white'}`}>
-                <Globe className="w-3.5 h-3.5 text-brand-orange" />
+          {/* Right Header Utilities */}
+          <div className="hidden lg:flex items-center gap-4">
+            
+            <div className="flex items-center gap-3 text-xs font-bold text-[#1A5D2C]/70 border-r border-[#1A5D2C]/20 pr-4">
+              <div className="flex items-center gap-1 cursor-pointer hover:text-[#E71D85] transition-colors">
+                <Globe className="w-3.5 h-3.5 text-[#F7931E]" />
                 <span>{language}</span>
               </div>
-              <div className={`flex items-center gap-0.5 cursor-pointer transition-colors ${scrolled ? 'hover:text-brand-charcoal' : 'hover:text-white'}`}>
-                <DollarSign className="w-3.5 h-3.5 text-brand-orange" />
+              <div className="flex items-center gap-0.5 cursor-pointer hover:text-[#E71D85] transition-colors">
+                <DollarSign className="w-3.5 h-3.5 text-[#F7931E]" />
                 <span>{currency}</span>
               </div>
             </div>
 
-            {/* Search Trigger */}
             <button
               onClick={() => setSearchOpen(true)}
-              className={`transition-all hover:scale-110 hover:text-brand-orange ${scrolled ? 'text-brand-charcoal/85' : 'text-white/85'}`}
-              aria-label="Search site"
+              className="text-[#1A5D2C] hover:scale-110 hover:text-[#E71D85] transition-all"
             >
               <Search className="w-5 h-5" />
             </button>
 
-            {/* Wishlist Link */}
             <Link
               href="/account?tab=wishlist"
-              className={`transition-all hover:scale-110 hover:text-brand-orange relative ${scrolled ? 'text-brand-charcoal/85' : 'text-white/85'}`}
-              aria-label="Wishlist"
+              className="text-[#1A5D2C] hover:scale-110 hover:text-[#E71D85] transition-all relative"
             >
               <Heart className="w-5 h-5" />
               {totalWishlistItems > 0 && (
-                <span className="absolute -top-1.5 -right-1.5 bg-brand-orange text-white text-[9px] font-black w-4 h-4 rounded-full flex items-center justify-center scale-95 animate-pulse">
+                <span className="absolute -top-1.5 -right-1.5 bg-[#E71D85] text-white text-[9px] font-black w-4 h-4 rounded-full flex items-center justify-center scale-95 animate-pulse">
                   {totalWishlistItems}
                 </span>
               )}
             </Link>
 
-            {/* User Account Link */}
             <Link
               href="/account"
-              className={`transition-all hover:scale-110 hover:text-brand-orange ${scrolled ? 'text-brand-charcoal/85' : 'text-white/85'}`}
-              aria-label="User Account"
+              className="text-[#1A5D2C] hover:scale-110 hover:text-[#E71D85] transition-all"
             >
               <User className="w-5 h-5" />
             </Link>
 
-            {/* Theme Toggle Button */}
-            <button
-              onClick={toggleTheme}
-              className={`transition-all hover:scale-110 hover:text-brand-orange flex items-center justify-center mr-1 ${scrolled ? 'text-brand-charcoal/85' : 'text-white/85'}`}
-              aria-label="Toggle theme"
-            >
-              {theme === "dark" ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-            </button>
-
             <button
               onClick={() => setCartOpen(true)}
-              className="bg-brand-orange hover:bg-brand-yellow hover:scale-105 transition-all text-brand-charcoal p-2.5 rounded-full flex items-center justify-center relative shadow-md"
-              aria-label="Open cart"
+              className="bg-[#1A5D2C] text-white hover:bg-[#B2D235] hover:text-[#1A5D2C] hover:scale-105 transition-all p-2.5 rounded-full flex items-center justify-center relative shadow-md ml-2"
             >
-              <ShoppingBag className="w-5 h-5" />
+              <ShoppingBag className="w-4 h-4 md:w-5 md:h-5" />
               {totalCartItems > 0 && (
-                <span className="absolute -top-1.5 -right-1.5 bg-white text-brand-charcoal text-[10px] font-black w-4.5 h-4.5 rounded-full flex items-center justify-center border border-brand-charcoal/20">
+                <span className="absolute -top-1.5 -right-1.5 bg-[#E71D85] text-white text-[10px] font-black w-4.5 h-4.5 rounded-full flex items-center justify-center border border-white">
                   {totalCartItems}
                 </span>
               )}
             </button>
             <Link
               href="/shop"
-              className="bg-[#FFC531] hover:bg-[#FF9F1C] text-[#2A1147] font-black text-xs uppercase tracking-widest px-5 py-2.5 rounded-full shadow-md transition-all hover:scale-105"
+              className="bg-[#F7931E] hover:bg-[#1A5D2C] text-white font-black text-[10px] md:text-xs uppercase tracking-widest px-4 md:px-6 py-2.5 rounded-full shadow-[0_8px_20px_rgba(247,147,30,0.3)] transition-all hover:scale-105 ml-1"
             >
               SHOP NOW
             </Link>
           </div>
 
           {/* Mobile Navigation controls */}
-          <div className="flex lg:hidden items-center gap-4">
-            {/* Theme Toggle for Mobile */}
-            <button
-              onClick={toggleTheme}
-              className={`p-1 flex items-center justify-center mr-1 ${scrolled ? 'text-brand-charcoal' : 'text-white/95'}`}
-              aria-label="Toggle theme"
-            >
-              {theme === "dark" ? <Sun className="w-5.5 h-5.5" /> : <Moon className="w-5.5 h-5.5" />}
-            </button>
-
-            {/* Cart Icon for Mobile */}
+          <div className="flex lg:hidden items-center gap-3">
             <button
               onClick={() => setCartOpen(true)}
-              className={`p-1 relative ${scrolled ? 'text-brand-charcoal' : 'text-white/95'}`}
-              aria-label="Open cart"
+              className="text-[#1A5D2C] relative p-1"
             >
-              <ShoppingBag className="w-6 h-6" />
+              <ShoppingBag className="w-5 h-5" />
               {totalCartItems > 0 && (
-                <span className="absolute -top-1 -right-1 bg-brand-orange text-brand-charcoal text-[9px] font-black w-4.5 h-4.5 rounded-full flex items-center justify-center">
+                <span className="absolute -top-1 -right-1 bg-[#E71D85] text-white text-[9px] font-black w-4 h-4 rounded-full flex items-center justify-center">
                   {totalCartItems}
                 </span>
               )}
             </button>
-
-            {/* Hamburger button */}
             <button
               onClick={() => setMobileMenuOpen(true)}
-              className={`p-1 ${scrolled ? 'text-brand-charcoal' : 'text-white/95'}`}
-              aria-label="Open menu"
+              className="text-[#1A5D2C] p-1"
             >
               <Menu className="w-6 h-6" />
             </button>
