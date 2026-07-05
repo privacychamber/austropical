@@ -42,8 +42,8 @@ export default function DreamlandHomepage() {
       */}
       <div className="fixed inset-0 pointer-events-none z-0">
         {/* Deep Dreamland Background */}
-        <div className="absolute inset-0 bg-[url('/rainforest_morning_placeholder.jpg')] bg-cover bg-center opacity-10 mix-blend-color-dodge" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1A0B2E]/40 via-[#2D0B38]/80 to-[#1A0B2E]" />
+        <div className="absolute inset-0 bg-[url('/rainforest_canopy_hero.png')] bg-cover bg-center opacity-60 mix-blend-luminosity" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1A0B2E]/70 via-[#2D0B38]/60 to-[#1A0B2E]" />
         
         {/* Floating Bioluminescent Spores */}
         <div className="absolute top-1/4 left-1/4 w-3 h-3 bg-brand-green rounded-full blur-[2px] animate-ping opacity-50" />
@@ -92,7 +92,7 @@ export default function DreamlandHomepage() {
         {/* World 1: Açaí */}
         <motion.div style={{ y: world1Y }} className="relative grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="flex justify-center relative">
-            <div className="absolute inset-0 bg-brand-charcoal opacity-40 blur-[100px] rounded-full" />
+            <div className="absolute inset-0 bg-[url('/mossy_rainforest_cave.png')] bg-cover bg-center opacity-40 blur-[40px] rounded-[60px]" />
             <motion.img 
               animate={{ y: [0, -20, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0 }}
@@ -122,7 +122,7 @@ export default function DreamlandHomepage() {
             <Button variant="outline" size="md" className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm">Shop Cubes</Button>
           </div>
           <div className="flex justify-center relative order-1 md:order-2">
-            <div className="absolute inset-0 bg-brand-blue/20 opacity-50 blur-[100px] rounded-full" />
+            <div className="absolute inset-0 bg-[url('/crushed_ice_macro.png')] bg-cover bg-center opacity-50 blur-[50px] rounded-[60px]" />
             <motion.img 
               animate={{ y: [0, -15, 0], rotate: [0, 5, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
@@ -136,7 +136,7 @@ export default function DreamlandHomepage() {
         {/* World 3: Ice Pops */}
         <motion.div style={{ y: world3Y }} className="relative grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="flex justify-center relative">
-            <div className="absolute inset-0 bg-brand-orange/20 opacity-40 blur-[100px] rounded-full" />
+            <div className="absolute inset-0 bg-[url('/australian_summer_timber.png')] bg-cover bg-center opacity-60 blur-[40px] rounded-[60px]" />
             <motion.img 
               animate={{ y: [0, -25, 0], rotate: [0, -5, 0] }}
               transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
@@ -164,6 +164,9 @@ export default function DreamlandHomepage() {
       */}
       <section className="relative h-[120vh] w-full flex items-center justify-center overflow-hidden bg-gradient-to-b from-transparent to-[#10041C]">
         
+        {/* Background Australian Beach Lifestyle */}
+        <div className="absolute inset-0 bg-[url('/australian_morning_surf.png')] bg-cover bg-center opacity-20 mix-blend-luminosity" />
+
         {/* Floating Fruits */}
         <motion.div style={{ y: fruit1Y, rotate: fruitRotate }} className="absolute top-[20%] left-[10%] w-32 h-32 bg-[url('/recipe_bowl.png')] bg-contain bg-no-repeat drop-shadow-2xl opacity-80" />
         <motion.div style={{ y: fruit2Y, rotate: fruitRotate }} className="absolute top-[40%] right-[15%] w-48 h-48 bg-[url('/mango_pack.png')] bg-contain bg-no-repeat drop-shadow-2xl opacity-90" />
