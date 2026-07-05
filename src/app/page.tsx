@@ -1,141 +1,182 @@
-import React from "react";
+"use client";
+
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { Button } from "@/components/ui/Button";
 
-export default function Homepage() {
+export default function DreamlandHomepage() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"]
+  });
+
+  // Hero Parallax Transforms
+  const heroY = useTransform(scrollYProgress, [0, 0.2], ["0%", "50%"]);
+  const heroOpacity = useTransform(scrollYProgress, [0, 0.15], [1, 0]);
+  const leafLeftX = useTransform(scrollYProgress, [0, 0.2], ["0%", "-50%"]);
+  const leafRightX = useTransform(scrollYProgress, [0, 0.2], ["0%", "50%"]);
+
+  // Floating Worlds Transforms
+  const world1Y = useTransform(scrollYProgress, [0.1, 0.4], ["100%", "0%"]);
+  const world2Y = useTransform(scrollYProgress, [0.2, 0.6], ["100%", "0%"]);
+  const world3Y = useTransform(scrollYProgress, [0.4, 0.8], ["100%", "0%"]);
+
+  // Zero-Gravity Harvest Transforms
+  const fruit1Y = useTransform(scrollYProgress, [0.7, 1], ["0%", "-200%"]);
+  const fruit2Y = useTransform(scrollYProgress, [0.7, 1], ["0%", "-100%"]);
+  const fruit3Y = useTransform(scrollYProgress, [0.7, 1], ["0%", "-150%"]);
+  const fruitRotate = useTransform(scrollYProgress, [0.7, 1], [0, 180]);
+
   return (
-    <main className="relative bg-brand-ivory text-brand-charcoal min-h-screen font-sans selection:bg-brand-orange selection:text-white">
+    <main ref={containerRef} className="relative bg-[#1A0B2E] text-brand-ivory min-h-[400vh] font-sans overflow-clip selection:bg-brand-orange selection:text-white">
       <Navbar />
       
       {/* 
         ========================================
-        SCENE 01: TROPICAL EXCELLENCE HERO
+        SCENE 01: THE CANOPY ENTRANCE
         ========================================
       */}
-      <section className="relative min-h-[85vh] w-full flex flex-col items-center justify-center overflow-hidden bg-[#2D0B38]">
-        {/* Tropical Leaf Background Pattern */}
-        <div className="absolute inset-0 bg-[url('/leaves_foreground_placeholder.png')] bg-cover bg-center opacity-10 mix-blend-color-dodge" />
+      <div className="fixed inset-0 pointer-events-none z-0">
+        {/* Deep Dreamland Background */}
+        <div className="absolute inset-0 bg-[url('/rainforest_morning_placeholder.jpg')] bg-cover bg-center opacity-10 mix-blend-color-dodge" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1A0B2E]/40 via-[#2D0B38]/80 to-[#1A0B2E]" />
         
-        {/* The Banner Image */}
-        <div className="relative z-20 w-full max-w-6xl mx-auto px-4 mt-12">
+        {/* Floating Bioluminescent Spores */}
+        <div className="absolute top-1/4 left-1/4 w-3 h-3 bg-brand-green rounded-full blur-[2px] animate-ping opacity-50" />
+        <div className="absolute top-1/2 right-1/3 w-4 h-4 bg-brand-blue rounded-full blur-[3px] animate-pulse opacity-40" />
+        <div className="absolute bottom-1/3 left-1/2 w-2 h-2 bg-brand-orange rounded-full blur-[1px] animate-ping opacity-60" />
+      </div>
+
+      <motion.section style={{ y: heroY, opacity: heroOpacity }} className="relative h-screen w-full flex flex-col items-center justify-center z-10 pt-20">
+        
+        {/* Floating Banner */}
+        <motion.div 
+          animate={{ y: [0, -15, 0] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          className="relative z-20 w-full max-w-5xl mx-auto px-4 mt-12"
+        >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img 
             src="/unmatched-excellence-buckets.jpg" 
-            alt="Unmatched Excellence - Organic Acai Tubs" 
-            className="w-full h-auto object-contain rounded-2xl shadow-2xl drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
+            alt="Unmatched Excellence" 
+            className="w-full h-auto object-contain rounded-[40px] shadow-[0_0_80px_rgba(45,11,56,0.8)]"
           />
-        </div>
+        </motion.div>
 
-        {/* Tropical Foreground Elements */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/leaves_foreground_placeholder.png" alt="" className="absolute -bottom-20 -left-20 w-[400px] opacity-80 blur-[4px] z-30 pointer-events-none drop-shadow-2xl" />
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/leaves_foreground_placeholder.png" alt="" className="absolute -bottom-20 -right-20 w-[400px] opacity-80 blur-[5px] z-30 pointer-events-none scale-x-[-1] drop-shadow-2xl" />
-      </section>
+        {/* Parallax Foreground Leaves */}
+        <motion.img 
+          style={{ x: leafLeftX }}
+          src="/leaves_foreground_placeholder.png" 
+          alt="" 
+          className="absolute -bottom-20 -left-20 w-[600px] opacity-90 blur-[4px] z-30 pointer-events-none drop-shadow-[0_20px_50px_rgba(0,0,0,0.8)]" 
+        />
+        <motion.img 
+          style={{ x: leafRightX }}
+          src="/leaves_foreground_placeholder.png" 
+          alt="" 
+          className="absolute -bottom-20 -right-20 w-[600px] opacity-90 blur-[5px] z-30 pointer-events-none scale-x-[-1] drop-shadow-[0_20px_50px_rgba(0,0,0,0.8)]" 
+        />
+      </motion.section>
 
       {/* 
         ========================================
-        SCENE 02: WORLDS, NOT CARDS
+        SCENE 02: FLOATING WORLDS
         ========================================
       */}
-      <section className="relative w-full bg-brand-charcoal">
+      <div className="relative z-20 w-full max-w-7xl mx-auto px-6 space-y-[30vh] pb-[30vh]">
         
-        {/* World 1: Acai in the Mossy Cave */}
-        <div className="relative min-h-[70vh] w-full flex items-center justify-center overflow-hidden">
-          <div className="absolute inset-0 bg-[url('/mossy_cave_placeholder.jpg')] bg-cover bg-fixed opacity-40 mix-blend-luminosity" />
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-charcoal/90 via-transparent to-brand-charcoal/90" />
-          
-          <div className="relative z-10 w-full max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <div className="flex justify-center md:justify-end">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/acai-passionfruit-legs.png" alt="Açaí Superberry" className="w-full max-w-sm h-auto drop-shadow-2xl" />
-            </div>
-            <div className="text-left text-white">
-              <span className="font-sans text-[10px] tracking-[0.3em] text-brand-green uppercase mb-6 block">The Original</span>
-              <h2 className="font-display text-5xl md:text-7xl mb-6">Açaí Bowls</h2>
-              <p className="font-sans text-lg font-light text-white/70 max-w-md mb-10">
-                Deep purple antioxidant power. Wild-harvested directly from the Amazon canopy.
-              </p>
-              <Button variant="outline" size="md" className="border-white/20 text-white hover:bg-white hover:text-brand-charcoal">Shop Tubs</Button>
-            </div>
+        {/* World 1: Açaí */}
+        <motion.div style={{ y: world1Y }} className="relative grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="flex justify-center relative">
+            <div className="absolute inset-0 bg-brand-charcoal opacity-40 blur-[100px] rounded-full" />
+            <motion.img 
+              animate={{ y: [0, -20, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0 }}
+              src="/acai-passionfruit-legs.png" 
+              alt="Açaí Superberry" 
+              className="relative z-10 w-full max-w-md h-auto drop-shadow-[0_40px_60px_rgba(0,0,0,0.8)]" 
+            />
           </div>
-        </div>
-
-        {/* World 2: Cubes on Crushed Ice */}
-        <div className="relative min-h-[70vh] w-full flex items-center justify-center overflow-hidden bg-brand-blue/5">
-          <div className="absolute inset-0 bg-[url('/crushed_ice_placeholder.jpg')] bg-cover bg-fixed opacity-60 mix-blend-overlay" />
-          <div className="absolute inset-0 bg-gradient-to-l from-brand-charcoal/90 via-brand-charcoal/40 to-brand-charcoal/90" />
-          
-          <div className="relative z-10 w-full max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <div className="text-left text-white order-2 md:order-1 md:pl-20">
-              <span className="font-sans text-[10px] tracking-[0.3em] text-brand-blue uppercase mb-6 block">Flash Frozen</span>
-              <h2 className="font-display text-5xl md:text-7xl mb-6">Smoothie Cubes</h2>
-              <p className="font-sans text-lg font-light text-white/70 max-w-md mb-10">
-                A perfectly portioned blend of raw, tropical energy. Just drop, blend, and glow.
-              </p>
-              <Button variant="outline" size="md" className="border-white/20 text-white hover:bg-white hover:text-brand-charcoal">Shop Cubes</Button>
-            </div>
-            <div className="flex justify-center md:justify-start order-1 md:order-2">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/dragonfruit_pack.png" alt="Smoothie Cubes" className="w-full max-w-sm h-auto drop-shadow-2xl" />
-            </div>
+          <div className="text-left">
+            <span className="font-sans text-xs tracking-[0.4em] text-brand-green uppercase mb-6 block drop-shadow-md">The Original</span>
+            <h2 className="font-display text-5xl md:text-7xl mb-6 text-white drop-shadow-lg">Açaí Bowls</h2>
+            <p className="font-sans text-lg font-light text-white/80 max-w-md mb-8">
+              Deep purple antioxidant power. Wild-harvested directly from the Amazon canopy.
+            </p>
+            <Button variant="outline" size="md" className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm">Shop Tubs</Button>
           </div>
-        </div>
+        </motion.div>
 
-        {/* World 3: Ice Pops on Australian Beach Table */}
-        <div className="relative min-h-[70vh] w-full flex items-center justify-center overflow-hidden bg-[#E6D4B8]/10">
-          <div className="absolute inset-0 bg-[url('/beach_timber_table_placeholder.jpg')] bg-cover bg-fixed opacity-40 mix-blend-soft-light" />
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-charcoal/90 via-transparent to-brand-charcoal/90" />
-          
-          <div className="relative z-10 w-full max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <div className="flex justify-center md:justify-end">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/acai-zero-sugar-original.png" alt="Ice Pops" className="w-full max-w-sm h-auto drop-shadow-2xl" />
-            </div>
-            <div className="text-left text-white">
-              <span className="font-sans text-[10px] tracking-[0.3em] text-brand-orange uppercase mb-6 block">Summer Classic</span>
-              <h2 className="font-display text-5xl md:text-7xl mb-6">Ice Pops</h2>
-              <p className="font-sans text-lg font-light text-white/70 max-w-md mb-10">
-                The healthy Australian summer classic. Zero added sugar, 100% real fruit joy.
-              </p>
-              <Button variant="outline" size="md" className="border-white/20 text-white hover:bg-white hover:text-brand-charcoal">Shop Pops</Button>
-            </div>
+        {/* World 2: Cubes */}
+        <motion.div style={{ y: world2Y }} className="relative grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="text-left order-2 md:order-1 md:pl-20">
+            <span className="font-sans text-xs tracking-[0.4em] text-brand-blue uppercase mb-6 block drop-shadow-md">Flash Frozen</span>
+            <h2 className="font-display text-5xl md:text-7xl mb-6 text-white drop-shadow-lg">Smoothie Cubes</h2>
+            <p className="font-sans text-lg font-light text-white/80 max-w-md mb-8">
+              A perfectly portioned blend of raw, tropical energy. Just drop, blend, and glow.
+            </p>
+            <Button variant="outline" size="md" className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm">Shop Cubes</Button>
           </div>
-        </div>
+          <div className="flex justify-center relative order-1 md:order-2">
+            <div className="absolute inset-0 bg-brand-blue/20 opacity-50 blur-[100px] rounded-full" />
+            <motion.img 
+              animate={{ y: [0, -15, 0], rotate: [0, 5, 0] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+              src="/dragonfruit_pack.png" 
+              alt="Smoothie Cubes" 
+              className="relative z-10 w-full max-w-md h-auto drop-shadow-[0_40px_60px_rgba(0,0,0,0.8)]" 
+            />
+          </div>
+        </motion.div>
 
-      </section>
+        {/* World 3: Ice Pops */}
+        <motion.div style={{ y: world3Y }} className="relative grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="flex justify-center relative">
+            <div className="absolute inset-0 bg-brand-orange/20 opacity-40 blur-[100px] rounded-full" />
+            <motion.img 
+              animate={{ y: [0, -25, 0], rotate: [0, -5, 0] }}
+              transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+              src="/acai-zero-sugar-original.png" 
+              alt="Ice Pops" 
+              className="relative z-10 w-full max-w-md h-auto drop-shadow-[0_40px_60px_rgba(0,0,0,0.8)]" 
+            />
+          </div>
+          <div className="text-left">
+            <span className="font-sans text-xs tracking-[0.4em] text-brand-orange uppercase mb-6 block drop-shadow-md">Summer Classic</span>
+            <h2 className="font-display text-5xl md:text-7xl mb-6 text-white drop-shadow-lg">Ice Pops</h2>
+            <p className="font-sans text-lg font-light text-white/80 max-w-md mb-8">
+              The healthy Australian summer classic. Zero added sugar, 100% real fruit joy.
+            </p>
+            <Button variant="outline" size="md" className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm">Shop Pops</Button>
+          </div>
+        </motion.div>
+
+      </div>
 
       {/* 
         ========================================
-        SCENE 03: AUSTRALIAN LIFESTYLE
+        SCENE 03: ZERO-GRAVITY HARVEST
         ========================================
       */}
-      <section className="relative min-h-[90vh] w-full flex items-center">
-        <div className="absolute inset-0 bg-[url('/australian_kitchen_placeholder.jpg')] bg-cover bg-center" />
-        <div className="absolute inset-0 bg-brand-charcoal/30" />
+      <section className="relative h-[120vh] w-full flex items-center justify-center overflow-hidden bg-gradient-to-b from-transparent to-[#10041C]">
         
-        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
-          <h2 className="font-display text-6xl md:text-[90px] text-white leading-none max-w-3xl drop-shadow-lg">
-            Morning rituals.<br />Perfected.
-          </h2>
-        </div>
-      </section>
+        {/* Floating Fruits */}
+        <motion.div style={{ y: fruit1Y, rotate: fruitRotate }} className="absolute top-[20%] left-[10%] w-32 h-32 bg-[url('/recipe_bowl.png')] bg-contain bg-no-repeat drop-shadow-2xl opacity-80" />
+        <motion.div style={{ y: fruit2Y, rotate: fruitRotate }} className="absolute top-[40%] right-[15%] w-48 h-48 bg-[url('/mango_pack.png')] bg-contain bg-no-repeat drop-shadow-2xl opacity-90" />
+        <motion.div style={{ y: fruit3Y, rotate: fruitRotate }} className="absolute top-[60%] left-[20%] w-40 h-40 bg-[url('/recipe_smoothie.png')] bg-contain bg-no-repeat drop-shadow-2xl opacity-70" />
 
-      {/* 
-        ========================================
-        SCENE 04: COMMUNITY & PLANET
-        ========================================
-      */}
-      <section className="relative w-full bg-brand-ivory py-40">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="font-display text-5xl md:text-[80px] text-brand-charcoal leading-tight mb-12">
-            Protecting what gives us everything.
+        <div className="relative z-20 max-w-4xl mx-auto px-6 text-center">
+          <h2 className="font-display text-6xl md:text-[100px] text-white leading-none mb-8 drop-shadow-[0_0_30px_rgba(255,255,255,0.3)]">
+            Taste the Magic.
           </h2>
-          <p className="font-sans text-xl text-brand-charcoal/70 font-light mb-16 max-w-2xl mx-auto">
-            From the Amazon canopy to the Australian coast, our commitment to sustainable harvesting ensures this world remains wildly natural.
+          <p className="font-sans text-xl text-white/70 font-light mb-12">
+            Experience the wildest, purest superfoods on earth.
           </p>
-          <Button variant="secondary" size="lg">Our Sustainability</Button>
+          <Button variant="primary" size="lg" className="shadow-[0_0_40px_rgba(247,147,30,0.4)]">Enter the Shop</Button>
         </div>
       </section>
 
