@@ -80,31 +80,33 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-4 left-4 right-4 md:left-1/2 md:-translate-x-1/2 md:w-full md:max-w-6xl z-50 transition-all duration-500 font-sans rounded-full ${
+        className={`fixed top-4 left-4 right-4 md:left-1/2 md:-translate-x-1/2 md:w-full md:max-w-[1200px] xl:max-w-[1400px] z-50 transition-all duration-500 font-sans rounded-full ${
           scrolled
             ? "py-3 bg-white shadow-[0_10px_30px_rgba(0,0,0,0.1)] border border-gray-100"
             : "py-3 md:py-4 bg-white shadow-lg border border-gray-100"
         }`}
       >
-        <div className="mx-auto px-4 md:px-8 grid grid-cols-2 lg:grid-cols-3 items-center w-full">
+        <div className="mx-auto px-4 md:px-6 xl:px-8 flex items-center justify-between w-full">
           {/* Graphic Logo */}
-          <Link href="/" className="flex items-center justify-start">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo.png" alt="Austropical Logo" className="h-10 md:h-12 w-auto object-contain transition-transform hover:scale-105" />
-          </Link>
+          <div className="flex-1 flex justify-start">
+            <Link href="/" className="flex items-center">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/logo.png" alt="Austropical Logo" className="h-10 md:h-12 w-auto object-contain transition-transform hover:scale-105" />
+            </Link>
+          </div>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center justify-center gap-8">
+          <nav className="hidden lg:flex flex-shrink-0 items-center justify-center gap-6 xl:gap-8">
             {navLinks.map((link) => (
               <div key={link.name} className="relative group/link py-2">
                 {link.name === "RECIPES" && (
-                  <span className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#E71D85] text-white text-[9px] font-black uppercase tracking-widest px-2 py-0.5 rounded-full after:content-[''] after:absolute after:top-full after:left-1/2 after:-translate-x-1/2 after:border-4 after:border-transparent after:border-t-[#E71D85]">
+                  <span className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#E71D85] text-white text-[9px] font-black uppercase tracking-widest px-2 py-0.5 rounded-full after:content-[''] after:absolute after:top-full after:left-1/2 after:-translate-x-1/2 after:border-4 after:border-transparent after:border-t-[#E71D85] whitespace-nowrap">
                     New
                   </span>
                 )}
                 <Link
                   href={link.href}
-                  className={`text-sm font-bold tracking-wide flex items-center gap-1 transition-all duration-300 text-[#1A5D2C] hover:text-[#F7931E]`}
+                  className={`text-xs xl:text-sm font-bold tracking-wide flex items-center gap-1 transition-all duration-300 text-[#1A5D2C] hover:text-[#F7931E] whitespace-nowrap`}
                 >
                   <span>{link.name}</span>
                   {link.hasDropdown && (
@@ -175,7 +177,7 @@ export default function Navbar() {
             <div className="relative group/link py-2">
               <Link
                 href="/admin"
-                className="text-xs font-bold tracking-wide text-[#E71D85] hover:text-[#F7931E] transition-all duration-300"
+                className="text-xs font-bold tracking-wide text-[#E71D85] hover:text-[#F7931E] transition-all duration-300 whitespace-nowrap"
               >
                 CMS
               </Link>
@@ -183,7 +185,7 @@ export default function Navbar() {
           </nav>
 
           {/* Right Header Utilities */}
-          <div className="hidden lg:flex items-center justify-end gap-5">
+          <div className="hidden lg:flex flex-1 items-center justify-end gap-4 xl:gap-5">
             
             <div className="flex items-center gap-3 text-xs font-bold text-[#1A5D2C]/70 border-r border-[#1A5D2C]/20 pr-4">
               <div className="flex items-center gap-1 cursor-pointer hover:text-[#E71D85] transition-colors">
@@ -224,18 +226,18 @@ export default function Navbar() {
 
             <button
               onClick={() => setCartOpen(true)}
-              className="bg-[#1A5D2C] text-white hover:bg-[#B2D235] hover:text-[#1A5D2C] hover:scale-105 transition-all p-2.5 rounded-full flex items-center justify-center relative shadow-md ml-2"
+              className="bg-[#1A5D2C] text-white hover:bg-[#B2D235] hover:text-[#1A5D2C] hover:scale-105 transition-all p-2.5 rounded-full flex items-center justify-center relative shadow-md ml-1 xl:ml-2"
             >
               <ShoppingBag className="w-4 h-4 md:w-5 md:h-5" />
               {totalCartItems > 0 && (
-                <span className="absolute -top-1.5 -right-1.5 bg-[#E71D85] text-white text-[10px] font-black w-4.5 h-4.5 rounded-full flex items-center justify-center border border-white">
+                <span className="absolute -top-1.5 -right-1.5 bg-[#E71D85] text-white text-[10px] font-black w-[18px] h-[18px] rounded-full flex items-center justify-center border border-white">
                   {totalCartItems}
                 </span>
               )}
             </button>
             <Link
               href="/shop"
-              className="bg-[#F7931E] hover:bg-[#1A5D2C] text-white font-bold text-sm tracking-wide px-6 py-2.5 rounded-full transition-all hover:scale-105 ml-2 flex items-center gap-2"
+              className="bg-[#F7931E] hover:bg-[#1A5D2C] text-white font-bold text-xs xl:text-sm tracking-wide px-4 xl:px-6 py-2.5 rounded-full transition-all hover:scale-105 ml-1 xl:ml-2 flex items-center gap-1 xl:gap-2 whitespace-nowrap"
             >
               Shop Now <span className="text-lg leading-none">→</span>
             </Link>
