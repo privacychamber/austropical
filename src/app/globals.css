@@ -21,6 +21,7 @@
   }
 
   body {
+    -webkit-tap-highlight-color: transparent;
     color: var(--foreground);
     background-color: var(--background);
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
@@ -66,6 +67,14 @@
 }
 
 /* Custom Scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 ::-webkit-scrollbar {
   width: 10px;
 }

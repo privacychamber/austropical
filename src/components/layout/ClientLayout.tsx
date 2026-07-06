@@ -6,6 +6,7 @@ import { StoreProvider } from "@/context/StoreContext";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { CustomCursor } from "@/components/ui/CustomCursor";
+import MobileNav from "@/components/layout/MobileNav";
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -44,12 +45,15 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
   return (
     <StoreProvider>
       <AnimatePresence mode="wait">
-        <motion.div key={pathname} className="relative min-h-screen">
+        <motion.div key={pathname} className="relative min-h-screen pb-16 md:pb-0">
           
           {/* Custom spring inertia follow cursor */}
           <CustomCursor />
 
           {children}
+          
+          {/* Mobile Bottom Tab Bar */}
+          <MobileNav />
         </motion.div>
       </AnimatePresence>
     </StoreProvider>

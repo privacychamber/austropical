@@ -80,10 +80,10 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-[44px] left-4 right-4 md:left-1/2 md:-translate-x-1/2 md:w-full md:max-w-[1200px] xl:max-w-[1400px] z-50 transition-all duration-500 font-sans rounded-full ${
+        className={`fixed top-[44px] left-0 w-full md:left-1/2 md:-translate-x-1/2 md:w-[calc(100%-2rem)] md:max-w-[1200px] xl:max-w-[1400px] z-50 transition-all duration-500 font-sans md:rounded-full ${
           scrolled
-            ? "py-3 bg-white shadow-[0_10px_30px_rgba(0,0,0,0.1)] border border-gray-100"
-            : "py-3 md:py-4 bg-white shadow-lg border border-gray-100"
+            ? "py-3 bg-white/95 backdrop-blur-md shadow-[0_10px_30px_rgba(0,0,0,0.1)] border-b md:border border-gray-100"
+            : "py-3 md:py-4 bg-white shadow-lg border-b md:border border-gray-100"
         }`}
       >
         <div className="mx-auto px-4 md:px-6 xl:px-8 flex items-center justify-between w-full">
@@ -234,24 +234,13 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Mobile Navigation controls */}
+          {/* Mobile Navigation controls (Simplified for Bottom Nav) */}
           <div className="flex lg:hidden items-center justify-end gap-3">
             <button
-              onClick={() => setCartOpen(true)}
-              className="text-[#1A5D2C] relative p-1"
+              onClick={() => setSearchOpen(true)}
+              className="text-[#1A5D2C] relative p-1 active:scale-90 transition-transform"
             >
-              <ShoppingBag className="w-5 h-5" />
-              {totalCartItems > 0 && (
-                <span className="absolute -top-1 -right-1 bg-[#E71D85] text-white text-[9px] font-black w-4 h-4 rounded-full flex items-center justify-center">
-                  {totalCartItems}
-                </span>
-              )}
-            </button>
-            <button
-              onClick={() => setMobileMenuOpen(true)}
-              className="text-[#1A5D2C] p-1"
-            >
-              <Menu className="w-6 h-6" />
+              <Search className="w-5 h-5" />
             </button>
           </div>
         </div>

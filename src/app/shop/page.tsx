@@ -146,14 +146,14 @@ function ShopContent() {
           <span className="text-xs font-black uppercase tracking-widest text-[#1A5D2C]/60 flex-shrink-0">
             Filter by:
           </span>
-          <div className="flex flex-wrap items-center gap-2">
+          <div className="flex items-center gap-2 overflow-x-auto no-scrollbar w-full py-1 pr-4">
             {categories.map((cat) => (
               <motion.button
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.98 }}
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`text-[10px] md:text-xs font-bold uppercase tracking-wider px-5 py-2.5 rounded-full border-2 transition-all duration-300 ${
+                className={`text-[10px] md:text-xs font-bold uppercase tracking-wider px-5 py-2.5 rounded-full border-2 transition-all duration-300 whitespace-nowrap flex-shrink-0 active:scale-95 ${
                   selectedCategory === cat
                     ? "bg-[#F7931E] border-[#F7931E] text-white shadow-[0_8px_20px_rgba(247,147,30,0.3)]"
                     : "bg-white border-[#1A5D2C]/10 text-[#1A5D2C] hover:border-[#F7931E] hover:text-[#F7931E]"
